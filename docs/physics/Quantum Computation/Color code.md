@@ -1,5 +1,6 @@
 ---
 title: "Color code"
+date: 2026-08-03
 ---
 
 ## Color code基础内容

@@ -1,7 +1,6 @@
 import { viteBundler } from "@vuepress/bundler-vite";
 import { defineUserConfig } from "vuepress";
 import { plumeTheme } from "vuepress-theme-plume";
-import { statSync } from "node:fs";
 
 export default defineUserConfig({
   lang: "zh-CN",
@@ -11,25 +10,36 @@ export default defineUserConfig({
   bundler: viteBundler(),
 
   extendsPage(page) {
-    const frontmatterDate = page.frontmatter.date;
-    let updatedAt = frontmatterDate
-      ? new Date(frontmatterDate).getTime()
-      : 0;
-
-    if (!updatedAt && page.filePath) {
-      try {
-        updatedAt = statSync(page.filePath).mtimeMs;
-      } catch {
-        updatedAt = 0;
-      }
-    }
+    const relativePath = page.filePathRelative?.replaceAll("\\", "/") ?? "";
 
     page.routeMeta.homepage = {
       title: page.title,
       description: page.frontmatter.description ?? "",
       tags: page.frontmatter.tags ?? [],
-      updatedAt,
+      updatedAt: 0,
+      isArticle:
+        Boolean(relativePath) &&
+        !relativePath.endsWith("README.md") &&
+        Boolean(page.title),
     };
+  },
+
+  onInitialized(app) {
+    for (const page of app.pages) {
+      const frontmatterDate = page.frontmatter.date;
+      const explicitUpdatedAt = frontmatterDate
+        ? new Date(frontmatterDate).getTime()
+        : 0;
+      const gitUpdatedAt = Number(page.data.git?.updatedTime ?? 0);
+      const validExplicitUpdatedAt = Number.isFinite(explicitUpdatedAt)
+        ? explicitUpdatedAt
+        : 0;
+
+      page.routeMeta.homepage = {
+        ...(page.routeMeta.homepage ?? {}),
+        updatedAt: Math.max(validExplicitUpdatedAt, gitUpdatedAt),
+      };
+    }
   },
 
   theme: plumeTheme({

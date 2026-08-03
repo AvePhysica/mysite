@@ -17,6 +17,10 @@ const homeComponent = await readFile(
   ),
   "utf8",
 );
+const config = await readFile(
+  resolve(dirname(fileURLToPath(import.meta.url)), "../docs/.vuepress/config.js"),
+  "utf8",
+);
 
 assert.match(
   homeComponent,
@@ -29,7 +33,11 @@ assert.match(
   /class="home-kicker"[^>]*>[^<]+<\/p>/,
   "首页应显示站点名称",
 );
-assert.match(html, /Blog &amp; Notes|Blog & Notes/, "首页应显示主标题");
+assert.match(
+  html,
+  /Study &amp; Research|Study & Research/,
+  "首页应显示主标题",
+);
 assert.match(html, /Recent Update/, "首页应包含最近更新区域");
 assert.match(html, /home-dashboard/, "首页应渲染自定义仪表盘组件");
 assert.match(html, /class="home-view-toggle"/, "首页应提供内容显示切换按钮");
@@ -43,6 +51,32 @@ assert.match(html, /id="recent-update-panel"/, "最近更新面板应提供稳�
 assert.match(html, /href="\/physics\/"/, "首页应提供物理笔记入口");
 assert.match(html, /href="\/japanese\/"/, "首页应提供日语笔记入口");
 assert.match(html, /href="\/computer-science\/"/, "首页应提供计算机科学入口");
+
+assert.doesNotMatch(
+  html,
+  /Untitled note/,
+  "Recent Update should not include structural or untitled pages",
+);
+assert.match(
+  html,
+  /class="recent-grid"[\s\S]*?href="\/physics\/Quantum%20Computation\//,
+  "Recent Update should include the newly added Quantum Computation notes",
+);
+assert.match(
+  config,
+  /page\.data\.git\?\.updatedTime/,
+  "Recent Update should use Git commit times so deployment does not reset the order",
+);
+assert.doesNotMatch(
+  config,
+  /statSync/,
+  "Recent Update should not use filesystem modification times",
+);
+assert.match(
+  homeComponent,
+  /filter\(\(\{ isArticle, updatedAt \}\) => isArticle && updatedAt > 0\)/,
+  "Recent Update should exclude structural and untitled pages",
+);
 
 const stylesheetPaths = [...html.matchAll(/<link rel="stylesheet" href="([^"]+)"/g)]
   .map((match) => match[1].replace(/^\//, ""));

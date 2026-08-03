@@ -1,5 +1,6 @@
 ---
 title: "Essay - Topological quantum memory"
+date: 2026-08-03
 ---
 
 ## 0. abstract

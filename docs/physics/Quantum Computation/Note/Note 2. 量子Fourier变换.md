@@ -1,5 +1,6 @@
 ---
 title: "Note 2. 量子Fourier变换"
+date: 2026-08-03
 ---
 
 本章介绍**量子傅里叶变换**(Quantum Fourier Transformation, QFT)
@@ -103,5 +104,4 @@ $$
 $$
 U_x|y\rangle\equiv |xy\,\mathrm{mod}\,N\rangle
 $$
-
 

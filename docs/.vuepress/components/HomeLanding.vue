@@ -52,6 +52,7 @@ const pages = computed(() =>
         category,
         description: String(home.description || fallbackDescription(category)),
         updatedAt: Number(home.updatedAt || 0),
+        isArticle: Boolean(home.isArticle),
         tags: Array.isArray(home.tags) ? home.tags.slice(0, 2) : [],
       };
     }),
@@ -67,7 +68,7 @@ const stats = computed(() =>
 
 const recentPages = computed(() =>
   pages.value
-    .filter(({ path }) => !path.endsWith("/"))
+    .filter(({ isArticle, updatedAt }) => isArticle && updatedAt > 0)
     .sort(
       (left, right) =>
         right.updatedAt - left.updatedAt || left.title.localeCompare(right.title),

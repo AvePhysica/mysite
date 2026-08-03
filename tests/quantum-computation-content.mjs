@@ -24,7 +24,9 @@ for (const relativePath of notes) {
 
   assert.match(
     content,
-    new RegExp(`^---\\r?\\ntitle: "${title.replace(/[.*+?^${}()|[\\]\\]/g, "\\$&")}"\\r?\\n---\\r?\\n`),
+    new RegExp(
+      `^---\\r?\\ntitle: "${title.replace(/[.*+?^${}()|[\\]\\]/g, "\\$&")}"\\r?\\ndate: 2026-08-03\\r?\\n---\\r?\\n`,
+    ),
     `${relativePath} 应包含与文件名一致的标题`,
   );
 
