@@ -1,7 +1,7 @@
 ---
 home: true
 icon: house
-title: RHJ Blog & Notes
+title: Study & Research
 description: Physics · AI · Mathematics · Learning
 config:
   - type: custom
