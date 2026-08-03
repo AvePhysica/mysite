@@ -2,7 +2,7 @@
 title: "Coleman QFT Lecture 12: 散射理论 II：应用"
 ---
 
-这一章将利用[[Coleman QFT - Lecture 11. 散射理论 I：Mandelstam变量、CPT和相空间]]最后得出的微分跃迁概率与Feynman振幅的关系，计算其在一些实际物理过程中的应用。为了防止你已经不记得，我将结论抄在下面：
+这一章将利用[Coleman QFT - Lecture 11. 散射理论 I：Mandelstam变量、CPT和相空间](./Coleman%20QFT%20-%20Lecture%2011.%20%E6%95%A3%E5%B0%84%E7%90%86%E8%AE%BA%20I%EF%BC%9AMandelstam%E5%8F%98%E9%87%8F%E3%80%81CPT%E5%92%8C%E7%9B%B8%E7%A9%BA%E9%97%B4.md)最后得出的微分跃迁概率与Feynman振幅的关系，计算其在一些实际物理过程中的应用。为了防止你已经不记得，我将结论抄在下面：
 $$
 (\text{diff. trans. prob. per unit time})=|\mathcal A_{fi}|^2D\prod_i\dfrac{1}{2E_i},\quad D=(2\pi)^4\delta^{(4)}(p_f-p_i)\prod_f\dfrac{\mathrm{d}^3\vec p_f}{(2\pi)^32E_f}
 $$
@@ -26,7 +26,7 @@ $$
 
 ## 12.2 双粒子散射
 
-现在，来考虑入射态是双粒子态的散射过程。在[[Coleman QFT - Lecture 11. 散射理论 I：Mandelstam变量、CPT和相空间]]中，我们提到此时的初态归一化方式为：
+现在，来考虑入射态是双粒子态的散射过程。在[Coleman QFT - Lecture 11. 散射理论 I：Mandelstam变量、CPT和相空间](./Coleman%20QFT%20-%20Lecture%2011.%20%E6%95%A3%E5%B0%84%E7%90%86%E8%AE%BA%20I%EF%BC%9AMandelstam%E5%8F%98%E9%87%8F%E3%80%81CPT%E5%92%8C%E7%9B%B8%E7%A9%BA%E9%97%B4.md)中，我们提到此时的初态归一化方式为：
 $$
 |i\rangle=\sqrt V|\vec p_1,\vec p_2\rangle
 $$
@@ -140,7 +140,7 @@ $$
 \mathrm{Im}\,f(\,\vec p\,,\theta=0)=\dfrac{|\vec p|}{4\pi}\sigma
 $$
 
-可以参考[[AQM_Note 6]]。在QFT的散射理论中也有相似的定理。此时我们用Feynman振幅 $\mathcal A_{fi}$ 代替散射振幅 $f(p,\cos\theta)$。定理表述为：
+可以参考AQM_Note 6。在QFT的散射理论中也有相似的定理。此时我们用Feynman振幅 $\mathcal A_{fi}$ 代替散射振幅 $f(p,\cos\theta)$。定理表述为：
 $$
 \mathrm{Im}\,\mathcal A_{ii}=2E_T|\vec p_i|\sigma
 $$

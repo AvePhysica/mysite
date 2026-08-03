@@ -3,7 +3,7 @@ title: "Coleman QFT Problem 11"
 ---
 
 >[!question]
->在[[Coleman QFT - Lecture 20. Dirac方程 II：求解]]中，我们得到了Dirac方程的沿 $z$ 轴运动平面波解。现在对于一般的 $\vec p$，找到两个线性独立的正频率解，使其为螺旋度的本征态。（Hint：旋转算符与螺旋度算符对易）。
+>在[Coleman QFT - Lecture 20. Dirac方程 II：求解](./Coleman%20QFT%20-%20Lecture%2020.%20Dirac%E6%96%B9%E7%A8%8B%20II%EF%BC%9A%E6%B1%82%E8%A7%A3.md)中，我们得到了Dirac方程的沿 $z$ 轴运动平面波解。现在对于一般的 $\vec p$，找到两个线性独立的正频率解，使其为螺旋度的本征态。（Hint：旋转算符与螺旋度算符对易）。
 
 对于沿 $z$ 轴的运动，我们得到：
 $$

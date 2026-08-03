@@ -2,7 +2,7 @@
 title: "Coleman QFT Lecture 8: 微扰理论 I：Wick diagram"
 ---
 
-本节正式进入微扰论的具体计算。其目标在于计算相互作用绘景下的时间演化算符 $U_I(\infty,-\infty)$。必要时参考前一篇文章：[[Coleman QFT - Lecture 7. 微扰论与散射理论初步]]。我们将从时序积的表达式出发：
+本节正式进入微扰论的具体计算。其目标在于计算相互作用绘景下的时间演化算符 $U_I(\infty,-\infty)$。必要时参考前一篇文章：[Coleman QFT - Lecture 7. 微扰论与散射理论初步](./Coleman%20QFT%20-%20Lecture%207.%20%E5%BE%AE%E6%89%B0%E8%AE%BA%E4%B8%8E%E6%95%A3%E5%B0%84%E7%90%86%E8%AE%BA%E5%88%9D%E6%AD%A5.md)。我们将从时序积的表达式出发：
 $$
 S=U_I(\infty,-\infty)=T\exp\left(-i\int_{-\infty}^\infty \mathrm{d}t\,H_I(t)\right)
 $$
@@ -94,7 +94,7 @@ $$
 0,\quad A\ne B
 \end{cases}
 $$
-这里 $\Delta_+(x-y)$ 是在第三章[[Coleman QFT - Lecture 3. 构建标量量子场]]中定义的，具体来说
+这里 $\Delta_+(x-y)$ 是在第三章[Coleman QFT - Lecture 3. 构建标量量子场](./Coleman%20QFT%20-%20Lecture%203.%20%E6%9E%84%E5%BB%BA%E6%A0%87%E9%87%8F%E9%87%8F%E5%AD%90%E5%9C%BA.md)中定义的，具体来说
 $$
  \Delta _+(x-y)\equiv\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3}(2\omega_{\vec p})}\mathrm{e}^{-ip\cdot (x-y)}
 $$
@@ -104,7 +104,7 @@ $$
 $$
 不论怎么样，它都是一个数而不是算符场。
 
-另一避免使用阶跃函数的方法我们实际上已经在[[Coleman QFT - Problem 1]]中的第三题遇到过了。我们可以将 $\overset {|\Large \mkern-2mu{}^{\overline{\quad\;\,}}\mkern-3mu\normalsize |}{\phi(x) \phi} (y)$ 夹在真空态之间（记住这是一个数，因此不论在哪个归一化态的平均值都等于这个数），但是正规序积作用在真空态上一定是零，因此：
+另一避免使用阶跃函数的方法我们实际上已经在[Coleman QFT - Problem 1](./Coleman%20QFT%20-%20Problem%201.md)中的第三题遇到过了。我们可以将 $\overset {|\Large \mkern-2mu{}^{\overline{\quad\;\,}}\mkern-3mu\normalsize |}{\phi(x) \phi} (y)$ 夹在真空态之间（记住这是一个数，因此不论在哪个归一化态的平均值都等于这个数），但是正规序积作用在真空态上一定是零，因此：
 $$
 \overset {|\Large \mkern-2mu{}^{\overline{\quad\;\,}}\mkern-3mu\normalsize |}{\phi(x) \phi} (y)=\langle0|T(\phi(x)\phi(y))|0\rangle+\langle0|:\phi(x)\phi(y):|0\rangle=\langle0|T(\phi(x)\phi(y))|0\rangle
 $$
@@ -113,7 +113,7 @@ $$
 \overset {|\Large \mkern-2mu{}^{\overline{\quad\;\,}}\mkern-3mu\normalsize |}{\phi(x) \phi} (y)=\langle 0|T(\phi(x)\phi(y))|0\rangle=\lim_{\epsilon\to0^+}\int\dfrac{\mathrm{d}^4p}{(2\pi)^4}\mathrm{e}^{-ip\cdot(x-y)}\dfrac{i}{p^2-\mu^2+i\epsilon}
 $$
 也就是说，对 $p^0$ 的积分自然会产生一个阶跃函数。后面将沿用这一表达式。
-上面是对实标量场的缩并，对复标量场而言，你可以直接用其定义式计算（定义参考[[Coleman QFT - Lecture 6. 对称性与守恒律 II：内部对称性]]）：
+上面是对实标量场的缩并，对复标量场而言，你可以直接用其定义式计算（定义参考[Coleman QFT - Lecture 6. 对称性与守恒律 II：内部对称性](./Coleman%20QFT%20-%20Lecture%206.%20%E5%AF%B9%E7%A7%B0%E6%80%A7%E4%B8%8E%E5%AE%88%E6%81%92%E5%BE%8B%20II%EF%BC%9A%E5%86%85%E9%83%A8%E5%AF%B9%E7%A7%B0%E6%80%A7.md)）：
 $$
 \psi=\dfrac{1}{\sqrt 2}(\phi^1+i\phi^2),\quad \psi^*=\dfrac{1}{\sqrt 2}(\phi^1-i\phi^2)
 $$

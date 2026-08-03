@@ -27,7 +27,7 @@ $$
 ---
 
 >[!question]
->在[[Coleman QFT - Problem 1]]的第四题中，定义了可观测量：
+>在[Coleman QFT - Problem 1](./Coleman%20QFT%20-%20Problem%201.md)的第四题中，定义了可观测量：
 >$$A(a)=\dfrac{1}{(a\sqrt\pi)^3}\int\mathrm{d}^3\vec x\,\phi(\vec x,0)\,\mathrm{e}^{-|\vec x|^2/a^2}$$
 > 对于小的 $a$ ，其期望的近似式为
 > $$\mathrm{var}\;A(a)=\alpha a^\beta+\cdots$$

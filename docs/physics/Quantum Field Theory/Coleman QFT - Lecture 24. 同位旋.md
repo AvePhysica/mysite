@@ -21,7 +21,7 @@ $$
 \mathcal A(pp\to pp)=\mathcal A(nn\to nn)=\mathcal A(pn\to pn)\quad\text{in an antisymmetric state}
 $$
 由重整化理论，极点邻域内的最低阶图因我们的重整化条件而不会受到修正，因此可以将上式在极点附近保留到 $O(g^2)$ 阶。
-在[[Coleman QFT - Lecture 21. Dirac方程 III：量子化与Feynman规则]]中介绍了其相关的Feynman规则，对于 $pp\to pp$ 散射，其对应的Feynman图为：
+在[Coleman QFT - Lecture 21. Dirac方程 III：量子化与Feynman规则](./Coleman%20QFT%20-%20Lecture%2021.%20Dirac%E6%96%B9%E7%A8%8B%20III%EF%BC%9A%E9%87%8F%E5%AD%90%E5%8C%96%E4%B8%8EFeynman%E8%A7%84%E5%88%99.md)中介绍了其相关的Feynman规则，对于 $pp\to pp$ 散射，其对应的Feynman图为：
 
 <div align="center">
   <img src="./pictures/Pasted image 20260210204540.png" width="600">
@@ -119,7 +119,7 @@ $$
 [I_i,I_j]=i\epsilon_{ijk}I_k
 $$
 >[!tip]
->这里补上前面[[Coleman QFT - Lecture 5. 对称性与守恒律 I：时空对称性]]中没有讲到的一个点，就是守恒荷为什么是生成元。考虑一个Lagrangian不变的对称性变换，则
+>这里补上前面[Coleman QFT - Lecture 5. 对称性与守恒律 I：时空对称性](./Coleman%20QFT%20-%20Lecture%205.%20%E5%AF%B9%E7%A7%B0%E6%80%A7%E4%B8%8E%E5%AE%88%E6%81%92%E5%BE%8B%20I%EF%BC%9A%E6%97%B6%E7%A9%BA%E5%AF%B9%E7%A7%B0%E6%80%A7.md)中没有讲到的一个点，就是守恒荷为什么是生成元。考虑一个Lagrangian不变的对称性变换，则
 >$$j^\mu=\pi^\mu_a\delta\phi^a,\quad I=\int\mathrm{d}^3\vec x\,\pi_a\delta\phi^a$$
 >则
 >$$[\phi^a(x),I]=\int\mathrm{d}^3\vec y\,[\phi_a(x),\pi_b(x^0,\vec y)]\delta\phi^b(x^0,\vec y)=\int\mathrm{d}^3\vec y\,i\delta_{ab}\delta^{(3)}(\vec x-\vec y)\delta\phi^b(x^0,\vec y)=i\delta\phi^a(x)$$

@@ -355,7 +355,7 @@ $$
 $$
 \langle 0|T(A_\mu(x)A_\nu(y))|0\rangle\overset{?}{=}\left[-g_{\mu\nu}-\dfrac{\partial^x_\mu \partial^x_\nu}{\mu^2}\right]\theta(x^0-y^0)\Delta_+(x-y)+(x\leftrightarrow y)=\int\dfrac{\mathrm{d}^4 k}{(2\pi)^4}\dfrac{i}{k^2-\mu^2+i\epsilon}\left[-g_{\mu\nu}+\dfrac{k_\mu k_\nu}{\mu^2}\right]\mathrm{e}^{ik\cdot(x-y)}
 $$
-实际上我们在[[Coleman QFT - Lecture 21. Dirac方程 III：量子化与Feynman规则]]中处理Fermi场的Wick缩并时就是用的这种方法：
+实际上我们在[Coleman QFT - Lecture 21. Dirac方程 III：量子化与Feynman规则](./Coleman%20QFT%20-%20Lecture%2021.%20Dirac%E6%96%B9%E7%A8%8B%20III%EF%BC%9A%E9%87%8F%E5%AD%90%E5%8C%96%E4%B8%8EFeynman%E8%A7%84%E5%88%99.md)中处理Fermi场的Wick缩并时就是用的这种方法：
 $$
 \begin{align}
 \overset {|\Large \mkern-2mu{}^{\overline{\quad\;\;}}\mkern-3mu\normalsize |}{\psi(x) \bar\psi} (y)&=(i\partial\mkern-8.5mu/_x+m)\overset {|\Large \mkern-2mu{}^{\overline{\quad\;}}\mkern-3mu\normalsize |}{\phi(x) \phi} (y)
@@ -369,8 +369,8 @@ $$
 $$
 \partial_i^x[\delta(x^0-y^0)\Delta_+(x-y)-(x\leftrightarrow y)]
 $$
-但是这个式子中的delta函数限制了 $x^0=y^0$，此时由[[Coleman QFT - Lecture 3. 构建标量量子场]]中的论证，$\Delta_+(x-y)=\Delta_+(y-x)$，故两项相消。因此**一个导数**不会有问题，这也是为什么Dirac传播子的结果是正确的。
-真正的问题来源于 $\mu=\nu=0$。二阶导数的不对易性是不可忽略的。我们举一例来说明。在[[Coleman QFT - Problem 1]]中的第二题得到了：
+但是这个式子中的delta函数限制了 $x^0=y^0$，此时由[Coleman QFT - Lecture 3. 构建标量量子场](./Coleman%20QFT%20-%20Lecture%203.%20%E6%9E%84%E5%BB%BA%E6%A0%87%E9%87%8F%E9%87%8F%E5%AD%90%E5%9C%BA.md)中的论证，$\Delta_+(x-y)=\Delta_+(y-x)$，故两项相消。因此**一个导数**不会有问题，这也是为什么Dirac传播子的结果是正确的。
+真正的问题来源于 $\mu=\nu=0$。二阶导数的不对易性是不可忽略的。我们举一例来说明。在[Coleman QFT - Problem 1](./Coleman%20QFT%20-%20Problem%201.md)中的第二题得到了：
 $$
 (\square_x^2+\mu^2)T(\phi(x)\phi(y))=-i\delta^{(4)}(x-y)
 $$

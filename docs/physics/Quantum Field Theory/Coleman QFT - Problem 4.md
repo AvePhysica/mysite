@@ -3,7 +3,7 @@ title: "Coleman QFT Problem 4"
 ---
 
 >[!question]
->在[[Coleman QFT - Lecture 8. 微扰理论 I：Wick diagram]]中，我们精确求解了Model 1，其Lagrangian density为：
+>在[Coleman QFT - Lecture 8. 微扰理论 I：Wick diagram](./Coleman%20QFT%20-%20Lecture%208.%20%E5%BE%AE%E6%89%B0%E7%90%86%E8%AE%BA%20I%EF%BC%9AWick%20diagram.md)中，我们精确求解了Model 1，其Lagrangian density为：
 >$$\mathcal L=\dfrac12(\partial_\mu\phi)^2-\dfrac12\mu^2\phi^2-g\rho(x)\phi(x)$$
 >其中图二代表了一个常数 $-\alpha+i\beta$。我们通过其作用于真空态上的归一化关系确定了其实部 $\alpha$，本题请通过直接求解图二验证这一点。
 
@@ -48,7 +48,7 @@ $$
 $$
 \alpha=\int\mathrm{d}^3\vec p\,h(\vec p)^*h(\vec p)=\int\mathrm{d}^3\vec p\,|h(\vec p)|^2
 $$
-与[[Coleman QFT - Lecture 8. 微扰理论 I：Wick diagram]]中用归一化得到的结果相同。
+与[Coleman QFT - Lecture 8. 微扰理论 I：Wick diagram](./Coleman%20QFT%20-%20Lecture%208.%20%E5%BE%AE%E6%89%B0%E7%90%86%E8%AE%BA%20I%EF%BC%9AWick%20diagram.md)中用归一化得到的结果相同。
 
 ---
 

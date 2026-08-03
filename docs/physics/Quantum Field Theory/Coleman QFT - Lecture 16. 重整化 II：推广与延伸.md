@@ -4,7 +4,7 @@ title: "Coleman QFT Lecture 16: 重整化 II：推广与延伸"
 
 ## 16.1 介子的自能函数（完结）
 
-在[[Coleman QFT - Lecture 15. 重整化 I：确定抵消项]] 中，我们算到一半就停了。将最后一步抄在这里：
+在[Coleman QFT - Lecture 15. 重整化 I：确定抵消项](./Coleman%20QFT%20-%20Lecture%2015.%20%E9%87%8D%E6%95%B4%E5%8C%96%20I%EF%BC%9A%E7%A1%AE%E5%AE%9A%E6%8A%B5%E6%B6%88%E9%A1%B9.md) 中，我们算到一半就停了。将最后一步抄在这里：
 $$
 -i\tilde \Pi^f(p^2)=g^2\int\dfrac{\mathrm{d}^4k}{(2\pi)^4}\int_0^1\dfrac{\mathrm{d}x}{[k^2-p^2x^2+p^2x-m^2+i\epsilon]^2}
 $$
@@ -41,7 +41,7 @@ $$
 
 ## 16.2 Feynman参数化
 
-在[[Coleman QFT - Lecture 15. 重整化 I：确定抵消项]]中，我们已经提到过Feynman参数化，其中引用了下面的积分结果：
+在[Coleman QFT - Lecture 15. 重整化 I：确定抵消项](./Coleman%20QFT%20-%20Lecture%2015.%20%E9%87%8D%E6%95%B4%E5%8C%96%20I%EF%BC%9A%E7%A1%AE%E5%AE%9A%E6%8A%B5%E6%B6%88%E9%A1%B9.md)中，我们已经提到过Feynman参数化，其中引用了下面的积分结果：
 $$
 \int_0^1\mathrm{d}x\,\dfrac{1}{[ax-b(1-x)]^2}=\dfrac{1}{ab}
 $$

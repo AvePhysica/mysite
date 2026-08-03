@@ -73,7 +73,7 @@ $$
 $$
 \psi(\vec x,t)=u_\vec p\,\mathrm{e}^{-ip\cdot x}
 $$
-注意不要混淆其与[[Coleman QFT - Lecture 19. Dirac方程 I：构造拉格朗日量]]中求解Weyl方程时的 $u_\vec p$，现在的 $u_\vec p$ 是四分量的列向量。后面我们会说明，Dirac方程可以推出质量为 $m$ 的Klein-Gordan方程，因此平面波的波矢应当处在质壳上，即
+注意不要混淆其与[Coleman QFT - Lecture 19. Dirac方程 I：构造拉格朗日量](./Coleman%20QFT%20-%20Lecture%2019.%20Dirac%E6%96%B9%E7%A8%8B%20I%EF%BC%9A%E6%9E%84%E9%80%A0%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E9%87%8F.md)中求解Weyl方程时的 $u_\vec p$，现在的 $u_\vec p$ 是四分量的列向量。后面我们会说明，Dirac方程可以推出质量为 $m$ 的Klein-Gordan方程，因此平面波的波矢应当处在质壳上，即
 $$
 E_p=\sqrt{\vec p^2+m^2}
 $$
@@ -367,7 +367,7 @@ $$
 $$
 \sigma^{\mu\nu}\equiv\dfrac i2
 [\gamma^\mu,\gamma^\nu]$$
-$\sigma^{\mu\nu}/2$ 其实就是在[[Coleman QFT - Lecture 18. Lorentz群的表示]]中说明的一般的Lorentz变换的生成元 $J^{\mu\nu}$ 的表示。这源于 $\gamma^\mu$ 的矢量性：
+$\sigma^{\mu\nu}/2$ 其实就是在[Coleman QFT - Lecture 18. Lorentz群的表示](./Coleman%20QFT%20-%20Lecture%2018.%20Lorentz%E7%BE%A4%E7%9A%84%E8%A1%A8%E7%A4%BA.md)中说明的一般的Lorentz变换的生成元 $J^{\mu\nu}$ 的表示。这源于 $\gamma^\mu$ 的矢量性：
 $$
 \overline {D(\Lambda)}\,\gamma^\mu D(\Lambda)=D^{-1}(\Lambda)\,\gamma^\mu D(\Lambda)=\Lambda^\mu_\nu\gamma^\nu
 $$

@@ -4,7 +4,7 @@ title: "Coleman QFT Lecture 21: Dirac方程 III：量子化与Feynman规则"
 
 ## 21.1 Dirac 场的正则量子化
 
-正则量子化的步骤在[[Coleman QFT - Lecture 4. 场的正则量子化]]中提到过，我们已经构造出了Dirac场的Lagrangian：
+正则量子化的步骤在[Coleman QFT - Lecture 4. 场的正则量子化](./Coleman%20QFT%20-%20Lecture%204.%20%E5%9C%BA%E7%9A%84%E6%AD%A3%E5%88%99%E9%87%8F%E5%AD%90%E5%8C%96.md)中提到过，我们已经构造出了Dirac场的Lagrangian：
 $$
 \mathcal L=\pm\left[i\psi^\dagger(\partial_0+\vec \alpha\cdot\nabla)\psi-m\psi^\dagger\beta\psi\right]
 $$
@@ -24,7 +24,7 @@ $$
 $$
 \psi(x)=\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3/2}\sqrt{2E_p}}\sum_{r=1}^2\left[b_\vec p^{(r)}u_\vec p^{(r)}\mathrm{e}^{-ip\cdot x}+c_\vec p^{(r)\dagger} v_\vec p^{(r)}\mathrm{e}^{ip\cdot x}\right]
 $$
-这里的 $u_\vec p^{(r)}\mathrm{e}^{-ip\cdot x}$ 与 $v_\vec p^{(r)}\mathrm{e}^{ip\cdot x}$ 正是[[Coleman QFT - Lecture 20. Dirac方程 II：求解]]中得到的平面波解，$r$ 用于标记螺旋度的两个本征态。而湮灭算符 $b_\vec p^{(r)}$ 代表湮灭一个核子，产生算符 $c_\vec p^{(r)}$ 代表产生一个反核子，因此 $\psi(x)$ 会使总的“电荷”减一。类似的，$\psi^\dagger(y)$ 的展开式为：
+这里的 $u_\vec p^{(r)}\mathrm{e}^{-ip\cdot x}$ 与 $v_\vec p^{(r)}\mathrm{e}^{ip\cdot x}$ 正是[Coleman QFT - Lecture 20. Dirac方程 II：求解](./Coleman%20QFT%20-%20Lecture%2020.%20Dirac%E6%96%B9%E7%A8%8B%20II%EF%BC%9A%E6%B1%82%E8%A7%A3.md)中得到的平面波解，$r$ 用于标记螺旋度的两个本征态。而湮灭算符 $b_\vec p^{(r)}$ 代表湮灭一个核子，产生算符 $c_\vec p^{(r)}$ 代表产生一个反核子，因此 $\psi(x)$ 会使总的“电荷”减一。类似的，$\psi^\dagger(y)$ 的展开式为：
 $$
 \psi^\dagger(y)=\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3/2}\sqrt{2E_p}}\sum_{r=1}^2\left[b_\vec p^{(r)\dagger}u_\vec p^{(r)\dagger}\mathrm{e}^{ip\cdot y}+c_\vec p^{(r)} v_\vec p^{(r)\dagger}\mathrm{e}^{-ip\cdot y}\right]
 $$
@@ -36,7 +36,7 @@ $$
 $$
 [\psi_a(\vec x,t),\psi^\dagger_b(\vec y,t)]=\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3}{2E_p}}\left[\mathrm{e}^{i\vec p\cdot(\vec x-\vec y)}B(\vec p)\sum_{r=1}^2u_{\vec p\,a}^{(r)} u_{\vec p\, b}^{(r)*}+\mathrm{e}^{-i\vec p\cdot(\vec x-\vec y)}C(\vec p)\sum_{r=1}^2v_{\vec p\,a}^{(r)} v_{\vec p\, b}^{(r)*}\right]
 $$
-利用[[Coleman QFT - Lecture 20. Dirac方程 II：求解]]中最后一节推导出的完备关系式：
+利用[Coleman QFT - Lecture 20. Dirac方程 II：求解](./Coleman%20QFT%20-%20Lecture%2020.%20Dirac%E6%96%B9%E7%A8%8B%20II%EF%BC%9A%E6%B1%82%E8%A7%A3.md)中最后一节推导出的完备关系式：
 $$
 \sum_{r=1}^2u_\vec p^{(r)}\bar u_\vec p^{(r)}=p\mkern -8.5mu /+m,\quad \sum_{r=1}^2v_\vec p^{(r)}\bar v_\vec p^{(r)}=p\mkern -8.5mu /-m
 $$
@@ -113,7 +113,7 @@ $$
 $$
 这是Pauli不相容定理。
 
-回忆我们在[[Coleman QFT - Lecture 3. 构建标量量子场]]中最开始引入对易子的原因，其是出于因果性的考虑，两个类空间隔的观测量之间不会互相影响，因此我们构建了算符场，并且要求类空间隔的场的对易子为零。但现在我们改用了反对易子，则
+回忆我们在[Coleman QFT - Lecture 3. 构建标量量子场](./Coleman%20QFT%20-%20Lecture%203.%20%E6%9E%84%E5%BB%BA%E6%A0%87%E9%87%8F%E9%87%8F%E5%AD%90%E5%9C%BA.md)中最开始引入对易子的原因，其是出于因果性的考虑，两个类空间隔的观测量之间不会互相影响，因此我们构建了算符场，并且要求类空间隔的场的对易子为零。但现在我们改用了反对易子，则
 $$
 [\psi_a(\vec x,t),\psi_b(\vec y,t)]=2\psi_a(\vec x,t)\psi_b(\vec y,t)\ne 0
 $$
@@ -176,7 +176,7 @@ $$
 $$
 \psi^{(+)}=\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3/2}\sqrt{2E_p}}\sum_{r=1}^2b_\vec p^{(r)}u_\vec p^{(r)}\mathrm{e}^{-ip\cdot x},\quad \psi^{(-)}=\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3/2}\sqrt{2E_p}}\sum_{r=1}^2c_\vec p^{(r)\dagger}v_\vec p^{(r)}\mathrm{e}^{ip\cdot x}
 $$
-这样就完成了时序积与正规序积的定义。可以证明，在这样的定义下，Wick定理仍然成立。在此不做具体证明，可以参考[[Coleman QFT - Lecture 8. 微扰理论 I：Wick diagram]]。对于两个旋量场的情况，缩并定义为：
+这样就完成了时序积与正规序积的定义。可以证明，在这样的定义下，Wick定理仍然成立。在此不做具体证明，可以参考[Coleman QFT - Lecture 8. 微扰理论 I：Wick diagram](./Coleman%20QFT%20-%20Lecture%208.%20%E5%BE%AE%E6%89%B0%E7%90%86%E8%AE%BA%20I%EF%BC%9AWick%20diagram.md)。对于两个旋量场的情况，缩并定义为：
 $$
 \overset {|\Large \mkern-2mu{}^{\overline{\quad\;\;}}\mkern-3mu\normalsize |}{\psi_a(x) \bar\chi_b} (y)\equiv T(\psi_a(x)\bar \chi_b(y))-:\psi_a(x)\bar \chi_b(y):
 $$
@@ -216,7 +216,7 @@ $x^0<y^0$ 的计算是类似的，会得到：
 $$
 \overset {|\Large \mkern-2mu{}^{\overline{\quad\;\;}}\mkern-3mu\normalsize |}{\psi(x) \bar\psi} (y)=\langle 0|T(\psi(x)\bar\psi(y))|0\rangle=(i\partial\mkern-8.5mu/_x+m)\Delta_+(y-x)
 $$
-在[[Coleman QFT - Lecture 8. 微扰理论 I：Wick diagram]]中，我们得到过标量场缩并的表达式：
+在[Coleman QFT - Lecture 8. 微扰理论 I：Wick diagram](./Coleman%20QFT%20-%20Lecture%208.%20%E5%BE%AE%E6%89%B0%E7%90%86%E8%AE%BA%20I%EF%BC%9AWick%20diagram.md)中，我们得到过标量场缩并的表达式：
 $$
 \overset {|\Large \mkern-2mu{}^{\overline{\quad\;}}\mkern-3mu\normalsize |}{\phi(x) \phi} (y)=\theta(x^0-y^0)\Delta_+(x-y)+\theta(y^0-x^0)\Delta_+(y-x)=\lim_{\epsilon\to0^+}\int\dfrac{\mathrm{d}^4p}{(2\pi)^4}\mathrm{e}^{-ip\cdot(x-y)}\dfrac{i}{p^2-\mu^2+i\epsilon}
 $$
@@ -418,7 +418,7 @@ $$
 $$
 \sum_{r,s}\bar u_{\vec p}^{(r)}q\mkern-8.5mu/ u_{\vec p'}^{(s)}\bar u_{\vec p'}^{(s)}q\mkern-8.5mu/ u_\vec p^{(r)}=\mathrm{Tr}\left(\sum_{r,s}q\mkern-8.5mu/ u_{\vec p'}^{(s)}\bar u_{\vec p'}^{(s)}q\mkern-8.5mu/ u_\vec p^{(r)}\bar u_{\vec p}^{(r)}\right)=\mathrm{Tr}(q\mkern-8.5mu/(p\mkern-8.5mu/+m)q\mkern-8.5mu/(p\mkern-8.5mu/'+m))
 $$
-第二步用了完备性关系。我们在[[Coleman QFT - Problem 11]]中推导了 $a\mkern-9.5mu /$ 的乘积的迹如何求解，有结论：
+第二步用了完备性关系。我们在[Coleman QFT - Problem 11](./Coleman%20QFT%20-%20Problem%2011.md)中推导了 $a\mkern-9.5mu /$ 的乘积的迹如何求解，有结论：
 $$
 \mathrm{Tr}\,(a\mkern-9.5mu /b\mkern-9.5mu /)=\dfrac12\mathrm{Tr}\,(a\mkern-9.5mu /b\mkern-9.5mu /+b\mkern-9.5mu /a\mkern-9.5mu /)=4a\cdot b,\quad \mathrm{Tr}\,(a\mkern-9.5mu /b\mkern-9.5mu /c\mkern-9.5mu /d\mkern-9.5mu /)=4(a\cdot b)(c\cdot d)-4(a\cdot c)(b\cdot d)+4(a\cdot d)(b\cdot c)
 $$

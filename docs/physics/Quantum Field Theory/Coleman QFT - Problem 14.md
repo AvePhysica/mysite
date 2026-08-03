@@ -10,7 +10,7 @@ title: "Coleman QFT Problem 14"
 >（1）说明 $\mathcal H'(0)$ 是 $CPT$ 不变的。
 >（2）在 $g_i$ 满足怎样的条件下， $\mathcal H'(0)$ 是 $C$ 不变的？$P$ 不变的？$T$ 不变的？$PC$ ？$CT$ ？$TP$ ？
 
-（1）关于二次型的三种变换下的性质我们已经在[[Coleman QFT - Lecture 22. CPT与Fermi场]]中讨论过，即：
+（1）关于二次型的三种变换下的性质我们已经在[Coleman QFT - Lecture 22. CPT与Fermi场](./Coleman%20QFT%20-%20Lecture%2022.%20CPT%E4%B8%8EFermi%E5%9C%BA.md)中讨论过，即：
 $$
 C:\begin{cases}
 \bar\psi_1\gamma^\mu\psi_2\to -\bar\psi_2\gamma^\mu\psi_1\\
@@ -65,7 +65,7 @@ $$
 ---
 
 >[!question]
->在[[Coleman QFT - Lecture 25. 处理无限大：正规化与重整化]]中，我们推导了在四维时空中一个图的表观发散度可以写为：
+>在[Coleman QFT - Lecture 25. 处理无限大：正规化与重整化](./Coleman%20QFT%20-%20Lecture%2025.%20%E5%A4%84%E7%90%86%E6%97%A0%E9%99%90%E5%A4%A7%EF%BC%9A%E6%AD%A3%E8%A7%84%E5%8C%96%E4%B8%8E%E9%87%8D%E6%95%B4%E5%8C%96.md)中，我们推导了在四维时空中一个图的表观发散度可以写为：
 >$$D=4-B_E-\dfrac32 F_E+\sum_i n_i\delta_i,\quad \delta_i\equiv b_i+\dfrac32 f_i+d_i-4=\mathrm{dim}\,\mathcal L_i-4$$
 >推导公式在一般的 $d$ 维时空中的版本。回答：使 $\phi^n$ 可重整化的最大的 $n$ 是多少？使 $(\bar\psi\psi)^2$ 可重整化的 $d$ 满足什么条件？
 
@@ -104,8 +104,8 @@ $$
 >[!question]
 >考虑旋量场与赝标量场的Yukawa相互作用：
 >$$\mathcal L'=g\bar\psi i\gamma_5\psi\phi$$
->我们已经在[[Coleman QFT - Lecture 21. Dirac方程 III：量子化与Feynman规则]]计算过介子-核子弹性散射的 $O(g^2)$ 阶的散射振幅了，其由两个图组成，设两个图代表的振幅分别为 $g^2M_1$ 与 $g^2M_2$。
->现在考虑介子与核子同位旋不变的相互作用理论（[[Coleman QFT - Lecture 24. 同位旋]]中有过讨论）：
+>我们已经在[Coleman QFT - Lecture 21. Dirac方程 III：量子化与Feynman规则](./Coleman%20QFT%20-%20Lecture%2021.%20Dirac%E6%96%B9%E7%A8%8B%20III%EF%BC%9A%E9%87%8F%E5%AD%90%E5%8C%96%E4%B8%8EFeynman%E8%A7%84%E5%88%99.md)计算过介子-核子弹性散射的 $O(g^2)$ 阶的散射振幅了，其由两个图组成，设两个图代表的振幅分别为 $g^2M_1$ 与 $g^2M_2$。
+>现在考虑介子与核子同位旋不变的相互作用理论（[Coleman QFT - Lecture 24. 同位旋](./Coleman%20QFT%20-%20Lecture%2024.%20%E5%90%8C%E4%BD%8D%E6%97%8B.md)中有过讨论）：
 >$$\mathcal L'=g\,\vec \Phi\cdot\bar Ni\gamma_5\vec\tau N $$
 >考虑下面三个不同类型的介子-核子散射过程：
 >$$(a)\;p+\pi^+\to p+\pi^+\qquad (b) \;n+\pi^+\to n+\pi^+,\qquad (c)\;n+\pi^+\to p+\pi^0$$

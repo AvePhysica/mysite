@@ -2,7 +2,7 @@
 title: "Coleman QFT Lecture 9: 微扰理论 II：发散与抵消项"
 ---
 
-在[[Coleman QFT - Lecture 8. 微扰理论 I：Wick diagram]]中，我们给出了三个Model，并且用Wick图精确求解了第一个Model。本章我们来处理Model 2，其Hamiltonian density为：
+在[Coleman QFT - Lecture 8. 微扰理论 I：Wick diagram](./Coleman%20QFT%20-%20Lecture%208.%20%E5%BE%AE%E6%89%B0%E7%90%86%E8%AE%BA%20I%EF%BC%9AWick%20diagram.md)中，我们给出了三个Model，并且用Wick图精确求解了第一个Model。本章我们来处理Model 2，其Hamiltonian density为：
 $$
 \mathcal H_I=g\,\phi(x)\rho(\vec x)
 $$
@@ -94,7 +94,7 @@ $$
 $$
 S=\;:\mathrm{e}^{(1)}:\;=\;:\exp\left(-ig\int\mathrm{d}^3\vec x\,\mathrm{d}t\,\rho(\vec x)\phi(x)f(t)\right)
 $$
-使用在[[Coleman QFT - Lecture 8. 微扰理论 I：Wick diagram]]中对Model 1一模一样的计算：
+使用在[Coleman QFT - Lecture 8. 微扰理论 I：Wick diagram](./Coleman%20QFT%20-%20Lecture%208.%20%E5%BE%AE%E6%89%B0%E7%90%86%E8%AE%BA%20I%EF%BC%9AWick%20diagram.md)中对Model 1一模一样的计算：
 $$
 O_1=-ig\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3/2}\sqrt{2\omega_{\vec p}}}\left(\tilde f(\omega_\vec p)\tilde\rho(\vec p)a_{\vec p}+\tilde f(\omega_{\vec p})^*\tilde\rho(\vec p)^*a_{\vec p}^\dagger\right)
 $$
@@ -199,7 +199,7 @@ $$
 首先，我们已经精确求解过Model 1，因此对于任意一个在 $t\to\pm\infty$ 的开关 $f(t)$ ，我们都能直接引用之前的结果，写出对应的散射算符 $S=U_I(\infty,-\infty)$。上面的这个 $f(t)$ 是满足要求的。
 另一方面，让我们考虑 $t=-\infty$ 时的真空态 $|0\rangle$ 的演化。对于足够小的正数 $\epsilon$ ，源加上来的速度是足够慢的，由**绝热定理**，我们知道 $t=0$ 时的态即源存在下的基态 $|0\rangle_P$。但是，在 $t=0$ 时源被突然撤去，因此态仍将保持在 $|0\rangle_P$ 上（注意我们在相互作用绘景中）。也就是说，我们只需要计算 $S=U_I(\infty,-\infty)$，将其作用于真空态 $|0\rangle$ 就能得到 $|0\rangle_P$。即$$U_I(\infty,-\infty)|0\rangle=|0\rangle_P$$
 
-好的，那我们直接引用[[Coleman QFT - Lecture 8. 微扰理论 I：Wick diagram]]中Model 1的结果：
+好的，那我们直接引用[Coleman QFT - Lecture 8. 微扰理论 I：Wick diagram](./Coleman%20QFT%20-%20Lecture%208.%20%E5%BE%AE%E6%89%B0%E7%90%86%E8%AE%BA%20I%EF%BC%9AWick%20diagram.md)中Model 1的结果：
 $$
 \langle\vec p_1,\cdots,\vec p_n|0\rangle_P=\langle\vec p_1,\cdots,\vec p_n|S|0\rangle=\psi^{(n)}(\vec p_1,\cdots,\vec p_n)=\mathrm{e}^{\frac12(-\alpha+i\beta)}h(\vec p_1)h(\vec p_2)\cdots h(\vec p_n)
 $$

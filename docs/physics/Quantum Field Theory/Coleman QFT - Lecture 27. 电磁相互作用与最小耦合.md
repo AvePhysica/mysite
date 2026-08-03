@@ -185,7 +185,7 @@ $$
 > $$\mathcal L_m=\bar\psi(i\partial\mkern-9mu/-m)\psi\to \mathcal L'=\bar\psi(i\partial\mkern-9mu/-m)\psi-eJ^\mu A_\mu$$
 > 这实际上就给出了最简单的耦合形式 $-eJ^\mu A_\mu$，因此我们验证了 $J^\mu$ 仍然守恒。原来的守恒流为：
 > $$J^\mu=\bar\psi\gamma^\mu\psi$$
->其中没有导数 $\partial_\mu$，因此我们无需对其做任何修改。$\mathcal L_I=-eJ^\mu A_\mu=-e\bar\psi\gamma^\mu\psi A_\mu$ 就是[[Coleman QFT - Lecture 26. 矢量场]]中提到的Yukawa耦合。
+>其中没有导数 $\partial_\mu$，因此我们无需对其做任何修改。$\mathcal L_I=-eJ^\mu A_\mu=-e\bar\psi\gamma^\mu\psi A_\mu$ 就是[Coleman QFT - Lecture 26. 矢量场](./Coleman%20QFT%20-%20Lecture%2026.%20%E7%9F%A2%E9%87%8F%E5%9C%BA.md)中提到的Yukawa耦合。
 
 >[!example] **Example 2. Revisited**：
 >$$D_\mu\phi=\partial_\mu\phi+ieA_\mu\phi,\quad D_\mu\phi^*=\partial_\mu\phi^*-ieA^\mu\phi^*$$
@@ -243,7 +243,7 @@ $$
 $$
 这是真实运动的约束。但是在无质量情形下，运动方程本身就是规范不变的。也就是说，如果 $\{A_i(\vec x,t)\}$ 是运动方程的解，则 $A_i'=A_i+\partial_i\chi$ 也是运动方程的解。即使我们施加了初值条件，由于 $\chi$ 是任意函数，我可以取其在初始时 $\chi(\vec x,t_0)=0$，而在其它时刻不为零，也能得到无穷组满足运动方程与初值条件的解。为了限制解的唯一性，我们必须人为施加**规范条件**。比如Lorenz规范 $\partial_\mu A^\mu=0$，或者Coulomb规范 $\nabla\cdot\vec A=0$。
 
-第二个问题来源于**导数耦合**，这我们早就提到过。在[[Coleman QFT - Lecture 14. LSZ约化公式]]中，我们提到可以“天真的”认为 $\partial_\mu\phi\to ik_\mu\phi$，但这显然是有问题的。例如，考虑下面的赝标量-旋量耦合：
+第二个问题来源于**导数耦合**，这我们早就提到过。在[Coleman QFT - Lecture 14. LSZ约化公式](./Coleman%20QFT%20-%20Lecture%2014.%20LSZ%E7%BA%A6%E5%8C%96%E5%85%AC%E5%BC%8F.md)中，我们提到可以“天真的”认为 $\partial_\mu\phi\to ik_\mu\phi$，但这显然是有问题的。例如，考虑下面的赝标量-旋量耦合：
 $$
 \mathcal L_I=f\bar\psi\gamma^\mu\gamma_5\psi\partial_\mu\phi\equiv fK^\mu \partial_\mu\phi
 $$
@@ -276,9 +276,9 @@ $$
 \langle 0|T(\partial_x^\mu\phi_I(x)\partial^\nu_y\phi_I(y))|0\rangle=\partial_x^\mu\partial_y^\nu i\Delta(x-y)-ig^{0\nu}g^{0\mu}\delta^{(4)}(x-y)
 $$
 第二项是纯粹的垃圾，我们完全不希望来处理这种东西。
-事实上，这些问题会互相抵消，因此我们一开始天真的处理能导出正确的答案。这一点已经在[[Coleman QFT - Lecture 26. 矢量场]]中提到过了，论证这一点需要用到泛函积分的技巧。
+事实上，这些问题会互相抵消，因此我们一开始天真的处理能导出正确的答案。这一点已经在[Coleman QFT - Lecture 26. 矢量场](./Coleman%20QFT%20-%20Lecture%2026.%20%E7%9F%A2%E9%87%8F%E5%9C%BA.md)中提到过了，论证这一点需要用到泛函积分的技巧。
 
-我最后一个要提到的问题是约束变量的问题。[[Coleman QFT - Lecture 26. 矢量场]]提到，Proca Lagrangian的IVD是 $\{A_i,F^{i0}\}$，$\{A_\mu,\partial_0 A_\mu\}=\{A_i,\partial_0A_i,A_0,\partial_0 A_0\}$ 可以由其得到。得到 $A^0$ 的式子为：
+我最后一个要提到的问题是约束变量的问题。[Coleman QFT - Lecture 26. 矢量场](./Coleman%20QFT%20-%20Lecture%2026.%20%E7%9F%A2%E9%87%8F%E5%9C%BA.md)提到，Proca Lagrangian的IVD是 $\{A_i,F^{i0}\}$，$\{A_\mu,\partial_0 A_\mu\}=\{A_i,\partial_0A_i,A_0,\partial_0 A_0\}$ 可以由其得到。得到 $A^0$ 的式子为：
 $$
 \mu^2 A^0=\partial_i F^{i0}-J^0
 $$

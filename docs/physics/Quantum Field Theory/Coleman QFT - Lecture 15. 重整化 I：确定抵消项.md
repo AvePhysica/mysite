@@ -2,7 +2,7 @@
 title: "Coleman QFT Lecture 15: 重整化 I：确定抵消项"
 ---
 
-在[[Coleman QFT - Lecture 14. LSZ约化公式]]中，我们回顾了Model 3，并对其进行了重整化：
+在[Coleman QFT - Lecture 14. LSZ约化公式](./Coleman%20QFT%20-%20Lecture%2014.%20LSZ%E7%BA%A6%E5%8C%96%E5%85%AC%E5%BC%8F.md)中，我们回顾了Model 3，并对其进行了重整化：
 $$
 \mathcal L=\dfrac12(\partial_\mu\phi')^2-\dfrac12\mu^2\phi'^2+\partial_\mu\psi'^*\partial^\mu\psi'-m^2\psi'^*\psi'-g_0\psi'^*\psi'\phi'+\mathcal L_{CT}
 $$
@@ -131,7 +131,7 @@ $$
 $$
 \langle 0|\phi'(x)\phi'(y)|0\rangle=\Delta_+(x-y,\mu^2)+\int_0^\infty\mathrm{d}a^2\,\sigma(a^2)\Delta_+(x-y,a^2)
 $$
-在[[Coleman QFT - Problem 1]]的第三题，我们对自由场证明了：
+在[Coleman QFT - Problem 1](./Coleman%20QFT%20-%20Problem%201.md)的第三题，我们对自由场证明了：
 $$
 \langle 0|T(\phi(x)\phi(y))|0\rangle=\lim_{\epsilon\to0^+}\int\dfrac{\mathrm{d}^4p}{(2\pi)^4}\mathrm{e}^{-ip\cdot(x-y)}\dfrac{i}{p^2-\mu^2+i\epsilon}
 $$

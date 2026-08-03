@@ -2,7 +2,7 @@
 title: "Coleman QFT Lecture 29: 推广泛函积分方法"
 ---
 
-在上一章[[Coleman QFT - Lecture 28. 泛函积分与Feynman图]]中，我介绍了简单标量场理论的泛函积分方法，并证明了其正确性。同时在最后一节应用到有质量矢量场上，得到了正确的传播子。但我们还没有证明泛函积分方法对于一般的矢量场理论是否适用，这需要先从 $\mathcal L$ 中消除自由度才能写出Hamiltonian形式的积分。本章我们还要研究标量电动力学，其需要处理涉及到导数耦合的理论。另外，我还需介绍如何将泛函积分方法应用于费米场，毕竟我们并不知道费米场的经典形式是什么。我们将用Grassmann变量（反交换的c数）来建模，并学习如何用它们进行微积分运算。
+在上一章[Coleman QFT - Lecture 28. 泛函积分与Feynman图](./Coleman%20QFT%20-%20Lecture%2028.%20%E6%B3%9B%E5%87%BD%E7%A7%AF%E5%88%86%E4%B8%8EFeynman%E5%9B%BE.md)中，我介绍了简单标量场理论的泛函积分方法，并证明了其正确性。同时在最后一节应用到有质量矢量场上，得到了正确的传播子。但我们还没有证明泛函积分方法对于一般的矢量场理论是否适用，这需要先从 $\mathcal L$ 中消除自由度才能写出Hamiltonian形式的积分。本章我们还要研究标量电动力学，其需要处理涉及到导数耦合的理论。另外，我还需介绍如何将泛函积分方法应用于费米场，毕竟我们并不知道费米场的经典形式是什么。我们将用Grassmann变量（反交换的c数）来建模，并学习如何用它们进行微积分运算。
 ## 29.1 费米场的泛函积分方法
 
 费米场需要满足**基本反对易关系**，因此其经典对应物不会是普通的数，而是称为Grassmann变量的反对易的数。引入一系列Grassmann变量的记号：
@@ -200,7 +200,7 @@ $$
 \int(\mathrm{d}\eta)(\mathrm{d}\bar\eta)\,\mathrm{e}^{(\bar\eta,A\eta)}=\mathrm{det}\,A
 $$
 这样，我的理论中就多出了一种Fermi场，其完全是由于计算需要而引入的，并不是有物理实在的场，因此称为**鬼场**。我们来看一个例子：
-在[[Coleman QFT - Problem 8]]中，我们研究了一个自由标量场理论的重定义问题。考虑一个有外源耦合的自由标量场：
+在[Coleman QFT - Problem 8](./Coleman%20QFT%20-%20Problem%208.md)中，我们研究了一个自由标量场理论的重定义问题。考虑一个有外源耦合的自由标量场：
 $$
 \mathcal L=\dfrac12(\partial_\mu\phi)^2-\dfrac12\mu^2\phi^2+J\phi
 $$
@@ -371,7 +371,7 @@ $$
 $$
 ## 29.6 有质量介子QED的泛函积分量子化
 
-现在，经过介绍上面处理技术问题的泛函积分办法后，我们能来回答[[Coleman QFT - Lecture 27. 电磁相互作用与最小耦合]]最后一节提出的问题了：为什么有这么多的技术问题，我们还能用天真的Feynman规则？
+现在，经过介绍上面处理技术问题的泛函积分办法后，我们能来回答[Coleman QFT - Lecture 27. 电磁相互作用与最小耦合](./Coleman%20QFT%20-%20Lecture%2027.%20%E7%94%B5%E7%A3%81%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8%E4%B8%8E%E6%9C%80%E5%B0%8F%E8%80%A6%E5%90%88.md)最后一节提出的问题了：为什么有这么多的技术问题，我们还能用天真的Feynman规则？
 旋量QED的作用量为：
 $$
 S_{2nd}=\int\mathrm{d}^4x\left\{-\dfrac14(\partial_\mu A_\nu-\partial_\nu A_\mu)^2+\dfrac12\mu^2A_\nu A^\nu+\bar\psi(i\partial\mkern-9.5mu/-eA\mkern-9mu/-m)\psi\right\}
@@ -401,7 +401,7 @@ $$
 $$
 \int\prod_j(\mathrm{d}F_{0j})\prod_i(\mathrm{d}A_i)\,\mathrm{e}^{iS_{\mathcal H}}=\int\prod_{\mu\nu}(\mathrm{d}F_{\mu\nu})\prod_\lambda(\mathrm{d}A_{\lambda})\,\mathrm{e}^{iS_{1st}}=\int\prod_\lambda(\mathrm{d}A_{\lambda})\,\mathrm{e}^{iS_{2nd}}
 $$
-左侧的就是正确的Hamiltionian形式的泛函积分，因此其等于生成泛函。而右侧的就是简单的对 $A_\mu$ 的协变的泛函积分公式，从 $S_{2nd}$ 可以简单的读出原先的Feynman公式（在[[Coleman QFT - Lecture 28. 泛函积分与Feynman图]]中，我们证明了对 $A_\mu$ 的泛函积分公式会直接给出原来的传播子）。因此，原先的规则的确是正确的。通过 $S_{1st}$ ，我们将左侧严格正确的，但存在约束变量、时序积交换等问题的形式，转化为了容易写出Feynman规则的右侧形式。
+左侧的就是正确的Hamiltionian形式的泛函积分，因此其等于生成泛函。而右侧的就是简单的对 $A_\mu$ 的协变的泛函积分公式，从 $S_{2nd}$ 可以简单的读出原先的Feynman公式（在[Coleman QFT - Lecture 28. 泛函积分与Feynman图](./Coleman%20QFT%20-%20Lecture%2028.%20%E6%B3%9B%E5%87%BD%E7%A7%AF%E5%88%86%E4%B8%8EFeynman%E5%9B%BE.md)中，我们证明了对 $A_\mu$ 的泛函积分公式会直接给出原来的传播子）。因此，原先的规则的确是正确的。通过 $S_{1st}$ ，我们将左侧严格正确的，但存在约束变量、时序积交换等问题的形式，转化为了容易写出Feynman规则的右侧形式。
 
 ---
 

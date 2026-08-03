@@ -2,7 +2,7 @@
 title: "Coleman QFT Lecture 14: LSZ约化公式"
 ---
 
-本章紧接上一章[[Coleman QFT - Lecture 13. Green函数与Heisenberg场]]，来回答第二个问题：
+本章紧接上一章[Coleman QFT - Lecture 13. Green函数与Heisenberg场](./Coleman%20QFT%20-%20Lecture%2013.%20Green%E5%87%BD%E6%95%B0%E4%B8%8EHeisenberg%E5%9C%BA.md)，来回答第二个问题：
 
 >[!question]
 >我们前面知道通过将Green函数限制在外线的质壳上能得到散射矩阵的矩阵元。这一关系在新的散射理论中是否仍成立？以四点函数为例：
@@ -145,7 +145,7 @@ Model 3的Lagrangian具有以下形式：
 $$
 \mathcal L=\dfrac12(\partial_\mu\phi)^2-\dfrac12\mu_0\phi^2+\partial_\mu\psi^*\partial^\mu\psi-m_0^2\psi^*\psi-g_0\psi^*\psi\phi+\text{const}
 $$
-这里 $\mu_0,m_0$ 为介子与核子的**裸质量**(bare mass)，我们在[[Coleman QFT - Lecture 10. 质量重整化与费曼图]]中曾提到过它，而 $g_0$ 被称为**裸耦合常数**(bare coupling constant)。
+这里 $\mu_0,m_0$ 为介子与核子的**裸质量**(bare mass)，我们在[Coleman QFT - Lecture 10. 质量重整化与费曼图](./Coleman%20QFT%20-%20Lecture%2010.%20%E8%B4%A8%E9%87%8F%E9%87%8D%E6%95%B4%E5%8C%96%E4%B8%8E%E8%B4%B9%E6%9B%BC%E5%9B%BE.md)中曾提到过它，而 $g_0$ 被称为**裸耦合常数**(bare coupling constant)。
 要注意的是，由于相互作用项的存在，其中存在的场都不是自由场，而是Heisenberg场。这与我们之前在Wick图或者Feynman图下做展开的思想是完全不同的，当时我们一直将场作为自由场，把相互作用项作为微扰。其的确在渐近情形下是正确的，但这样的理解是有偏差的。
 另一方面现在，整个Lagrangian都是由裸物理量写出来的，我们需要重整化。首先是质量与耦合常数的重整化：
 $$

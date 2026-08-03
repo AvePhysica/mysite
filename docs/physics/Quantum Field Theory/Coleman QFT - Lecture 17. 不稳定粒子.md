@@ -5,7 +5,7 @@ title: "Coleman QFT Lecture 17: 不稳定粒子"
 本章是标量场的最后一章，算是一个番外篇吧。前面提到，由于介子实际上是稳定的，即 $\mu<2m$，因此Model 3的基本顶点代表的介子衰变过程 $\phi\to N+\bar N$ 是不会发生的，或者说满足能动量守恒的解必须使某些分量变成复数。实际上，我们的微扰理论中永远不会涉及到不稳定的粒子，因为当我们考虑 $t=\pm \infty$ 时，不稳定的粒子并不存在，我们计算的S矩阵元是对于稳定粒子态而言的。但是，如果我们强行在原先的理论中设置 $\mu>2m$，则会发生什么呢？
 ## 17.1 计算 $\mu>2m$ 下的传播子 $\tilde D'$
 
-在[[Coleman QFT - Problem 9]]中，我们已得到了下面的关系：
+在[Coleman QFT - Problem 9](./Coleman%20QFT%20-%20Problem%209.md)中，我们已得到了下面的关系：
 $$
 \mathrm{Im}\,\tilde \Pi'(p^2)=-\dfrac{\pi\sigma(p^2)}{|\tilde D(p^2)|^2}
 $$

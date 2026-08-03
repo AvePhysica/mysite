@@ -75,7 +75,7 @@ $$
 $$
 S_c[\phi,J]=\int\mathrm{d}^4x\,\mathcal L(\phi,J)
 $$
-在量子场论中，[[Coleman QFT - Lecture 13. Green函数与Heisenberg场]]中提到过**生成泛函**，其定义为S矩阵的真空-真空分量：
+在量子场论中，[Coleman QFT - Lecture 13. Green函数与Heisenberg场](./Coleman%20QFT%20-%20Lecture%2013.%20Green%E5%87%BD%E6%95%B0%E4%B8%8EHeisenberg%E5%9C%BA.md)中提到过**生成泛函**，其定义为S矩阵的真空-真空分量：
 $$
 Z[J]=\langle 0|S|0\rangle_J
 $$
@@ -92,7 +92,7 @@ $N$ 实际上与真空极化振幅有关。接下来，我将说明Green函数�
 $$
 q_0\to \mathrm{e}^{i\alpha}q_0,\quad 0\le \alpha\le \dfrac\pi 2
 $$
-实际上等价于换元 $q_0=iq_4$（参见[[Coleman QFT - Lecture 15. 重整化 I：确定抵消项]]）这样 $k^2$ 变成
+实际上等价于换元 $q_0=iq_4$（参见[Coleman QFT - Lecture 15. 重整化 I：确定抵消项](./Coleman%20QFT%20-%20Lecture%2015.%20%E9%87%8D%E6%95%B4%E5%8C%96%20I%EF%BC%9A%E7%A1%AE%E5%AE%9A%E6%8A%B5%E6%B6%88%E9%A1%B9.md)）这样 $k^2$ 变成
 $$
 k^2=-k_4^2-\vec k^2=-k_E^2
 $$
@@ -122,7 +122,7 @@ $$
 $$
 \mathcal L(\phi,J)=\dfrac12(\partial^\mu\phi)^2-\dfrac12\mu^2\phi^2+J(x)\phi
 $$
-这就是[[Coleman QFT - Lecture 8. 微扰理论 I：Wick diagram]]研究过的Model 1。我们直接通过Wick图求得了其严格解：
+这就是[Coleman QFT - Lecture 8. 微扰理论 I：Wick diagram](./Coleman%20QFT%20-%20Lecture%208.%20%E5%BE%AE%E6%89%B0%E7%90%86%E8%AE%BA%20I%EF%BC%9AWick%20diagram.md)研究过的Model 1。我们直接通过Wick图求得了其严格解：
 $$
 U_I(\infty,-\infty)=S=\exp(O_2/2):\exp(O_1):\;,\quad Z_0[J]=\langle0|S|0\rangle=\exp(O_2/2)=\mathrm{e}^{\frac12(-\alpha+i\beta)}
 $$
@@ -322,7 +322,7 @@ $$
 $$
 D_{\nu\rho}^P(x)=\int\dfrac{\mathrm{d}^4k}{(2\pi)^4}\,\mathrm{e}^{-ik\cdot x}\tilde D^P_{\nu\rho}(k),\quad (-k^2g^{\mu\nu}+k^\mu k^\nu+\mu^2 g^{\mu\nu})\tilde D^P_{\nu\rho}(k)=i\delta_\rho^\mu
 $$
-接下来怎么办呢？受到[[Coleman QFT - Lecture 26. 矢量场]]中的启发，这个算符可以分解为**纵向与横向**两部分，投影算符为
+接下来怎么办呢？受到[Coleman QFT - Lecture 26. 矢量场](./Coleman%20QFT%20-%20Lecture%2026.%20%E7%9F%A2%E9%87%8F%E5%9C%BA.md)中的启发，这个算符可以分解为**纵向与横向**两部分，投影算符为
 $$
 P_{\mu\nu}^L=\dfrac{k_\mu k_\nu}{k^2},\quad P_{\mu\nu}^T=g_{\mu\nu}-\dfrac{k_\mu k_\nu}{k^2}
 $$
@@ -338,7 +338,7 @@ $$
 $$
 \tilde D_{\mu\nu}^P(k)=\dfrac{i P^T_{\mu\nu}}{-k^2+\mu^2}+\dfrac{iP^L_{\mu\nu}}{\mu^2}=-\dfrac{i}{k^2-\mu^2}\left[g_{\mu\nu}-\dfrac{k_\mu k_\nu}{\mu^2}\right]\to \dfrac{i}{k^2-\mu^2+i\epsilon}\left[-g_{\mu\nu}+\dfrac{k_\mu k_\nu}{\mu^2}\right]
 $$
-这里由于在Minkowski空间中 $(k^2-\mu^2)^{-1}$ 不是一个良定义的算符，因此我们要给它补上 $i\epsilon$。这个式子正是早在[[Coleman QFT - Lecture 26. 矢量场]]中得到的传播子的表达式。因子
+这里由于在Minkowski空间中 $(k^2-\mu^2)^{-1}$ 不是一个良定义的算符，因此我们要给它补上 $i\epsilon$。这个式子正是早在[Coleman QFT - Lecture 26. 矢量场](./Coleman%20QFT%20-%20Lecture%2026.%20%E7%9F%A2%E9%87%8F%E5%9C%BA.md)中得到的传播子的表达式。因子
 $$
 -g_{\mu\nu}+\dfrac{k_\mu k_\nu}{\mu^2}
 $$

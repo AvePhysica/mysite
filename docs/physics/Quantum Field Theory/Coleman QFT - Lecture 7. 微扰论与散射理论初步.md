@@ -6,13 +6,13 @@ title: "Coleman QFT Lecture 7: 微扰论与散射理论初步"
 ## 7.1 含时微扰理论
 
 具体的形式理论请参见文章：
-[[含时微扰论 Part.I 形式理论]]
-[[含时微扰论 Part.II 瞬变近似与绝热近似]]
+含时微扰论 Part.I 形式理论
+含时微扰论 Part.II 瞬变近似与绝热近似
 总结来说，含时微扰问题归结于求解相互作用绘景下的时间演化算符 $U_I(t,t_0)$。当Hamilton显含时间时，$U_I(t,t_0)$ 只能表示为Dyson级数的形式：
 $$
 U_I(t,t_0)=1+\sum_{n=1}^\infty\left(\dfrac{-i}{\hbar}\right)^n\int_{t_0}^t\mathrm{d}t_1\int_{t_0}^{t_1}\mathrm{d}t_2\cdots\int_{t_0}^{t_{n-1}}\mathrm{d}t_n\hat H_{int}(t_1)\hat H_{int}(t_2)\cdots\hat H_{int}(t_n)
 $$
-但更简单的方法是将其写为**时序积**的形式（我们已经在[[Coleman QFT - Problem 1]]中遇到过它了）：
+但更简单的方法是将其写为**时序积**的形式（我们已经在[Coleman QFT - Problem 1](./Coleman%20QFT%20-%20Problem%201.md)中遇到过它了）：
 $$
 U_I(t,t_0)= T\exp\left(-i\int_{t_0}^t\mathrm{d} t'\,H_I(t')\right)
 $$
@@ -21,10 +21,10 @@ $$
 ## 7.2 散射理论与S矩阵
 
 具体的形式理论参见文章：
-[[散射理论Part.I 定态散射理论]]
-[[散射理论 Part.II 含时散射理论]]
-[[散射理论 Part.III 角动量表象：分波与相移]]
-[[散射理论 Part.IV 低能散射与高能散射]]
+散射理论Part.I 定态散射理论
+散射理论 Part.II 含时散射理论
+散射理论 Part.III 角动量表象：分波与相移
+散射理论 Part.IV 低能散射与高能散射
 
 散射S矩阵的矩阵元描述“出态”与“入态”的内积。在含时理论中，假设势是被**绝热**加上的，因此在 $t=\pm\infty$ 时能量本征态均为自由粒子的平面波态 $|\vec k\rangle$。当入射的态是 $|\vec k_i\rangle$ 时，设其于 $t=0$ 时的态为 $|\psi^{in}\rangle$，而当出射的态是 $|\vec k_f\rangle$ 时，$t=0$ 时的态为 $|\psi^{out}\rangle$，则S矩阵的矩阵元定义为：
 $$

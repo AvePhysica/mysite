@@ -74,7 +74,7 @@ $$
 $$
 \langle0|\psi'(0)|1,p_{(0)}\rangle=u_0^{(1)}\Rightarrow \langle0|\psi'(x)|r,p\rangle=\mathrm{e}^{-ip\cdot x}u_{\vec p}^{(r)}
 $$
-质量重整化与耦合常数重整化的步骤和[[Coleman QFT - Lecture 15. 重整化 I：确定抵消项]]是一样的。重整化后的Lagrangian写为：
+质量重整化与耦合常数重整化的步骤和[Coleman QFT - Lecture 15. 重整化 I：确定抵消项](./Coleman%20QFT%20-%20Lecture%2015.%20%E9%87%8D%E6%95%B4%E5%8C%96%20I%EF%BC%9A%E7%A1%AE%E5%AE%9A%E6%8A%B5%E6%B6%88%E9%A1%B9.md)是一样的。重整化后的Lagrangian写为：
 $$
 \mathcal L=\dfrac12(\partial_\mu\phi')^2-\dfrac12\mu^2\phi'^2+\bar\psi'(i\partial\mkern-8.5mu/-m)\psi'+g\bar\psi 'i\gamma_5\psi'\phi'+\dfrac12A(\partial_\mu\phi')^2-\dfrac12 B\phi'^2+C\bar\psi'i\partial\mkern-9mu/\psi'-D\bar\psi'\psi'-E\bar\psi'i\gamma_5\psi'\phi'
 $$
@@ -98,7 +98,7 @@ $$
 $$
 \tilde S'(p)=a(p^2)+b(p^2)\gamma_5+c(p^2)p\mkern-8.5mu/+d(p^2)\gamma_5 p\mkern-8.5mu/+\underbrace{e(p^2)\sigma^{\mu\nu}p_\mu p_{\nu}}_{=0,\;\text{for $\sigma^{\mu\nu}$ is antisymmetric}}
 $$
-另一方面，其具有宇称不变性，因此这个表达式也一定具有确定的宇称。我们知道，零阶下自由Dirac传播子为：（参见[[Coleman QFT - Lecture 21. Dirac方程 III：量子化与Feynman规则]]）
+另一方面，其具有宇称不变性，因此这个表达式也一定具有确定的宇称。我们知道，零阶下自由Dirac传播子为：（参见[Coleman QFT - Lecture 21. Dirac方程 III：量子化与Feynman规则](./Coleman%20QFT%20-%20Lecture%2021.%20Dirac%E6%96%B9%E7%A8%8B%20III%EF%BC%9A%E9%87%8F%E5%AD%90%E5%8C%96%E4%B8%8EFeynman%E8%A7%84%E5%88%99.md)）
 $$
 \tilde S'_F=\dfrac{i(p\mkern-8.5mu/+m)}{p^2-m^2+i\epsilon}\quad \Rightarrow c(p^2)\bigg|_0=\dfrac{i}{p^2-m^2+i\epsilon},\quad a(p^2)\bigg|_{0}=mc(p^2)\bigg|_0
 $$
@@ -109,7 +109,7 @@ $$
 
 ## 23.3 Dirac传播子的谱表示
 
-类似于[[Coleman QFT - Lecture 15. 重整化 I：确定抵消项]]中标量场的Kallen-Lehmann谱表示，Dirac传播子同样有类似的定理。我先将其谱表示的结果写在下面：
+类似于[Coleman QFT - Lecture 15. 重整化 I：确定抵消项](./Coleman%20QFT%20-%20Lecture%2015.%20%E9%87%8D%E6%95%B4%E5%8C%96%20I%EF%BC%9A%E7%A1%AE%E5%AE%9A%E6%8A%B5%E6%B6%88%E9%A1%B9.md)中标量场的Kallen-Lehmann谱表示，Dirac传播子同样有类似的定理。我先将其谱表示的结果写在下面：
 $$
 \tilde S'(p\mkern-8.5mu/)=\dfrac{i}{p\mkern-8.5mu/-m+i\epsilon}+i\int_{(m+\mu)^2}^\infty\mathrm{d}a^2\,\sigma_+(a^2)\dfrac{p\mkern-8.5mu/+a}{p^2-a^2+i\epsilon}+i\int_{(m+\mu)^2}^\infty\mathrm{d}a^2\,\sigma_-(a^2)\dfrac{p\mkern-8.5mu/-a}{p^2-a^2+i\epsilon}
 $$
@@ -229,7 +229,7 @@ $$
 $$
 \tilde\varGamma'=i\gamma_5g+O(g^3)
 $$
-现在，我们遇到了一个问题。在[[Coleman QFT - Lecture 16. 重整化 II：推广与延伸]]中，我们使用的重整化条件是 $\tilde\varGamma'$ 在质壳上取到精确值 $g$：
+现在，我们遇到了一个问题。在[Coleman QFT - Lecture 16. 重整化 II：推广与延伸](./Coleman%20QFT%20-%20Lecture%2016.%20%E9%87%8D%E6%95%B4%E5%8C%96%20II%EF%BC%9A%E6%8E%A8%E5%B9%BF%E4%B8%8E%E5%BB%B6%E4%BC%B8.md)中，我们使用的重整化条件是 $\tilde\varGamma'$ 在质壳上取到精确值 $g$：
 $$
 \tilde \varGamma'(m^2,m^2,\mu^2)=g
 $$

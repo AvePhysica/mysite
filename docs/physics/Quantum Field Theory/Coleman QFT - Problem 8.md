@@ -2,7 +2,7 @@
 title: "Coleman QFT Problem 8"
 ---
 
-在[[Coleman QFT - Lecture 14. LSZ约化公式]]中，我们得到了一个很强的结论：只要我们选取的局域场满足**真空态与单粒子态间的归一化关系**，则其就会给出相同的散射 $S$ 矩阵。下面用一个简单的例子来验证这一点。
+在[Coleman QFT - Lecture 14. LSZ约化公式](./Coleman%20QFT%20-%20Lecture%2014.%20LSZ%E7%BA%A6%E5%8C%96%E5%85%AC%E5%BC%8F.md)中，我们得到了一个很强的结论：只要我们选取的局域场满足**真空态与单粒子态间的归一化关系**，则其就会给出相同的散射 $S$ 矩阵。下面用一个简单的例子来验证这一点。
 
 >[!question]
 >考虑一个自由标量场理论：
@@ -21,7 +21,7 @@ $$
 $$
 \mathcal L_I=(\partial_\mu A)^2(gA+\dfrac12g^2A^2)-\dfrac12\mu^2(gA^3+\dfrac14 g^2A^4)
 $$
-相互作用是包含导数的，但我们可以采取在[[Coleman QFT - Lecture 14. LSZ约化公式]]中得到的有效方法。简单认为 $\mathcal H_I=-\mathcal L_I$，并且做替换 $\partial_\mu\to ip_\mu$。我们将相互作用项分为两类。首先，对于项 $g(A\partial_\mu A\partial^\mu A-\frac12 \mu^2A^3)$，其基本顶点为：
+相互作用是包含导数的，但我们可以采取在[Coleman QFT - Lecture 14. LSZ约化公式](./Coleman%20QFT%20-%20Lecture%2014.%20LSZ%E7%BA%A6%E5%8C%96%E5%85%AC%E5%BC%8F.md)中得到的有效方法。简单认为 $\mathcal H_I=-\mathcal L_I$，并且做替换 $\partial_\mu\to ip_\mu$。我们将相互作用项分为两类。首先，对于项 $g(A\partial_\mu A\partial^\mu A-\frac12 \mu^2A^3)$，其基本顶点为：
 
 <div align="center">
   <img src="./pictures/Pasted image 20260107125732.png" width="700">

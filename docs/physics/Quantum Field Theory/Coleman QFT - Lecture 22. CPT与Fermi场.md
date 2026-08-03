@@ -168,7 +168,7 @@ $$
 $$
 L^k=-i\epsilon^{ijk}[M^i,M^j]\quad \text{is pure imaginary}
 $$
-因此同样的，$D(R(\hat n\theta))$ 也为实。这一点其实说明了Lorentz群的 $(1/2,0)\oplus(0,1/2)$ 表示是一个实表示。参见[[实表示、伪实表示与复表示]]。
+因此同样的，$D(R(\hat n\theta))$ 也为实。这一点其实说明了Lorentz群的 $(1/2,0)\oplus(0,1/2)$ 表示是一个实表示。参见实表示、伪实表示与复表示。
 
 ## 22.3 Fermi场的电荷共轭
 
@@ -367,7 +367,7 @@ $c_\vec p^{(r)}$ 的变换同理。
 
 ## 22.5 Fermi场的CPT定理
 
-我们在之前[[Coleman QFT - Lecture 11. 散射理论 I：Mandelstam变量、CPT和相空间]]中讨论了标量场的CPT定理，我们通过散射振幅的显式形式得到了其具有CPT不变性的结论，但这样的证明不是很有普适性。这里会提供另一种证明方法，其适用于更广的范围。CPT定理的结果是：
+我们在之前[Coleman QFT - Lecture 11. 散射理论 I：Mandelstam变量、CPT和相空间](./Coleman%20QFT%20-%20Lecture%2011.%20%E6%95%A3%E5%B0%84%E7%90%86%E8%AE%BA%20I%EF%BC%9AMandelstam%E5%8F%98%E9%87%8F%E3%80%81CPT%E5%92%8C%E7%9B%B8%E7%A9%BA%E9%97%B4.md)中讨论了标量场的CPT定理，我们通过散射振幅的显式形式得到了其具有CPT不变性的结论，但这样的证明不是很有普适性。这里会提供另一种证明方法，其适用于更广的范围。CPT定理的结果是：
 $$
 \mathcal A(p_1,p_2,\cdots)=\mathcal A(-p_1,-p_2,\cdots )
 $$

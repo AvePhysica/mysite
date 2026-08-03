@@ -5,7 +5,7 @@ title: "Coleman QFT Problem 6"
 >[!question]
 >考虑衰变过程 $K\to\pi^++\pi^-$，$K$ 介子的质量为 $498\,\mathrm{MeV}$，$\pi^{\pm}$ 的质量为 $140\,\mathrm{MeV}$，衰变率为 $\varGamma=0.773\times 10^{10}\,\mathrm{s}^{-1}$。计算 $g/m_K$。
 
-这是末态为两个粒子的衰变过程，利用[[Coleman QFT - Lecture 12. 散射理论 II：应用]]中得到的公式：
+这是末态为两个粒子的衰变过程，利用[Coleman QFT - Lecture 12. 散射理论 II：应用](./Coleman%20QFT%20-%20Lecture%2012.%20%E6%95%A3%E5%B0%84%E7%90%86%E8%AE%BA%20II%EF%BC%9A%E5%BA%94%E7%94%A8.md)中得到的公式：
 $$
 \hbar\varGamma=\dfrac{1}{2m}\sum_f\int|\mathcal{A}_{fi}|^2D
 $$
@@ -34,7 +34,7 @@ $$
 $$
 \dfrac{\mathrm{d}\sigma}{\mathrm{d}\varOmega}=\dfrac{1}{64\pi^2E_T}\dfrac{|\vec p_f|}{|\vec p_i|}|\mathcal A_{fi}|^2=\dfrac{1}{64\pi^2E_T}|\mathcal A_{fi}|^2
 $$
-在[[Coleman QFT - Lecture 11. 散射理论 I：Mandelstam变量、CPT和相空间]]中，我们已经计算过对应的Feynman振幅（到 $O(g^2)$ 阶）：
+在[Coleman QFT - Lecture 11. 散射理论 I：Mandelstam变量、CPT和相空间](./Coleman%20QFT%20-%20Lecture%2011.%20%E6%95%A3%E5%B0%84%E7%90%86%E8%AE%BA%20I%EF%BC%9AMandelstam%E5%8F%98%E9%87%8F%E3%80%81CPT%E5%92%8C%E7%9B%B8%E7%A9%BA%E9%97%B4.md)中，我们已经计算过对应的Feynman振幅（到 $O(g^2)$ 阶）：
 $$
 i\mathcal A_{fi}=(-ig)^2\left[\dfrac{i}{(p_1-p_1')^2-\mu^2+i\epsilon}+\dfrac{i}{(p_1+p_2)^2-\mu^2+i\epsilon}\right]
 $$

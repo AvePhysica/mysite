@@ -3,7 +3,7 @@ title: "Coleman QFT Problem 13"
 ---
 
 >[!question]
->在[[Coleman QFT - Lecture 23. 旋量场理论的重整化]]中，对核子自能函数的计算还剩了一点没完成。请完成 $\tilde\Sigma'(p\mkern-8.5mu/)$ 到 $O(g^2)$ 阶的计算，最后仅保留对Feynman参数的积分。
+>在[Coleman QFT - Lecture 23. 旋量场理论的重整化](./Coleman%20QFT%20-%20Lecture%2023.%20%E6%97%8B%E9%87%8F%E5%9C%BA%E7%90%86%E8%AE%BA%E7%9A%84%E9%87%8D%E6%95%B4%E5%8C%96.md)中，对核子自能函数的计算还剩了一点没完成。请完成 $\tilde\Sigma'(p\mkern-8.5mu/)$ 到 $O(g^2)$ 阶的计算，最后仅保留对Feynman参数的积分。
 
 已经得到的结果是：
 $$
@@ -13,7 +13,7 @@ $$
 $$
 \Sigma^f(p\mkern-8.5mu/)=-\dfrac{ig^2}{(2\pi)^4}\int\mathrm{d}^4k'\int_0^1\mathrm{d}x\,\dfrac{-p\mkern-8.5mu/(1-x)+m}{[k'^2+p^2x(1-x)-m^2x-\mu^2(1-x)+i\epsilon]^2}
 $$
-只用完成对 $k'$ 的积分，[[Coleman QFT - Lecture 15. 重整化 I：确定抵消项]]最后一节的积分表给出：
+只用完成对 $k'$ 的积分，[Coleman QFT - Lecture 15. 重整化 I：确定抵消项](./Coleman%20QFT%20-%20Lecture%2015.%20%E9%87%8D%E6%95%B4%E5%8C%96%20I%EF%BC%9A%E7%A1%AE%E5%AE%9A%E6%8A%B5%E6%B6%88%E9%A1%B9.md)最后一节的积分表给出：
 $$
 I_2=\int\dfrac{\mathrm{d}^4 q}{(2\pi)^4}\dfrac{1}{(q^2+a+i\epsilon)^2}=-\dfrac{i}{16\pi^2}\ln(-a)
 $$
@@ -32,7 +32,7 @@ $$
 
 >[!question]
 >（1）类似的，计算到 $O(g^2)$ 阶的介子的自能函数 $\tilde\Pi'(k^2)$。仅保留对Feynman参数的积分。
->（2）在[[Coleman QFT - Problem 9]]中，我们推导过公式：
+>（2）在[Coleman QFT - Problem 9](./Coleman%20QFT%20-%20Problem%209.md)中，我们推导过公式：
 >$$-\mathrm{Im}[-i\tilde D'(k^2)]^{-1}=\mathrm{Im}\,\tilde \Pi'(k^2)=\dfrac{-\pi\sigma(k^2)}{|\tilde D(k^2)|^2}$$
 >由于当 $k>2m$ 时 $\sigma(k^2)>0$ ，因此介子自能函数 $\tilde\Pi'(k^2)$ 的虚部在 $k>2m$ 时是负的。由（1）的计算结果验证这一点。
 

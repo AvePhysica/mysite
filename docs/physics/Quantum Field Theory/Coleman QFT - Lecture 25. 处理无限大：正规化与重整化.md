@@ -2,7 +2,7 @@
 title: "Coleman QFT Lecture 25: 处理无限大：正规化与重整化"
 ---
 
-我们已经了解过重整化的基本步骤，比如在[[Coleman QFT - Lecture 23. 旋量场理论的重整化]]的最后，对耦合常数的重整化：
+我们已经了解过重整化的基本步骤，比如在[Coleman QFT - Lecture 23. 旋量场理论的重整化](./Coleman%20QFT%20-%20Lecture%2023.%20%E6%97%8B%E9%87%8F%E5%9C%BA%E7%90%86%E8%AE%BA%E7%9A%84%E9%87%8D%E6%95%B4%E5%8C%96.md)的最后，对耦合常数的重整化：
 $$
 \tilde \varGamma'=i\gamma_5g+O(g^3)
 $$
@@ -79,12 +79,12 @@ $$
 $$
 I=\dfrac{\pi^{d/2}}{\Gamma(n)}\int_0^\infty\mathrm{d}\lambda\,\lambda^{n-\frac d2-1}\mathrm{e}^{-\lambda a^2}=\dfrac{\Gamma(n-\frac d2)}{\Gamma(n)}\dfrac{\pi^{d/2}}{a^{2n-d}}
 $$
-你可以自行对照 $d=4$ 的情况与[[Coleman QFT - Lecture 15. 重整化 I：确定抵消项]]的积分表。
+你可以自行对照 $d=4$ 的情况与[Coleman QFT - Lecture 15. 重整化 I：确定抵消项](./Coleman%20QFT%20-%20Lecture%2015.%20%E9%87%8D%E6%95%B4%E5%8C%96%20I%EF%BC%9A%E7%A1%AE%E5%AE%9A%E6%8A%B5%E6%B6%88%E9%A1%B9.md)的积分表。
 改变空间维度会带来许多问题，比如你不能保持 $\alpha=e^2/4\pi\approx1/137$ 是一个维数无关的常量，而且你也不太能知道怎样定义新的gamma矩阵。甚至，如果我考虑最简单的标量场 $\phi^4$ 理论：
 $$
 \mathcal L=\dfrac12(\partial_\mu\phi')^2-\dfrac12\mu^2\phi'^2-\dfrac{1}{4!}\lambda\phi'^4+\mathcal L_{CT}
 $$
-来做量纲分析。在[[Coleman QFT - Problem 2]] 中，我们得到过一般的 $d$ 维时空下标量场与Lagrangian的量纲为：
+来做量纲分析。在[Coleman QFT - Problem 2](./Coleman%20QFT%20-%20Problem%202.md) 中，我们得到过一般的 $d$ 维时空下标量场与Lagrangian的量纲为：
 $$
 [\phi']=[M]^{\frac d2-1},\quad [\mathcal L]=[M]^d
 $$
@@ -236,7 +236,7 @@ $$
 $$
 \mathcal L_I\propto \phi^5,\quad \delta=1
 $$
-这里 $\delta>0$，意味着引入越多的顶点就会产生表观发散度 $D$ 越大的Feynman图。因此我们需要对无数的 $D\ge 0$ 的发散图引入抵消项，这直接说明了该理论是**不可重整化**的。这里关于 $\phi^4,\phi^5$ 理论的重整化结果与[[Coleman QFT - Lecture 16. 重整化 II：推广与延伸]]最后一节是一致的。因此，可重整化与不可重整化理论就可以完全由 $\delta_i$ 的符号判断。
+这里 $\delta>0$，意味着引入越多的顶点就会产生表观发散度 $D$ 越大的Feynman图。因此我们需要对无数的 $D\ge 0$ 的发散图引入抵消项，这直接说明了该理论是**不可重整化**的。这里关于 $\phi^4,\phi^5$ 理论的重整化结果与[Coleman QFT - Lecture 16. 重整化 II：推广与延伸](./Coleman%20QFT%20-%20Lecture%2016.%20%E9%87%8D%E6%95%B4%E5%8C%96%20II%EF%BC%9A%E6%8E%A8%E5%B9%BF%E4%B8%8E%E5%BB%B6%E4%BC%B8.md)最后一节是一致的。因此，可重整化与不可重整化理论就可以完全由 $\delta_i$ 的符号判断。
 
 ## 25.4 标量场与旋量场的可重整化理论综述
 

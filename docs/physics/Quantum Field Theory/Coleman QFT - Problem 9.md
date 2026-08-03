@@ -3,7 +3,7 @@ title: "Coleman QFT Problem 9"
 ---
 
 >[!question]
->在[[Coleman QFT - Lecture 16. 重整化 II：推广与延伸]]中我们得到了介子的自能函数 $\tilde\Pi'(p^2)$（到 $O(g^2)$ 阶），我们没有将对Feynman参数的积分显式积出来。但如果我们只考虑其虚部，则并不会很繁琐。本题来讨论自能函数的虚部。
+>在[Coleman QFT - Lecture 16. 重整化 II：推广与延伸](./Coleman%20QFT%20-%20Lecture%2016.%20%E9%87%8D%E6%95%B4%E5%8C%96%20II%EF%BC%9A%E6%8E%A8%E5%B9%BF%E4%B8%8E%E5%BB%B6%E4%BC%B8.md)中我们得到了介子的自能函数 $\tilde\Pi'(p^2)$（到 $O(g^2)$ 阶），我们没有将对Feynman参数的积分显式积出来。但如果我们只考虑其虚部，则并不会很繁琐。本题来讨论自能函数的虚部。
 >（1）求介子自能函数的虚部表达式。
 >（2）用谱定理，证明到任意阶都有：
 >$$\mathrm{Im}\,\tilde \Pi'(p^2)\propto|\tilde D(p^2)|^{-2}\sigma(p^2)$$
@@ -50,7 +50,7 @@ $$
 $$
 \sigma(q^2)\theta(q^0)=\sum_{n>1}'(2\pi)^3\delta^{(4)}(q-p_n)|\langle n|\phi'(0)|0\rangle|^2
 $$
-这里，多粒子态 $|n\rangle$ 可以用出态展开，对所有多粒子态求和相当于对粒子数 $n$ 求和，并对每一粒子数的出态中各动量积分。同时，利用[[Coleman QFT - Lecture 14. LSZ约化公式]]中LSZ公式的推论，我们得到：
+这里，多粒子态 $|n\rangle$ 可以用出态展开，对所有多粒子态求和相当于对粒子数 $n$ 求和，并对每一粒子数的出态中各动量积分。同时，利用[Coleman QFT - Lecture 14. LSZ约化公式](./Coleman%20QFT%20-%20Lecture%2014.%20LSZ%E7%BA%A6%E5%8C%96%E5%85%AC%E5%BC%8F.md)中LSZ公式的推论，我们得到：
 $$
 ^{\text{out}}\langle k_1,\cdots ,k_n|\phi(y)|0\rangle=\int\mathrm{d}^4x_1\cdots\mathrm{d}^4x_n\,\mathrm{e}^{ik_1\cdot x_1+\cdots+ik_n\cdot x_n}\times\prod_{r=1}^n(\square_r^2+\mu^2)\langle0|T(\phi'(x_1)\cdots\phi'(x_n)\phi(y))|0\rangle
 $$
@@ -76,7 +76,7 @@ $$
 $$
 \sigma(p^2)=\left|\dfrac{g}{p^2-\mu^2}\right|^2\dfrac{1}{2\pi}\underbrace{\int \dfrac{\mathrm{d}^3\vec k}{(2\pi)^32E_{k}}\dfrac{\mathrm{d}^3\vec k'}{(2\pi)^32E_{k'}}(2\pi)^4\delta^{(4)}(p-k-k')}_{\text{two particle state density}}
 $$
-后面的积分正是双粒子末态的态密度积分，这我们已经在[[Coleman QFT - Lecture 12. 散射理论 II：应用]]中计算过，有结论：
+后面的积分正是双粒子末态的态密度积分，这我们已经在[Coleman QFT - Lecture 12. 散射理论 II：应用](./Coleman%20QFT%20-%20Lecture%2012.%20%E6%95%A3%E5%B0%84%E7%90%86%E8%AE%BA%20II%EF%BC%9A%E5%BA%94%E7%94%A8.md)中计算过，有结论：
 $$
 D=\int \dfrac{\mathrm{d}^3\vec k}{(2\pi)^32E_{k}}\dfrac{\mathrm{d}^3\vec k'}{(2\pi)^32E_{k'}}(2\pi)^4\delta^{(4)}(p-k-k')=\dfrac{1}{16\pi^2}\dfrac{|\vec p_f|\mathrm{d}\varOmega_f}{E_T}
 $$

@@ -101,7 +101,7 @@ $$
 >$$\mathcal L=\dfrac12\partial^\mu\phi'\partial_\mu\phi'-\dfrac12\mu^2\phi'^2-\dfrac{1}{4!}g\phi'^4-\dfrac{1}{4!}C\phi'^4+\cdots$$
 >考虑该理论的耦合常数重整化，其要求介子-介子弹性散射的振幅在对称点 $s=t=u=\dfrac 43\mu^2$ 处精确满足：
 >$$i\mathcal A=ig$$
->其中三个Mandelstam变量为（参见[[Coleman QFT - Lecture 11. 散射理论 I：Mandelstam变量、CPT和相空间]]）：
+>其中三个Mandelstam变量为（参见[Coleman QFT - Lecture 11. 散射理论 I：Mandelstam变量、CPT和相空间](./Coleman%20QFT%20-%20Lecture%2011.%20%E6%95%A3%E5%B0%84%E7%90%86%E8%AE%BA%20I%EF%BC%9AMandelstam%E5%8F%98%E9%87%8F%E3%80%81CPT%E5%92%8C%E7%9B%B8%E7%A9%BA%E9%97%B4.md)）：
 >$$s=(p+q)^2,\quad t=(p-p')^2,\quad u=(p-q')^2$$
 >计算该散射过程到 $O(g^2)$ 阶的散射振幅，用 $s,t,u$ 表示，结果保留对Feynman参数的积分即可。并通过计算散射截面验证质心系中的光学定理成立。
 
@@ -135,7 +135,7 @@ $$
 $$
 \mathcal A=-g+g^2[f(s)+f(t)+f(u)]+O(g^3)
 $$
-引用[[Coleman QFT - Lecture 12. 散射理论 II：应用]]中的结论，双粒子弹性散射的微分散射截面为
+引用[Coleman QFT - Lecture 12. 散射理论 II：应用](./Coleman%20QFT%20-%20Lecture%2012.%20%E6%95%A3%E5%B0%84%E7%90%86%E8%AE%BA%20II%EF%BC%9A%E5%BA%94%E7%94%A8.md)中的结论，双粒子弹性散射的微分散射截面为
 $$
 \dfrac{\mathrm{d}\sigma}{\mathrm{d}\varOmega}=\dfrac{1}{64\pi^2E_T^2}|\mathcal A_{fi}|^2=\dfrac{g^2}{64\pi^2s}+O(g^3)
 $$

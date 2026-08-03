@@ -2,7 +2,7 @@
 title: "Coleman QFT Lecture 13: Green函数与Heisenberg场"
 ---
 
-在上一章[[Coleman QFT - Lecture 12. 散射理论 II：应用]]的最后，我们提到了外线不在质壳上的Feynman图。这个研究对象是比较有趣的，它将引出我们本章要讲的**Green函数**。为了简单起见，我将只考虑外线为介子线的Feynman图。其推广是简单的。
+在上一章[Coleman QFT - Lecture 12. 散射理论 II：应用](./Coleman%20QFT%20-%20Lecture%2012.%20%E6%95%A3%E5%B0%84%E7%90%86%E8%AE%BA%20II%EF%BC%9A%E5%BA%94%E7%94%A8.md)的最后，我们提到了外线不在质壳上的Feynman图。这个研究对象是比较有趣的，它将引出我们本章要讲的**Green函数**。为了简单起见，我将只考虑外线为介子线的Feynman图。其推广是简单的。
 
 ## 13.1  $\tilde G^{(n)}(k_i)$ 的图形化定义
 
@@ -43,7 +43,7 @@ $$
 $$
 \mathcal H\to\mathcal H+\rho(x)\phi(x)
 $$
-回忆我们对Model 1的处理（参考[[Coleman QFT - Lecture 8. 微扰理论 I：Wick diagram]]），对于场与势的作用，其基本顶点可表示为：
+回忆我们对Model 1的处理（参考[Coleman QFT - Lecture 8. 微扰理论 I：Wick diagram](./Coleman%20QFT%20-%20Lecture%208.%20%E5%BE%AE%E6%89%B0%E7%90%86%E8%AE%BA%20I%EF%BC%9AWick%20diagram.md)），对于场与势的作用，其基本顶点可表示为：
 
 <div align="center">
   <img src="./pictures/Pasted image 20251229160218.png" width="350">

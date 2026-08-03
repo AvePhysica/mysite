@@ -2,7 +2,7 @@
 title: "Coleman QFT Lecture 11: 散射理论 I：Mandelstam变量、CPT和相空间"
 ---
 
-本文将紧接着上一篇文章[[Coleman QFT - Lecture 10. 质量重整化与费曼图]]，讨论其未完成的散射过程的振幅计算，并且在其中顺带引出一些有趣的话题。（我们已经完成了核子-核子散射的 $O(g^2)$ 阶的振幅计算，并且得到了Yukawa势以及交换势。）
+本文将紧接着上一篇文章[Coleman QFT - Lecture 10. 质量重整化与费曼图](./Coleman%20QFT%20-%20Lecture%2010.%20%E8%B4%A8%E9%87%8F%E9%87%8D%E6%95%B4%E5%8C%96%E4%B8%8E%E8%B4%B9%E6%9B%BC%E5%9B%BE.md)，讨论其未完成的散射过程的振幅计算，并且在其中顺带引出一些有趣的话题。（我们已经完成了核子-核子散射的 $O(g^2)$ 阶的振幅计算，并且得到了Yukawa势以及交换势。）
 ## 11.1 核子-反核子散射
 
 首先是 $2.6\quad N+\bar N\to N+\bar N$，其同样对应到两个Feynman图：
@@ -269,7 +269,7 @@ $$
 $$
 |f\rangle=\sqrt V\,|\vec p_1,\vec p_2\rangle
 $$
-注意这里我们又取的是 $|\vec p\rangle$，与[[Coleman QFT - Lecture 10. 质量重整化与费曼图]]中注意区分。
+注意这里我们又取的是 $|\vec p\rangle$，与[Coleman QFT - Lecture 10. 质量重整化与费曼图](./Coleman%20QFT%20-%20Lecture%2010.%20%E8%B4%A8%E9%87%8F%E9%87%8D%E6%95%B4%E5%8C%96%E4%B8%8E%E8%B4%B9%E6%9B%BC%E5%9B%BE.md)中注意区分。
 我们将 $S-1$ 的矩阵元写为下面的形式：
 $$
 \langle f|S-1|i\rangle=i\mathcal A_{fi}^{VT}(2\pi)^4\delta_{VT}^{(4)}(p_f-p_i)\prod_f

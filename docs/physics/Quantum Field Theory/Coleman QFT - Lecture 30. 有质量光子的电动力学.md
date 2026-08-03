@@ -2,7 +2,7 @@
 title: "Coleman QFT Lecture 30: 有质量光子的电动力学"
 ---
 
-在[[Coleman QFT - Lecture 29. 推广泛函积分方法]]的最后，我们通过证明泛函积分的三种形式（二阶形式、一阶形式与Hamiltonian形式）彼此等价，说明了“天真的”Feynman规则是正确的。本章就来讨论一些具体的散射过程。但在此之前，先来讨论**标量电动力学**的Feynman规则。
+在[Coleman QFT - Lecture 29. 推广泛函积分方法](./Coleman%20QFT%20-%20Lecture%2029.%20%E6%8E%A8%E5%B9%BF%E6%B3%9B%E5%87%BD%E7%A7%AF%E5%88%86%E6%96%B9%E6%B3%95.md)的最后，我们通过证明泛函积分的三种形式（二阶形式、一阶形式与Hamiltonian形式）彼此等价，说明了“天真的”Feynman规则是正确的。本章就来讨论一些具体的散射过程。但在此之前，先来讨论**标量电动力学**的Feynman规则。
 ## 30.1 标量电动力学的Feynman规则
 
 类似的，如果采用正则量子化体系，则会遇到标量场的导数作用、消除 $A_0$ 的技术性难题。所以我们直接采用泛函积分方法。Proca Lagrangian的二阶形式为：
@@ -123,7 +123,7 @@ $$
 \mathcal A_1=-e^2\dfrac{\vec j^{(1)T}\cdot \vec j^{(2)T}}{k_0^2-|\vec k|^2}-e^2\dfrac{j_0^{(1)}j_0^{(2)}}{|\vec k|^2}
 $$
 第一项代表了交换两种横向极化的光子，而第二项不含时间分量 $k_0$ ，其实际代表了静态的**瞬时Coulomb作用**。
-回忆在[[Coleman QFT - Lecture 9. 微扰理论 II：发散与抵消项]]中关于model 2基态能量的计算：
+回忆在[Coleman QFT - Lecture 9. 微扰理论 II：发散与抵消项](./Coleman%20QFT%20-%20Lecture%209.%20%E5%BE%AE%E6%89%B0%E7%90%86%E8%AE%BA%20II%EF%BC%9A%E5%8F%91%E6%95%A3%E4%B8%8E%E6%8A%B5%E6%B6%88%E9%A1%B9.md)中关于model 2基态能量的计算：
 $$
 E_0=-\dfrac iT\ln\langle0|S|0\rangle=\dfrac12(-ig)^2\int\dfrac{\mathrm{d}^3\vec k}{(2\pi)^3}\dfrac{|\tilde\rho(\vec k)|^2}{|\vec k|^2+\mu^2}=\dfrac12\int\mathrm{d}^3\vec x\,\mathrm{d}^3\vec y\,\rho(\vec x)\left[-g^2\dfrac{\mathrm{e}^{-\mu|\vec x-\vec y|}}{4\pi|\vec x-\vec y|}\right]\rho(\vec y)
 $$
@@ -183,7 +183,7 @@ $$
 $$
 \mathcal L=-\dfrac14(\partial_\mu A_\nu-\partial_\nu A_\mu)^2+\bar \psi(i\partial\mkern-9mu/-m-eA\mkern-9mu/)\psi+(\text{source term})
 $$
-这个理论的正则量子化是有问题的，因为 $A_0$ 无法被消除。我们需要**规范条件**来良定义这个初值问题。当然也可以尝试泛函积分方法，使用[[Coleman QFT - Lecture 28. 泛函积分与Feynman图]]最后一节相似的流程。先定义横向与纵向投影算符：
+这个理论的正则量子化是有问题的，因为 $A_0$ 无法被消除。我们需要**规范条件**来良定义这个初值问题。当然也可以尝试泛函积分方法，使用[Coleman QFT - Lecture 28. 泛函积分与Feynman图](./Coleman%20QFT%20-%20Lecture%2028.%20%E6%B3%9B%E5%87%BD%E7%A7%AF%E5%88%86%E4%B8%8EFeynman%E5%9B%BE.md)最后一节相似的流程。先定义横向与纵向投影算符：
 $$
 P_{\mu\nu}^T=g_{\mu\nu}-\dfrac{k_\mu k_\nu}{k^2},\quad P_{\mu\nu}^L=\dfrac{k_\mu k_\nu}{k^2}
 $$

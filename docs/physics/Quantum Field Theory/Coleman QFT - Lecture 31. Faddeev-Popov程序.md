@@ -2,7 +2,7 @@
 title: "Coleman QFT Lecture 31: Faddeev-Popov程序"
 ---
 
-紧接上一篇文章[[Coleman QFT - Lecture 30. 有质量光子的电动力学]]，来处理无质量光子电动力学中泛函积分方法出现发散的问题。
+紧接上一篇文章[Coleman QFT - Lecture 30. 有质量光子的电动力学](./Coleman%20QFT%20-%20Lecture%2030.%20%E6%9C%89%E8%B4%A8%E9%87%8F%E5%85%89%E5%AD%90%E7%9A%84%E7%94%B5%E5%8A%A8%E5%8A%9B%E5%AD%A6.md)，来处理无质量光子电动力学中泛函积分方法出现发散的问题。
 
 ## 31.1 有限维方法
 
