@@ -103,6 +103,16 @@ assert.match(
   /html\[data-theme=light\] body:has\(\.vp-doc\):not\(:has\(\.home-dashboard\)\)\{[^}]*background-image:/,
   "Article grid should provide a light-theme color",
 );
+assert.match(
+  css,
+  /body:has\(\.vp-doc\):not\(:has\(\.home-dashboard\)\) \.vp-sidebar\{[^}]*background-image:[^}]*background-size:32px 32px/,
+  "The article sidebar should continue the grid background",
+);
+assert.match(
+  css,
+  /html\[data-theme=light\] body:has\(\.vp-doc\):not\(:has\(\.home-dashboard\)\) \.vp-sidebar\{[^}]*background-image:/,
+  "The article sidebar grid should support the light theme",
+);
 
 assert.match(
   css,
