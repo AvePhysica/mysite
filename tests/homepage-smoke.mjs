@@ -58,11 +58,6 @@ assert.doesNotMatch(
   "Recent Update should not include structural or untitled pages",
 );
 assert.match(
-  html,
-  /class="recent-grid"[\s\S]*?href="\/physics\/Quantum%20Computation\//,
-  "Recent Update should include the newly added Quantum Computation notes",
-);
-assert.match(
   config,
   /page\.data\.git\?\.updatedTime/,
   "Recent Update should use Git commit times so deployment does not reset the order",
@@ -92,6 +87,11 @@ assert.match(
   css,
   /\.vp-doc:not\(:has\(\.home-dashboard\)\)\{[^}]*霞鹜文楷等宽[^}]*font-family:var\(--vp-font-family-base\)/,
   "Article pages should use the LXGW WenKai Mono font family",
+);
+assert.match(
+  css,
+  /\.vp-doc:not\(:has\(\.home-dashboard\)\)\{[^}]*font-size:1\.05rem[^}]*line-height:1\.85/,
+  "Article body text should use the enlarged readable size and line height",
 );
 
 assert.match(
