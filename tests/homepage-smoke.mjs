@@ -90,6 +90,12 @@ const css = (
 
 assert.match(
   css,
+  /\.vp-doc:not\(:has\(\.home-dashboard\)\)\{[^}]*霞鹜文楷等宽[^}]*font-family:var\(--vp-font-family-base\)/,
+  "Article pages should use the LXGW WenKai Mono font family",
+);
+
+assert.match(
+  css,
   /html\[data-theme=light\] \.home-dashboard/,
   "首页应为亮色主题提供独立配色",
 );

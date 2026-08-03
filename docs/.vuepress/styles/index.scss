@@ -10,6 +10,13 @@
   margin: 0 !important;
 }
 
+.vp-doc:not(:has(.home-dashboard)) {
+  --vp-font-family-base: "霞鹜文楷等宽", "LXGW WenKai Mono",
+    "Noto Sans Mono CJK SC", monospace;
+
+  font-family: var(--vp-font-family-base);
+}
+
 body:has(.home-dashboard) .vp-navbar {
   color: rgb(238 242 242 / 88%);
   background: rgb(27 30 32 / 78%) !important;
