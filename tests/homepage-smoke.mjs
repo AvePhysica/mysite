@@ -93,6 +93,16 @@ assert.match(
   /\.vp-doc:not\(:has\(\.home-dashboard\)\)\{[^}]*font-size:1\.05rem[^}]*line-height:1\.85/,
   "Article body text should use the enlarged readable size and line height",
 );
+assert.match(
+  css,
+  /body:has\(\.vp-doc\):not\(:has\(\.home-dashboard\)\)\{[^}]*background-image:[^}]*background-size:32px 32px/,
+  "Article pages should display the grid background without affecting the homepage",
+);
+assert.match(
+  css,
+  /html\[data-theme=light\] body:has\(\.vp-doc\):not\(:has\(\.home-dashboard\)\)\{[^}]*background-image:/,
+  "Article grid should provide a light-theme color",
+);
 
 assert.match(
   css,
