@@ -1,0 +1,24 @@
+{
+  "name": "vuepress-mysite",
+  "version": "1.0.0",
+  "description": "My personal website",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vuepress dev docs --port 8081",
+    "docs:build": "vuepress build docs",
+    "test:homepage": "node tests/homepage-smoke.mjs"
+  },
+  "devDependencies": {
+    "@vuepress/bundler-vite": "^2.0.0-rc.30",
+    "katex": "^0.16.47",
+    "sass-embedded": "^1.100.0",
+    "typescript": "^5.9.3",
+    "vuepress": "^2.0.0-rc.30"
+  },
+  "dependencies": {
+    "vuepress-theme-plume": "^1.0.0-rc.204"
+  }
+}
