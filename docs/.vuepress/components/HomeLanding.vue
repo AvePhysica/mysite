@@ -7,11 +7,6 @@ const showUpdates = ref(true);
 
 const sections = [
   { label: "Physics", path: "/physics/", prefix: "/physics/" },
-  {
-    label: "QFT Lectures",
-    path: "/physics/",
-    prefix: "/physics/Quantum%20Field%20Theory/",
-  },
   { label: "Japanese", path: "/japanese/", prefix: "/japanese/" },
   {
     label: "Computer Science",
@@ -22,6 +17,9 @@ const sections = [
 
 function categoryOf(path) {
   if (path.startsWith("/physics/Quantum%20Field%20Theory/")) return "QFT";
+  if (path.startsWith("/physics/Quantum%20Computation/")) {
+    return "Quantum Computing";
+  }
   if (path.startsWith("/physics/")) return "Physics";
   if (path.startsWith("/japanese/")) return "Japanese";
   return "Computer Science";
@@ -30,6 +28,7 @@ function categoryOf(path) {
 function fallbackDescription(category) {
   const descriptions = {
     QFT: "Quantum Field Theory lecture notes, derivations and exercises.",
+    "Quantum Computing": "Quantum computation, algorithms and topological codes.",
     Physics: "Notes on condensed matter physics and many-body theory.",
     Japanese: "Japanese language learning notes and study records.",
     "Computer Science": "Computer science, programming and AI notes.",
@@ -59,8 +58,9 @@ const pages = computed(() =>
 );
 
 const stats = computed(() =>
-  sections.map((section) => ({
+  sections.map((section, index) => ({
     ...section,
+    number: String(index + 1).padStart(2, "0"),
     count: pages.value.filter(({ path }) => path.startsWith(section.prefix))
       .length,
   })),
@@ -76,6 +76,9 @@ const recentPages = computed(() =>
     .slice(0, 4),
 );
 
+const featuredPage = computed(() => recentPages.value[0] ?? null);
+const recentListPages = computed(() => recentPages.value.slice(1));
+
 function formatDate(timestamp) {
   if (!timestamp) return "Recently updated";
 
@@ -90,82 +93,120 @@ function formatDate(timestamp) {
 <template>
   <main class="home-dashboard">
     <div class="home-shell">
-      <section class="home-hero" aria-labelledby="home-title">
-        <p class="home-kicker">流明酱的小站</p>
-        <h1 id="home-title">Study &amp; Research</h1>
-        <p class="home-intro">
-        </p>
+      <section class="home-stage" aria-labelledby="home-title">
+        <div class="home-copy">
+          <p class="home-overline">PERSONAL KNOWLEDGE GARDEN</p>
+          <p class="home-kicker">流明酱的小站</p>
+          <h1 id="home-title">Study &amp; Research</h1>
+          <p class="home-intro">
+            记录物理、量子计算、语言学习与技术探索，让零散的思考在这里持续生长。
+          </p>
 
-        <nav class="home-actions" aria-label="主要内容入口">
-          <RouteLink to="/physics/">Physics</RouteLink>
-          <RouteLink to="/japanese/">Japanese</RouteLink>
-          <RouteLink to="/computer-science/">Computer Science</RouteLink>
-        </nav>
+          <nav class="home-actions" aria-label="主要内容入口">
+            <RouteLink to="/physics/">进入知识库</RouteLink>
+            <a href="#recent-update-panel">查看最近笔记</a>
+          </nav>
+        </div>
 
-        <button
-          type="button"
-          class="home-view-toggle"
-          aria-controls="recent-update-panel"
-          :aria-expanded="showUpdates"
-          @click="showUpdates = !showUpdates"
-        >
-          <span aria-hidden="true">{{ showUpdates ? "−" : "+" }}</span>
-          {{ showUpdates ? "隐藏最近更新" : "显示最近更新" }}
-        </button>
+        <aside class="research-index" aria-label="研究分类索引">
+          <header class="index-heading">
+            <div>
+              <p>RESEARCH INDEX</p>
+              <span>Browse by field</span>
+            </div>
+            <strong>{{ String(stats.length).padStart(2, "0") }}</strong>
+          </header>
+
+          <nav class="index-list" aria-label="知识领域">
+            <RouteLink
+              v-for="stat in stats"
+              :key="stat.label"
+              :to="stat.path"
+              class="index-row"
+            >
+              <span class="index-number">{{ stat.number }}</span>
+              <span class="index-label">{{ stat.label }}</span>
+              <strong>{{ stat.count }}</strong>
+              <span class="index-arrow" aria-hidden="true">↗</span>
+            </RouteLink>
+          </nav>
+        </aside>
       </section>
 
-      <Transition name="update-panel">
-      <section
-        v-if="showUpdates"
-        id="recent-update-panel"
-        class="update-panel"
-        aria-labelledby="recent-update-title"
-      >
-        <div class="panel-heading">
-          <div>
-            <p class="panel-eyebrow">KNOWLEDGE BASE</p>
-            <h2 id="recent-update-title">Recent Update</h2>
-          </div>
-          <span class="panel-status"><i /> continuously growing</span>
-        </div>
-
-        <div class="stats-grid">
-          <RouteLink
-            v-for="stat in stats"
-            :key="stat.label"
-            :to="stat.path"
-            class="stat-card"
-          >
-            <span>{{ stat.label }}</span>
-            <strong>{{ stat.count }}</strong>
-          </RouteLink>
-        </div>
-
-        <div class="recent-grid">
-          <article v-for="page in recentPages" :key="page.path" class="note-card">
-            <div class="note-meta">
-              <span class="note-type">{{ page.category }}</span>
-              <time>{{ formatDate(page.updatedAt) }}</time>
+      <Transition name="recent-section">
+        <section
+          v-if="showUpdates"
+          id="recent-update-panel"
+          class="recent-section"
+          aria-labelledby="recent-update-title"
+        >
+          <header class="recent-heading">
+            <div>
+              <p class="section-overline">RESEARCH LOG</p>
+              <h2 id="recent-update-title">Recent Notes</h2>
             </div>
+            <RouteLink to="/physics/" class="view-all-link">
+              Browse all <span aria-hidden="true">↗</span>
+            </RouteLink>
+          </header>
 
-            <h3>
-              <RouteLink :to="page.path">{{ page.title }}</RouteLink>
-            </h3>
-            <p>{{ page.description }}</p>
-
-            <div class="note-footer">
-              <div class="note-tags">
-                <span>{{ page.category }}</span>
-                <span v-for="tag in page.tags" :key="String(tag)">{{ tag }}</span>
+          <div v-if="featuredPage" class="recent-layout">
+            <article class="featured-note">
+              <div class="featured-meta">
+                <span>{{ featuredPage.category }}</span>
+                <time>{{ formatDate(featuredPage.updatedAt) }}</time>
               </div>
-              <RouteLink :to="page.path" class="read-link">
-                阅读 <span aria-hidden="true">↗</span>
+
+              <p class="featured-label">LATEST ENTRY</p>
+              <h3>
+                <RouteLink :to="featuredPage.path">
+                  {{ featuredPage.title }}
+                </RouteLink>
+              </h3>
+              <p class="featured-description">{{ featuredPage.description }}</p>
+
+              <footer class="featured-footer">
+                <div class="featured-tags">
+                  <span>{{ featuredPage.category }}</span>
+                  <span v-for="tag in featuredPage.tags" :key="String(tag)">
+                    {{ tag }}
+                  </span>
+                </div>
+                <RouteLink :to="featuredPage.path" class="read-link">
+                  阅读全文 <span aria-hidden="true">↗</span>
+                </RouteLink>
+              </footer>
+            </article>
+
+            <div class="recent-list">
+              <RouteLink
+                v-for="page in recentListPages"
+                :key="page.path"
+                :to="page.path"
+                class="recent-row"
+              >
+                <div class="recent-row-meta">
+                  <time>{{ formatDate(page.updatedAt) }}</time>
+                  <span>{{ page.category }}</span>
+                </div>
+                <h3>{{ page.title }}</h3>
+                <span class="recent-arrow" aria-hidden="true">↗</span>
               </RouteLink>
             </div>
-          </article>
-        </div>
-      </section>
+          </div>
+        </section>
       </Transition>
+
+      <button
+        type="button"
+        class="focus-toggle"
+        aria-controls="recent-update-panel"
+        :aria-expanded="showUpdates"
+        @click="showUpdates = !showUpdates"
+      >
+        <span aria-hidden="true">{{ showUpdates ? "−" : "+" }}</span>
+        {{ showUpdates ? "专注模式" : "显示笔记" }}
+      </button>
     </div>
   </main>
 </template>
@@ -187,32 +228,58 @@ function formatDate(timestamp) {
   inset: 0;
   z-index: -1;
   content: "";
-  background: linear-gradient(180deg, rgb(8 10 12 / 8%), rgb(8 10 12 / 35%));
+  background: linear-gradient(115deg, rgb(6 11 22 / 18%), rgb(8 10 12 / 42%));
 }
 
 .home-shell {
-  width: min(1180px, calc(100% - 48px));
-  padding: clamp(76px, 10vw, 132px) 0 64px;
+  width: min(1200px, calc(100% - 56px));
+  padding: clamp(62px, 8vw, 104px) 0 76px;
   margin: 0 auto;
 }
 
-.home-hero {
-  max-width: 780px;
-  margin-bottom: clamp(64px, 8vw, 96px);
+.home-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(330px, 0.72fr);
+  gap: clamp(48px, 8vw, 112px);
+  align-items: center;
+  min-height: min(660px, calc(100vh - var(--vp-nav-height) - 120px));
 }
 
+.home-copy {
+  max-width: 660px;
+}
+
+.home-overline,
 .home-kicker,
-.home-hero h1,
+.home-copy h1,
 .home-intro,
-.panel-heading h2,
-.panel-eyebrow {
+.index-heading p,
+.index-heading span,
+.section-overline,
+.recent-heading h2,
+.featured-label {
   margin: 0;
+}
+
+.home-overline,
+.section-overline,
+.index-heading p,
+.featured-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.home-overline,
+.section-overline {
+  color: #91d2e2;
 }
 
 .home-kicker {
   width: fit-content;
+  margin-top: 18px;
   font-family: "霞鹜文楷等宽", "Times New Roman", serif;
-  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  font-size: clamp(2.8rem, 6vw, 4.8rem);
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.045em;
@@ -221,333 +288,402 @@ function formatDate(timestamp) {
   -webkit-text-fill-color: transparent;
 }
 
-.home-hero h1 {
-  margin-top: 18px;
+.home-copy h1 {
+  margin-top: 26px;
   font-family: "霞鹜文楷等宽", "Times New Roman", "Noto Serif SC", serif;
-  font-size: clamp(0.6rem, 7vw, 2.2rem);
+  font-size: clamp(1.7rem, 3.2vw, 2.65rem);
   font-weight: 600;
-  line-height: 1.02;
-  letter-spacing: -0.04em;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
   color: #d5efd9;
 }
 
 .home-intro {
-  max-width: 660px;
-  margin-top: 22px;
-  font-size: clamp(1rem, 2vw, 1.16rem);
-  line-height: 1.8;
-  color: rgb(231 237 238 / 70%);
+  max-width: 610px;
+  margin-top: 26px;
+  font-family: "霞鹜文楷等宽", "Noto Serif SC", serif;
+  font-size: clamp(1rem, 1.5vw, 1.12rem);
+  line-height: 1.9;
+  color: rgb(231 237 238 / 72%);
 }
 
 .home-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 32px;
+  gap: 28px;
+  margin-top: 34px;
 }
 
-.home-actions a {
-  padding: 10px 22px;
-  font-family: "Times New Roman", serif;
-  font-size: 1rem;
+.home-actions a,
+.view-all-link,
+.read-link {
+  position: relative;
+  padding: 7px 0;
+  font-size: 0.9rem;
   font-weight: 700;
-  color: #edf5f5;
+  color: #b3e6f0;
   text-decoration: none;
-  background: rgb(72 84 102 / 66%);
-  border: 1px solid rgb(255 255 255 / 6%);
-  border-radius: 999px;
-  box-shadow: inset 0 1px 0 rgb(255 255 255 / 7%);
-  transition: transform 180ms ease, background-color 180ms ease;
+  border-bottom: 1px solid rgb(179 230 240 / 42%);
+  transition: color 180ms ease, border-color 180ms ease, transform 180ms ease;
 }
 
-.home-actions a:first-child,
-.home-actions a:hover {
-  color: #10252b;
-  background: #89cce1;
-  transform: translateY(-2px);
-}
-
-.home-view-toggle {
-  display: inline-flex;
-  gap: 8px;
-  align-items: center;
-  padding: 8px 15px;
-  margin-top: 14px;
-  font-size: 0.84rem;
-  font-weight: 600;
-  color: rgb(237 245 245 / 78%);
-  cursor: pointer;
-  background: rgb(27 37 48 / 48%);
-  border: 1px solid rgb(255 255 255 / 12%);
-  border-radius: 999px;
-  box-shadow: inset 0 1px 0 rgb(255 255 255 / 6%);
-  transition: color 180ms ease, background-color 180ms ease, transform 180ms ease;
-}
-
-.home-view-toggle:hover {
+.home-actions a:hover,
+.view-all-link:hover,
+.read-link:hover {
   color: #fff;
-  background: rgb(72 100 116 / 68%);
+  border-color: currentcolor;
   transform: translateY(-2px);
 }
 
-.home-view-toggle span {
-  display: grid;
-  width: 18px;
-  height: 18px;
-  place-items: center;
-  font-size: 1rem;
-  line-height: 1;
-  background: rgb(255 255 255 / 9%);
-  border-radius: 50%;
+.research-index {
+  padding: 12px 0;
+  background: linear-gradient(110deg, rgb(20 29 39 / 46%), rgb(38 45 52 / 22%));
+  border-top: 1px solid rgb(255 255 255 / 22%);
+  border-bottom: 1px solid rgb(255 255 255 / 16%);
+  box-shadow: 0 28px 70px rgb(0 0 0 / 16%);
+  backdrop-filter: blur(12px);
 }
 
-.update-panel-enter-active,
-.update-panel-leave-active {
-  transition: opacity 260ms ease, transform 260ms ease;
-}
-
-.update-panel-enter-from,
-.update-panel-leave-to {
-  opacity: 0;
-  transform: translateY(18px);
-}
-
-.update-panel {
-  padding: clamp(24px, 4vw, 40px);
-  background:
-    linear-gradient(135deg, rgb(189 206 211 / 20%), rgb(178 163 147 / 14%)),
-    rgb(255 255 255 / 8%);
-  border: 1px solid rgb(255 255 255 / 13%);
-  border-radius: 18px;
-  box-shadow: 0 28px 80px rgb(0 0 0 / 28%), inset 0 1px 0 rgb(255 255 255 / 8%);
-  backdrop-filter: blur(18px);
-}
-
-.panel-heading {
+.index-heading {
   display: flex;
-  gap: 24px;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: 26px;
+  padding: 18px 22px 24px;
 }
 
-.panel-eyebrow {
-  margin-bottom: 5px;
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: #91d2e2;
-  letter-spacing: 0.18em;
+.index-heading p {
+  color: #9ed9e8;
 }
 
-.panel-heading h2 {
+.index-heading span {
+  display: block;
+  margin-top: 7px;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 500;
-  color: #f4f2eb;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: rgb(232 239 240 / 52%);
 }
 
-.panel-status {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  padding-bottom: 8px;
-  font-size: 0.82rem;
-  color: rgb(232 239 240 / 58%);
+.index-heading strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: rgb(239 244 243 / 78%);
 }
 
-.panel-status i {
-  width: 7px;
-  height: 7px;
-  background: #86d3bb;
-  border-radius: 50%;
-  box-shadow: 0 0 12px #86d3bb;
-}
-
-.stats-grid {
+.index-row {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-  margin-bottom: 18px;
-}
-
-.stat-card {
-  display: flex;
-  gap: 18px;
+  grid-template-columns: 34px minmax(0, 1fr) auto 20px;
+  gap: 12px;
   align-items: center;
-  justify-content: space-between;
-  min-width: 0;
-  padding: 18px 20px;
-  color: rgb(235 239 240 / 70%);
+  padding: 17px 22px;
+  color: rgb(238 243 243 / 76%);
   text-decoration: none;
-  background: rgb(24 29 34 / 28%);
-  border: 1px solid rgb(255 255 255 / 16%);
-  border-radius: 12px;
-  box-shadow: inset 0 1px 0 rgb(255 255 255 / 7%);
-  transition: border-color 180ms ease, transform 180ms ease;
+  border-top: 1px solid rgb(255 255 255 / 10%);
+  transition: color 180ms ease, background-color 180ms ease, padding-left 180ms ease;
 }
 
-.stat-card:hover {
-  color: #f4f7f7;
-  border-color: rgb(139 210 228 / 46%);
-  transform: translateY(-2px);
+.index-row:hover {
+  padding-left: 28px;
+  color: #fff;
+  background: rgb(126 197 214 / 10%);
 }
 
-.stat-card span {
+.index-number,
+.index-arrow {
+  font-size: 0.72rem;
+  color: rgb(158 217 232 / 66%);
+}
+
+.index-label {
   overflow: hidden;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: Georgia, "Times New Roman", "Noto Serif SC", serif;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.stat-card strong {
+.index-row strong {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.15rem;
+  font-size: 1rem;
   font-style: italic;
-  color: #f1efe7;
+  font-weight: 500;
 }
 
-.recent-grid {
+.recent-section-enter-active,
+.recent-section-leave-active {
+  transition: opacity 260ms ease, transform 260ms ease;
+}
+
+.recent-section-enter-from,
+.recent-section-leave-to {
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+.recent-section {
+  padding-top: clamp(44px, 6vw, 72px);
+  margin-top: clamp(34px, 5vw, 64px);
+  border-top: 1px solid rgb(255 255 255 / 16%);
+}
+
+.recent-heading {
+  display: flex;
+  gap: 24px;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.recent-heading h2 {
+  margin-top: 7px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.1rem, 4vw, 3.35rem);
+  font-weight: 500;
+  color: #f4f2eb;
+}
+
+.recent-layout {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
+  grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.72fr);
+  gap: clamp(22px, 3vw, 38px);
 }
 
-.note-card {
+.featured-note {
   display: flex;
   min-width: 0;
-  min-height: 280px;
-  padding: 24px;
+  min-height: 340px;
+  padding: clamp(28px, 4vw, 44px);
   flex-direction: column;
   background:
-    linear-gradient(145deg, rgb(255 255 255 / 8%), rgb(117 135 138 / 5%)),
-    rgb(19 24 28 / 23%);
-  border: 1px solid rgb(255 255 255 / 15%);
-  border-radius: 14px;
-  box-shadow: inset 0 1px 0 rgb(255 255 255 / 6%);
+    linear-gradient(135deg, rgb(172 207 216 / 15%), rgb(98 113 125 / 5%)),
+    rgb(14 20 28 / 34%);
+  border-left: 3px solid rgb(143 211 226 / 72%);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 8%), 0 24px 60px rgb(0 0 0 / 17%);
+  backdrop-filter: blur(12px);
 }
 
-.note-meta,
-.note-footer {
+.featured-meta,
+.featured-footer,
+.recent-row-meta {
   display: flex;
   gap: 14px;
   align-items: center;
   justify-content: space-between;
 }
 
-.note-type,
-.note-tags span {
-  padding: 5px 10px;
-  font-size: 0.78rem;
+.featured-meta {
+  font-size: 0.76rem;
+  color: rgb(230 236 237 / 58%);
+}
+
+.featured-meta span,
+.featured-tags span,
+.recent-row-meta span {
   color: #9ddbea;
-  background: rgb(91 151 166 / 14%);
-  border-radius: 999px;
 }
 
-.note-meta time {
-  font-size: 0.78rem;
-  color: rgb(230 236 237 / 55%);
+.featured-label {
+  margin-top: 38px;
+  color: rgb(157 219 234 / 72%);
 }
 
-.note-card h3 {
-  margin: 24px 0 12px;
+.featured-note h3 {
+  max-width: 720px;
+  margin: 13px 0 16px;
   font-family: Georgia, "Times New Roman", "Noto Serif SC", serif;
-  font-size: clamp(1.18rem, 2vw, 1.4rem);
+  font-size: clamp(1.45rem, 2.5vw, 2.15rem);
   line-height: 1.35;
 }
 
-.note-card h3 a {
-  color: #f2f0e9;
+.featured-note h3 a {
+  color: #f4f2eb;
   text-decoration: none;
 }
 
-.note-card h3 a:hover {
-  color: #9edbec;
+.featured-note h3 a:hover {
+  color: #a9dfeb;
 }
 
-.note-card > p {
+.featured-description {
   display: -webkit-box;
-  margin: 0 0 24px;
+  max-width: 720px;
+  margin: 0 0 26px;
   overflow: hidden;
-  font-size: 0.94rem;
-  line-height: 1.75;
+  font-size: 0.96rem;
+  line-height: 1.8;
   color: rgb(230 236 237 / 62%);
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 }
 
-.note-footer {
+.featured-footer {
   margin-top: auto;
 }
 
-.note-tags {
+.featured-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 7px;
+  gap: 13px;
+  font-size: 0.76rem;
 }
 
-.read-link {
-  flex: none;
-  font-size: 0.84rem;
-  color: #a7dce9;
+.recent-list {
+  border-top: 1px solid rgb(255 255 255 / 16%);
+}
+
+.recent-row {
+  position: relative;
+  display: block;
+  min-height: 112px;
+  padding: 20px 38px 20px 2px;
+  color: inherit;
   text-decoration: none;
+  border-bottom: 1px solid rgb(255 255 255 / 13%);
+  transition: padding-left 180ms ease, background-color 180ms ease;
 }
 
-.read-link:hover {
-  color: #e8f9fd;
+.recent-row:hover {
+  padding-left: 12px;
+  background: linear-gradient(90deg, rgb(135 204 220 / 9%), transparent);
 }
 
-@media (max-width: 900px) {
-  .stats-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+.recent-row-meta {
+  justify-content: flex-start;
+  font-size: 0.72rem;
+  color: rgb(230 236 237 / 52%);
+}
+
+.recent-row h3 {
+  display: -webkit-box;
+  margin: 12px 0 0;
+  overflow: hidden;
+  font-family: Georgia, "Times New Roman", "Noto Serif SC", serif;
+  font-size: 1.03rem;
+  font-weight: 500;
+  line-height: 1.45;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.recent-arrow {
+  position: absolute;
+  top: 50%;
+  right: 4px;
+  color: #9ddbea;
+  transform: translateY(-50%);
+}
+
+.focus-toggle {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 14px;
+  margin-top: 24px;
+  float: right;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgb(237 245 245 / 70%);
+  cursor: pointer;
+  background: rgb(20 29 39 / 48%);
+  border: 1px solid rgb(255 255 255 / 12%);
+  border-radius: 999px;
+  backdrop-filter: blur(10px);
+  transition: color 180ms ease, background-color 180ms ease;
+}
+
+.focus-toggle:hover {
+  color: #fff;
+  background: rgb(72 100 116 / 68%);
+}
+
+.focus-toggle span {
+  display: grid;
+  width: 17px;
+  height: 17px;
+  place-items: center;
+  line-height: 1;
+  background: rgb(255 255 255 / 9%);
+  border-radius: 50%;
+}
+
+@media (max-width: 940px) {
+  .home-stage {
+    grid-template-columns: 1fr;
+    gap: 54px;
+    min-height: auto;
+  }
+
+  .research-index {
+    max-width: 680px;
+  }
+
+  .recent-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .recent-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    border-top: 0;
+  }
+
+  .recent-row {
+    padding: 18px 32px 18px 0;
+    border-top: 1px solid rgb(255 255 255 / 16%);
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 680px) {
   .home-shell {
-    width: min(100% - 28px, 1180px);
-    padding-top: 66px;
+    width: min(100% - 30px, 1200px);
+    padding-top: 58px;
   }
 
-  .home-hero {
-    margin-bottom: 48px;
+  .home-stage {
+    gap: 42px;
   }
 
-  .panel-heading {
+  .home-kicker {
+    font-size: clamp(2.5rem, 12vw, 3.65rem);
+  }
+
+  .home-actions {
+    gap: 22px;
+  }
+
+  .recent-heading {
     align-items: flex-start;
     flex-direction: column;
   }
 
-  .panel-status {
-    padding-bottom: 0;
+  .recent-list {
+    grid-template-columns: 1fr;
+    gap: 0;
   }
 
-  .recent-grid {
-    grid-template-columns: 1fr;
+  .featured-note {
+    min-height: 320px;
+  }
+
+  .featured-footer {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }
 
-@media (max-width: 480px) {
-  .home-actions {
-    gap: 10px;
+@media (max-width: 430px) {
+  .index-row {
+    grid-template-columns: 28px minmax(0, 1fr) auto 16px;
+    padding-inline: 16px;
   }
 
-  .home-actions a {
-    padding: 9px 15px;
-    font-size: 0.9rem;
+  .index-heading {
+    padding-inline: 16px;
   }
 
-  .update-panel {
-    padding: 20px;
-    border-radius: 14px;
-  }
-
-  .stats-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .note-card {
-    min-height: 250px;
-    padding: 20px;
+  .featured-note {
+    padding: 24px 20px;
   }
 }
 </style>

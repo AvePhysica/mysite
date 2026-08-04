@@ -24,7 +24,7 @@ const config = await readFile(
 
 assert.match(
   homeComponent,
-  /\.home-hero h1\s*\{[^}]*margin-top:\s*18px;/s,
+  /\.home-copy h1\s*\{[^}]*margin-top:\s*26px;/s,
   "首页两行标题之间应保留较宽的垂直间距",
 );
 
@@ -38,9 +38,13 @@ assert.match(
   /Study &amp; Research|Study & Research/,
   "首页应显示主标题",
 );
-assert.match(html, /Recent Update/, "首页应包含最近更新区域");
+assert.match(html, /Recent Notes/, "首页应包含最近更新区域");
 assert.match(html, /home-dashboard/, "首页应渲染自定义仪表盘组件");
-assert.match(html, /class="home-view-toggle"/, "首页应提供内容显示切换按钮");
+assert.match(html, /class="home-stage"/, "首页首屏应使用非对称双栏工作台布局");
+assert.match(html, /class="research-index"/, "首页应在首屏显示研究分类索引");
+assert.match(html, /class="featured-note"/, "首页应突出展示最新文章");
+assert.match(html, /class="recent-list"/, "首页应以时间列表展示其余最近文章");
+assert.match(html, /class="focus-toggle"/, "首页应提供专注模式切换按钮");
 assert.match(
   html,
   /aria-controls="recent-update-panel"/,
@@ -51,6 +55,16 @@ assert.match(html, /id="recent-update-panel"/, "最近更新面板应提供稳�
 assert.match(html, /href="\/physics\/"/, "首页应提供物理笔记入口");
 assert.match(html, /href="\/japanese\/"/, "首页应提供日语笔记入口");
 assert.match(html, /href="\/computer-science\/"/, "首页应提供计算机科学入口");
+assert.doesNotMatch(html, /class="stats-grid"/, "首页不应继续使用横向统计卡片栏");
+assert.doesNotMatch(html, /class="recent-grid"/, "首页不应继续使用等权双列文章卡片");
+
+const sectionConfig =
+  homeComponent.match(/const sections = \[([\s\S]*?)\n\];/)?.[1] ?? "";
+assert.deepEqual(
+  [...sectionConfig.matchAll(/label: "([^"]+)"/g)].map((match) => match[1]),
+  ["Physics", "Japanese", "Computer Science"],
+  "研究索引应只显示三个一级目录",
+);
 
 assert.doesNotMatch(
   html,
@@ -144,5 +158,16 @@ const lightBackgroundRule = css.match(
 
 assert.doesNotMatch(darkBackgroundRule, /32px 32px/, "深色首页不应显示网格");
 assert.doesNotMatch(lightBackgroundRule, /32px 32px/, "亮色首页不应显示网格");
+
+assert.match(
+  css,
+  /\.home-stage(?:\[[^\]]+\])?\{[^}]*grid-template-columns:/,
+  "桌面首页应使用双栏首屏布局",
+);
+assert.match(
+  css,
+  /\.recent-layout(?:\[[^\]]+\])?\{[^}]*grid-template-columns:/,
+  "最近更新应使用重点文章与时间列表组成的非对称布局",
+);
 
 console.log("Homepage smoke test passed.");

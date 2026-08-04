@@ -9,4 +9,7 @@ docs/.vuepress/.verify-cache/
 docs/.vuepress/.verify-temp/
 docs/.vuepress/.verify-dist/
 
+docs/.vuepress/.preview-cache/
+docs/.vuepress/.preview-temp/
+
 *.log

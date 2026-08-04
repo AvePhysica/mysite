@@ -92,7 +92,7 @@ html[data-theme="light"] .home-dashboard {
 }
 
 html[data-theme="light"] .home-dashboard::before {
-  background: linear-gradient(180deg, rgb(255 255 255 / 10%), rgb(221 231 233 / 24%));
+  background: linear-gradient(115deg, rgb(255 255 255 / 8%), rgb(221 231 233 / 28%));
 }
 
 html[data-theme="light"] .home-kicker {
@@ -101,109 +101,107 @@ html[data-theme="light"] .home-kicker {
   -webkit-text-fill-color: transparent;
 }
 
-html[data-theme="light"] .home-hero h1,
-html[data-theme="light"] .panel-heading h2 {
+html[data-theme="light"] .home-copy h1,
+html[data-theme="light"] .recent-heading h2,
+html[data-theme="light"] .featured-note h3 a {
   color: #203139;
+}
+
+html[data-theme="light"] .home-overline,
+html[data-theme="light"] .section-overline,
+html[data-theme="light"] .index-heading p {
+  color: #347b90;
 }
 
 html[data-theme="light"] .home-intro {
   color: rgb(37 57 65 / 72%);
 }
 
-html[data-theme="light"] .home-actions a {
-  color: #334b55;
-  background: rgb(255 255 255 / 58%);
-  border-color: rgb(65 106 120 / 14%);
-  box-shadow: inset 0 1px 0 rgb(255 255 255 / 80%);
+html[data-theme="light"] .home-actions a,
+html[data-theme="light"] .view-all-link,
+html[data-theme="light"] .read-link {
+  color: #287f98;
+  border-color: rgb(40 127 152 / 36%);
 }
 
-html[data-theme="light"] .home-actions a:first-child,
-html[data-theme="light"] .home-actions a:hover {
-  color: #f8fcfd;
-  background: #4f9db5;
+html[data-theme="light"] .home-actions a:hover,
+html[data-theme="light"] .view-all-link:hover,
+html[data-theme="light"] .read-link:hover {
+  color: #135d73;
 }
 
-html[data-theme="light"] .home-view-toggle {
+html[data-theme="light"] .research-index {
+  background: linear-gradient(110deg, rgb(255 255 255 / 48%), rgb(232 241 242 / 28%));
+  border-color: rgb(63 97 107 / 20%);
+  box-shadow: 0 28px 70px rgb(69 96 104 / 14%);
+}
+
+html[data-theme="light"] .index-heading span,
+html[data-theme="light"] .featured-meta,
+html[data-theme="light"] .recent-row-meta {
+  color: rgb(40 61 69 / 58%);
+}
+
+html[data-theme="light"] .index-heading strong,
+html[data-theme="light"] .index-row {
+  color: rgb(32 49 57 / 82%);
+}
+
+html[data-theme="light"] .index-row {
+  border-color: rgb(63 97 107 / 15%);
+}
+
+html[data-theme="light"] .index-row:hover {
+  color: #173d49;
+  background: rgb(67 148 170 / 9%);
+}
+
+html[data-theme="light"] .index-number,
+html[data-theme="light"] .index-arrow,
+html[data-theme="light"] .featured-meta span,
+html[data-theme="light"] .featured-tags span,
+html[data-theme="light"] .recent-row-meta span,
+html[data-theme="light"] .recent-arrow {
+  color: #287f98;
+}
+
+html[data-theme="light"] .recent-section,
+html[data-theme="light"] .recent-list,
+html[data-theme="light"] .recent-row {
+  border-color: rgb(63 97 107 / 18%);
+}
+
+html[data-theme="light"] .featured-note {
+  background:
+    linear-gradient(135deg, rgb(255 255 255 / 62%), rgb(219 232 235 / 30%)),
+    rgb(255 255 255 / 30%);
+  border-left-color: rgb(47 132 155 / 66%);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 86%), 0 24px 60px rgb(69 96 104 / 13%);
+}
+
+html[data-theme="light"] .featured-note h3 a:hover {
+  color: #287f98;
+}
+
+html[data-theme="light"] .featured-description {
+  color: rgb(43 62 69 / 68%);
+}
+
+html[data-theme="light"] .recent-row:hover {
+  background: linear-gradient(90deg, rgb(67 148 170 / 10%), transparent);
+}
+
+html[data-theme="light"] .focus-toggle {
   color: rgb(37 57 65 / 76%);
   background: rgb(255 255 255 / 52%);
   border-color: rgb(65 106 120 / 18%);
-  box-shadow: inset 0 1px 0 rgb(255 255 255 / 82%);
 }
 
-html[data-theme="light"] .home-view-toggle:hover {
+html[data-theme="light"] .focus-toggle:hover {
   color: #174755;
   background: rgb(255 255 255 / 74%);
 }
 
-html[data-theme="light"] .home-view-toggle span {
+html[data-theme="light"] .focus-toggle span {
   background: rgb(67 148 170 / 12%);
-}
-
-html[data-theme="light"] .update-panel {
-  background:
-    linear-gradient(135deg, rgb(255 255 255 / 60%), rgb(238 227 211 / 32%)),
-    rgb(255 255 255 / 36%);
-  border-color: rgb(255 255 255 / 78%);
-  box-shadow: 0 28px 70px rgb(69 96 104 / 16%), inset 0 1px 0 rgb(255 255 255 / 90%);
-}
-
-html[data-theme="light"] .panel-eyebrow {
-  color: #347b90;
-}
-
-html[data-theme="light"] .panel-status,
-html[data-theme="light"] .note-meta time {
-  color: rgb(40 61 69 / 58%);
-}
-
-html[data-theme="light"] .panel-status i {
-  background: #3ca77f;
-  box-shadow: 0 0 10px rgb(60 167 127 / 55%);
-}
-
-html[data-theme="light"] .stat-card {
-  color: rgb(39 58 66 / 74%);
-  background: rgb(255 255 255 / 44%);
-  border-color: rgb(70 105 115 / 19%);
-  box-shadow: inset 0 1px 0 rgb(255 255 255 / 85%);
-}
-
-html[data-theme="light"] .stat-card:hover {
-  color: #20363f;
-  border-color: rgb(61 143 165 / 58%);
-}
-
-html[data-theme="light"] .stat-card strong {
-  color: #253940;
-}
-
-html[data-theme="light"] .note-card {
-  background:
-    linear-gradient(145deg, rgb(255 255 255 / 66%), rgb(220 232 234 / 28%)),
-    rgb(255 255 255 / 32%);
-  border-color: rgb(72 105 115 / 18%);
-  box-shadow: inset 0 1px 0 rgb(255 255 255 / 90%);
-}
-
-html[data-theme="light"] .note-type,
-html[data-theme="light"] .note-tags span {
-  color: #28788f;
-  background: rgb(67 148 170 / 12%);
-}
-
-html[data-theme="light"] .note-card h3 a {
-  color: #22353d;
-}
-
-html[data-theme="light"] .note-card h3 a:hover,
-html[data-theme="light"] .read-link {
-  color: #287f98;
-}
-
-html[data-theme="light"] .note-card > p {
-  color: rgb(43 62 69 / 68%);
-}
-
-html[data-theme="light"] .read-link:hover {
-  color: #135d73;
 }
