@@ -82,6 +82,41 @@ assert.doesNotMatch(
   "Recent Update should not use filesystem modification times",
 );
 assert.match(
+  config,
+  /text:\s*"物理"[\s\S]*?items:\s*\[/,
+  "物理导航应使用下拉分类菜单",
+);
+assert.match(
+  config,
+  /\/physics\/Quantum%20Field%20Theory\//,
+  "物理下拉菜单应包含 QFT 分类入口",
+);
+assert.match(
+  config,
+  /\/physics\/Quantum%20Computation\//,
+  "物理下拉菜单应包含 Quantum Computation 分类入口",
+);
+assert.match(
+  config,
+  /"\/physics\/Quantum Field Theory\/":\s*"auto"/,
+  "QFT 页面应使用独立自动侧边栏",
+);
+assert.match(
+  config,
+  /"\/physics\/Quantum Computation\/":\s*"auto"/,
+  "Quantum Computation 页面应使用独立自动侧边栏",
+);
+assert.doesNotMatch(
+  config,
+  /"\/physics\/":\s*"auto"/,
+  "Physics 根侧边栏不应再聚合所有子分类",
+);
+assert.doesNotMatch(
+  config,
+  /\/physics\/(?:non-Hermitian|green-function)/,
+  "Physics 根侧边栏不应引用已删除的零散笔记",
+);
+assert.match(
   homeComponent,
   /filter\(\(\{ isArticle, updatedAt \}\) => isArticle && updatedAt > 0\)/,
   "Recent Update should exclude structural and untitled pages",

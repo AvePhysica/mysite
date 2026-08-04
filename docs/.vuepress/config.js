@@ -45,13 +45,28 @@ export default defineUserConfig({
   theme: plumeTheme({
     navbar: [
       { text: "首页", link: "/" },
-      { text: "物理", link: "/physics/" },
+      {
+        text: "物理",
+        items: [
+          { text: "物理概览", link: "/physics/" },
+          {
+            text: "Quantum Field Theory",
+            link: "/physics/Quantum%20Field%20Theory/",
+          },
+          {
+            text: "Quantum Computation",
+            link: "/physics/Quantum%20Computation/",
+          },
+        ],
+      },
       { text: "日本語", link: "/japanese/" },
       { text: "计算机科学", link: "/computer-science/" },
     ],
 
     sidebar: {
-      "/physics/": "auto",
+  "/physics/Quantum Field Theory/": "auto",
+  "/physics/Quantum Computation/": "auto",
+  "/physics/": [{ text: "Physics", link: "/physics/" }],
       "/japanese/": "auto",
       "/computer-science/": "auto",
     },
