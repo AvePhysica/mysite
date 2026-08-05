@@ -83,6 +83,10 @@ export default defineUserConfig({
             text: "新标日下册",
             link: "/japanese/新标日下册/",
           },
+          {
+            text: "新世纪日本语教程",
+            link: "/japanese/新世纪日本语教程/",
+          },
         ],
       },
       { text: "计算机科学", link: "/computer-science/" },
@@ -105,6 +109,7 @@ export default defineUserConfig({
       ],
       "/japanese/全能日语初级下/": "auto",
       "/japanese/新标日下册/": "auto",
+      "/japanese/新世纪标准日本语/": "auto",
       "/japanese/": [
         { text: "日本語 Overview", link: "/japanese/" },
         {
