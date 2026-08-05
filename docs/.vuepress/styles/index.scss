@@ -1,5 +1,36 @@
+html {
+  font-size: 18px;
+}
+
+@media (max-width: 719px) {
+  html {
+    font-size: 17px;
+  }
+}
+
 .vp-home-custom {
   padding: 0 !important;
+}
+
+.vp-navbar-title .logo {
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.vp-navbar-title .title {
+  font-family: "Times New Roman", serif;
+}
+
+.vp-navbar-menu {
+  font-family: "霞鹜文楷等宽", "LXGW WenKai Mono",
+    "Noto Sans Mono CJK SC", monospace;
+}
+
+.vp-navbar-menu .navbar-menu-link,
+.vp-navbar-menu .vp-navbar-menu-group .text {
+  font-size: 17px;
+  font-weight: 500;
 }
 
 .vp-home-custom > .container,
@@ -63,7 +94,7 @@ body:has(.home-dashboard) .vp-navbar button {
   color: inherit;
 }
 
-body:has(.home-dashboard) .vp-footer {
+.vp-footer {
   font-family: "Times New Roman", "Noto Serif SC", serif;
   font-size: 0.9rem;
   font-style: italic;
@@ -72,13 +103,19 @@ body:has(.home-dashboard) .vp-footer {
   border-top-color: rgb(255 255 255 / 7%);
 }
 
+.vp-footer .message,
+.vp-footer .copyright {
+  font: inherit;
+  color: inherit;
+}
+
 html[data-theme="light"] body:has(.home-dashboard) .vp-navbar {
   color: rgb(34 51 58 / 88%);
   background: rgb(244 248 248 / 82%) !important;
   border-bottom-color: rgb(61 89 98 / 12%) !important;
 }
 
-html[data-theme="light"] body:has(.home-dashboard) .vp-footer {
+html[data-theme="light"] .vp-footer {
   color: rgb(43 62 69 / 62%);
   background: #edf3f4;
   border-top-color: rgb(61 89 98 / 12%);
@@ -87,7 +124,7 @@ html[data-theme="light"] body:has(.home-dashboard) .vp-footer {
 html[data-theme="light"] .home-dashboard {
   color: #24333a;
   background:
-    linear-gradient(180deg, rgb(239 247 249 / 50%), rgb(226 238 242 / 60%)),
+    linear-gradient(180deg, rgb(239 247 249 / 40%), rgb(226 238 242 / 50%)),
     url("/images/background_light.png") center / cover no-repeat fixed;
 }
 
@@ -96,7 +133,7 @@ html[data-theme="light"] .home-dashboard::before {
 }
 
 html[data-theme="light"] .home-kicker {
-  background: linear-gradient(100deg, #368aa4 4%, #578f7b 48%, #ae7a30 92%);
+  background: linear-gradient(100deg, #3341bd 4%, #207527 48%, #ae30aa 92%);
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }

@@ -85,7 +85,7 @@ $$
 另一方面
 $$
 \begin{align}
-\langle\vec p|(S-1)(S^\dagger-1)|\vec p'\rangle&=\int\mathrm{d}^3\vec k\,\langle\vec p|S-1|\vec k\rangle\langle\vec k|S-1|\vec p'\rangle\\&=\dfrac{ig\,\tilde\rho(\vec p)\,\tilde\rho(\vec p')^*}{8\pi^2\omega_{\vec p}|1-G(\omega_{\vec p})|^2}\left[-\dfrac{ig}{8\pi^2}\int\dfrac{\mathrm{d}^3\vec k}{\omega_{\vec p'}}\tilde\rho(\vec k)^*\delta(\omega_{\vec p}-\omega_\vec k)\tilde\rho(\vec k)\delta(\omega_{\vec p'}-\omega_\vec k)\right]\\&=\dfrac{ig\,\tilde\rho(\vec p)\,\tilde\rho(\vec p')^*}{8\pi^2\omega_{\vec p}|1-G(\omega_{\vec p})|^2}\delta(\omega_{\vec p}-\omega_{\vec p'})\cdot\left[\dfrac{-ig}{8\pi^2\omega_{\vec p}}\int\mathrm{d}^3\vec k\,|\tilde\rho(\vec k)|^2\delta(\omega_{\vec p}-\omega_{\vec k})\right]
+\langle\vec p|(S-1)(S^\dagger-1)|\vec p'\rangle&=\int\mathrm{d}^3\vec k\,\langle\vec p|S-1|\vec k\rangle\langle\vec k|S-1|\vec p'\rangle\\&=\dfrac{ig\,\tilde\rho(\vec p)\,\tilde\rho(\vec p')^*}{8\pi^2\omega_{\vec p}|1-G(\omega_{\vec p})|^2}\left[-\dfrac{ig}{8\pi^2}\int\dfrac{\mathrm{d}^3\vec k}{\omega_{\vec p'}}\tilde\rho(\vec k)^*\delta(\omega_{\vec p}-\omega_{\vec k})\tilde\rho(\vec k)\delta(\omega_{\vec p'}-\omega_{\vec k})\right]\\&=\dfrac{ig\,\tilde\rho(\vec p)\,\tilde\rho(\vec p')^*}{8\pi^2\omega_{\vec p}|1-G(\omega_{\vec p})|^2}\delta(\omega_{\vec p}-\omega_{\vec p'})\cdot\left[\dfrac{-ig}{8\pi^2\omega_{\vec p}}\int\mathrm{d}^3\vec k\,|\tilde\rho(\vec k)|^2\delta(\omega_{\vec p}-\omega_{\vec k})\right]
 \end{align}
 $$
 比较可得两者互为相反数，因此

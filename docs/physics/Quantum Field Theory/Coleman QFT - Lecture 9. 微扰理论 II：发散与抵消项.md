@@ -68,6 +68,7 @@ $$
   <img src="./pictures/Pasted image 20251203111609.png" width="500">
 </div>
 其中前两个我们已经在Model 1中遇到过了，而第三个为抵消项对应的Wick图。其分别代表的算符为：
+
 $$
 O_1=-ig\int\mathrm{d}^3\vec x\,\mathrm{d}t\,\rho(\vec x)\phi(x)f(t)
 $$
@@ -87,7 +88,7 @@ S=\mathrm{e}^{(2)+(3)}:\mathrm{e}^{(1)}:
 $$
 注意到，当我们计算 $\langle 0|S|0\rangle$ 时，$:e^{(1)}:$ 只有展开的零阶项不为零，因此：
 $$
-\langle0|S|0\rangle=\mathrm{e}^{(2)+(3)}=1
+\langle 0|S|0\rangle=\mathrm{e}^{(2)+(3)}=1
 $$
 即 $(2)+(3)=0$。因此如果我们想要知道基态能量 $E_0$ ，就只需要计算 $O_2$ 就行了。这会在下一节进行演示。现在我们还是集中于S矩阵的计算。
 现在，我们知道了
@@ -96,7 +97,7 @@ S=\;:\mathrm{e}^{(1)}:\;=\;:\exp\left(-ig\int\mathrm{d}^3\vec x\,\mathrm{d}t\,\r
 $$
 使用在[Coleman QFT - Lecture 8. 微扰理论 I：Wick diagram](./Coleman%20QFT%20-%20Lecture%208.%20%E5%BE%AE%E6%89%B0%E7%90%86%E8%AE%BA%20I%EF%BC%9AWick%20diagram.md)中对Model 1一模一样的计算：
 $$
-O_1=-ig\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3/2}\sqrt{2\omega_{\vec p}}}\left(\tilde f(\omega_\vec p)\tilde\rho(\vec p)a_{\vec p}+\tilde f(\omega_{\vec p})^*\tilde\rho(\vec p)^*a_{\vec p}^\dagger\right)
+O_1=-ig\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3/2}\sqrt{2\omega_{\vec p}}}\left(\tilde f(\omega_{\vec p})\tilde\rho(\vec p)a_{\vec p}+\tilde f(\omega_{\vec p})^*\tilde\rho(\vec p)^*a_{\vec p}^\dagger\right)
 $$
 现在，什么是 $\tilde f(\omega_{\vec p})$ ？我们知道对于很大的 $T$，$f(t)$ 接近于一个恒为1的常函数。其傅里叶变换显然为：
 $$

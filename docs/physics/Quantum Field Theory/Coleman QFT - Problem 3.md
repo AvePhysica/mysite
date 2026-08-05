@@ -73,7 +73,7 @@ $$
 $$
 产生-湮灭算符的对易关系为：
 $$
-[a_\vec p,a_{\vec p'}]=[a_\vec p^\dagger,a_{\vec p'}^\dagger]=0,\quad [a_\vec p,a_{\vec p'}^\dagger]=\delta^{(3)}(\vec p-\vec p')
+[a_{\vec p},a_{\vec p'}]=[a_{\vec p}^\dagger,a_{\vec p'}^\dagger]=0,\quad [a_{\vec p},a_{\vec p'}^\dagger]=\delta^{(3)}(\vec p-\vec p')
 $$
 则下面对易子为：
 $$

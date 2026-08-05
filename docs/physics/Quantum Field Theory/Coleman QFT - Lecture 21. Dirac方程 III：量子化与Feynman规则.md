@@ -22,15 +22,15 @@ $$
 $$
 最后一步是Dirac方程的结果。这其实不是很严谨，因为Hamiltonian本身只是一个相空间的泛函，其不要求场量满足真实的运动方程。但对于我们考虑的满足方程的Dirac场，上面的结果仍是正确的。现在，我们来构造满足Dirac方程的旋量场 $\psi(x)$。这一点可以类比标量场，我们只需要将方程的平面波解搭配上对应的产生-湮灭算符即可。这会给出下面的**平面波展开式**：
 $$
-\psi(x)=\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3/2}\sqrt{2E_p}}\sum_{r=1}^2\left[b_\vec p^{(r)}u_\vec p^{(r)}\mathrm{e}^{-ip\cdot x}+c_\vec p^{(r)\dagger} v_\vec p^{(r)}\mathrm{e}^{ip\cdot x}\right]
+\psi(x)=\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3/2}\sqrt{2E_p}}\sum_{r=1}^2\left[b_{\vec p}^{(r)}u_{\vec p}^{(r)}\mathrm{e}^{-ip\cdot x}+c_{\vec p}^{(r)\dagger} v_{\vec p}^{(r)}\mathrm{e}^{ip\cdot x}\right]
 $$
-这里的 $u_\vec p^{(r)}\mathrm{e}^{-ip\cdot x}$ 与 $v_\vec p^{(r)}\mathrm{e}^{ip\cdot x}$ 正是[Coleman QFT - Lecture 20. Dirac方程 II：求解](./Coleman%20QFT%20-%20Lecture%2020.%20Dirac%E6%96%B9%E7%A8%8B%20II%EF%BC%9A%E6%B1%82%E8%A7%A3.md)中得到的平面波解，$r$ 用于标记螺旋度的两个本征态。而湮灭算符 $b_\vec p^{(r)}$ 代表湮灭一个核子，产生算符 $c_\vec p^{(r)}$ 代表产生一个反核子，因此 $\psi(x)$ 会使总的“电荷”减一。类似的，$\psi^\dagger(y)$ 的展开式为：
+这里的 $u_{\vec p}^{(r)}\mathrm{e}^{-ip\cdot x}$ 与 $v_{\vec p}^{(r)}\mathrm{e}^{ip\cdot x}$ 正是[Coleman QFT - Lecture 20. Dirac方程 II：求解](./Coleman%20QFT%20-%20Lecture%2020.%20Dirac%E6%96%B9%E7%A8%8B%20II%EF%BC%9A%E6%B1%82%E8%A7%A3.md)中得到的平面波解，$r$ 用于标记螺旋度的两个本征态。而湮灭算符 $b_{\vec p}^{(r)}$ 代表湮灭一个核子，产生算符 $c_{\vec p}^{(r)}$ 代表产生一个反核子，因此 $\psi(x)$ 会使总的“电荷”减一。类似的，$\psi^\dagger(y)$ 的展开式为：
 $$
-\psi^\dagger(y)=\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3/2}\sqrt{2E_p}}\sum_{r=1}^2\left[b_\vec p^{(r)\dagger}u_\vec p^{(r)\dagger}\mathrm{e}^{ip\cdot y}+c_\vec p^{(r)} v_\vec p^{(r)\dagger}\mathrm{e}^{-ip\cdot y}\right]
+\psi^\dagger(y)=\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3/2}\sqrt{2E_p}}\sum_{r=1}^2\left[b_{\vec p}^{(r)\dagger}u_{\vec p}^{(r)\dagger}\mathrm{e}^{ip\cdot y}+c_{\vec p}^{(r)} v_{\vec p}^{(r)\dagger}\mathrm{e}^{-ip\cdot y}\right]
 $$
-注意这里取厄米共轭的操作产生了两个效果，一是产生-湮灭算符的厄米共轭，二是旋量 $u_\vec p,v_\vec p$ 的复共轭加转置。这可能会产生一些问题，当我们考虑 $[\psi,\psi^\dagger]$ 时，$\psi\psi^\dagger$ 是一个 $4\times 4$ 的矩阵，而 $\psi^\dagger\psi$ 只是一个数，所以这个对易子的定义不是很好。鉴于这种原因，我们单独研究其分量的对易子。先猜测产生-湮灭算符的对易关系。Ansatz：
+注意这里取厄米共轭的操作产生了两个效果，一是产生-湮灭算符的厄米共轭，二是旋量 $u_{\vec p},v_{\vec p}$ 的复共轭加转置。这可能会产生一些问题，当我们考虑 $[\psi,\psi^\dagger]$ 时，$\psi\psi^\dagger$ 是一个 $4\times 4$ 的矩阵，而 $\psi^\dagger\psi$ 只是一个数，所以这个对易子的定义不是很好。鉴于这种原因，我们单独研究其分量的对易子。先猜测产生-湮灭算符的对易关系。Ansatz：
 $$
-[b_\vec p^{(r)},b_{\vec p'}^{(s)\dagger}]=\delta^{rs}\delta^{(3)}(\vec p-\vec p')B(\vec p),\quad [c_\vec p^{(r)\dagger},c_{\vec p'}^{(s)}]=\delta^{rs}\delta^{(3)}(\vec p-\vec p')C(\vec p),\quad\text{其他对易子为零}
+[b_{\vec p}^{(r)},b_{\vec p'}^{(s)\dagger}]=\delta^{rs}\delta^{(3)}(\vec p-\vec p')B(\vec p),\quad [c_{\vec p}^{(r)\dagger},c_{\vec p'}^{(s)}]=\delta^{rs}\delta^{(3)}(\vec p-\vec p')C(\vec p),\quad\text{其他对易子为零}
 $$
 则 $[\psi_a(\vec x,t),\psi_b(\vec y,t)]=[\psi_a^\dagger(\vec x,t),\psi_b^\dagger(\vec y,t)]=0$ 显然成立，而
 $$
@@ -38,9 +38,9 @@ $$
 $$
 利用[Coleman QFT - Lecture 20. Dirac方程 II：求解](./Coleman%20QFT%20-%20Lecture%2020.%20Dirac%E6%96%B9%E7%A8%8B%20II%EF%BC%9A%E6%B1%82%E8%A7%A3.md)中最后一节推导出的完备关系式：
 $$
-\sum_{r=1}^2u_\vec p^{(r)}\bar u_\vec p^{(r)}=p\mkern -8.5mu /+m,\quad \sum_{r=1}^2v_\vec p^{(r)}\bar v_\vec p^{(r)}=p\mkern -8.5mu /-m
+\sum_{r=1}^2u_{\vec p}^{(r)}\bar u_{\vec p}^{(r)}=p\mkern -8.5mu /+m,\quad \sum_{r=1}^2v_{\vec p}^{(r)}\bar v_{\vec p}^{(r)}=p\mkern -8.5mu /-m
 $$
-通过同时右乘 $\gamma^0$ 可以回到 $u_\vec p^\dagger$，因此
+通过同时右乘 $\gamma^0$ 可以回到 $u_{\vec p}^\dagger$，因此
 $$
 \sum_{r=1}^2u_{\vec p\,a}^{(r)} u_{\vec p\, b}^{(r)*}=E_p\delta_{ab}-\vec p\cdot(\vec\gamma\gamma^0)_{ab}+m\gamma^0_{ab},\quad \sum_{r=1}^2v_{\vec p\,a}^{(r)} v_{\vec p\, b}^{(r)*}=E_p\delta_{ab}-\vec p\cdot(\vec\gamma\gamma^0)_{ab}-m\gamma^0_{ab}
 $$
@@ -52,18 +52,18 @@ $$
 $$
 \begin{align}
 H&=\int\mathrm{d}^3\vec x\,\mathcal H=\pm\int\mathrm{d}^3\vec x\,i\psi^\dagger\partial_0\psi\\
-&=\pm\int\mathrm{d}^3\vec x\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3/2}\sqrt{2E_p}}\int\dfrac{\mathrm{d}^3\vec p'}{(2\pi)^{3/2}\sqrt{2E_{p'}}}\sum_{r=1}^2\left[b_\vec p^{(r)\dagger}u_\vec p^{(r)\dagger}\mathrm{e}^{-ip\cdot x}+c_\vec p^{(r)}v_\vec p^{(r)\dagger}\mathrm{e}^{ip\cdot x}\right]\sum_{s=1}^2E_p\left[-b_{\vec p'}^{(s)}u_{\vec p'}^{(s)}\mathrm{e}^{ip'\cdot x}+c_{\vec p'}^{(s)\dagger}v_{\vec p'}^{(s)}\mathrm{e}^{-ip'\cdot x}\right]\\
-&=\pm\int\dfrac{\mathrm{d}^3\vec p}{2E_p}E_p\sum_{r=1}^2 \left(2E_pb_\vec p^{(r)\dagger}b_\vec p^{(r)}-2E_pc_\vec p^{(r)}c_\vec p^{(r)\dagger}\right)\\
-&=\pm\int\mathrm{d}^3\vec p\,E_p\sum_{r=1}^2\left(b_\vec p^{(r)\dagger}b_\vec p^{(r)}-c_\vec p^{(r)}c_\vec p^{(r)\dagger}\right)
+&=\pm\int\mathrm{d}^3\vec x\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3/2}\sqrt{2E_p}}\int\dfrac{\mathrm{d}^3\vec p'}{(2\pi)^{3/2}\sqrt{2E_{p'}}}\sum_{r=1}^2\left[b_{\vec p}^{(r)\dagger}u_{\vec p}^{(r)\dagger}\mathrm{e}^{-ip\cdot x}+c_{\vec p}^{(r)}v_{\vec p}^{(r)\dagger}\mathrm{e}^{ip\cdot x}\right]\sum_{s=1}^2E_p\left[-b_{\vec p'}^{(s)}u_{\vec p'}^{(s)}\mathrm{e}^{ip'\cdot x}+c_{\vec p'}^{(s)\dagger}v_{\vec p'}^{(s)}\mathrm{e}^{-ip'\cdot x}\right]\\
+&=\pm\int\dfrac{\mathrm{d}^3\vec p}{2E_p}E_p\sum_{r=1}^2 \left(2E_pb_{\vec p}^{(r)\dagger}b_{\vec p}^{(r)}-2E_pc_{\vec p}^{(r)}c_{\vec p}^{(r)\dagger}\right)\\
+&=\pm\int\mathrm{d}^3\vec p\,E_p\sum_{r=1}^2\left(b_{\vec p}^{(r)\dagger}b_{\vec p}^{(r)}-c_{\vec p}^{(r)}c_{\vec p}^{(r)\dagger}\right)
 \end{align}
 $$
 其中用到了正交关系式：
 $$
-\bar u_\vec p^{(r)}\gamma^\mu u_\vec p^{(s)}=\bar v_\vec p^{(r)}\gamma^\mu v_\vec p^{(s)}=2p^\mu\delta^{rs}\Rightarrow u_\vec p^{(r)\dagger}u_\vec p^{(r)}=v_\vec p^{(r)\dagger}v_\vec p^{(r)}=2E_p\delta^{rs}
+\bar u_{\vec p}^{(r)}\gamma^\mu u_{\vec p}^{(s)}=\bar v_{\vec p}^{(r)}\gamma^\mu v_{\vec p}^{(s)}=2p^\mu\delta^{rs}\Rightarrow u_{\vec p}^{(r)\dagger}u_{\vec p}^{(r)}=v_{\vec p}^{(r)\dagger}v_{\vec p}^{(r)}=2E_p\delta^{rs}
 $$
 以及
 $$
-\bar u_\vec p^{(r)}\gamma^\mu v_\vec p^{(s)}=\bar v_\vec p^{(r)}\gamma^\mu u_\vec p^{(s)}=0\Rightarrow u_\vec p^{(r)\dagger}v_\vec p^{(r)}=v_\vec p^{(r)\dagger}u_\vec p^{(r)}=0
+\bar u_{\vec p}^{(r)}\gamma^\mu v_{\vec p}^{(s)}=\bar v_{\vec p}^{(r)}\gamma^\mu u_{\vec p}^{(s)}=0\Rightarrow u_{\vec p}^{(r)\dagger}v_{\vec p}^{(r)}=v_{\vec p}^{(r)\dagger}u_{\vec p}^{(r)}=0
 $$
 能量表达式的问题在于其不正定，不论我们选择最前面的正号还是负号。这在物理上是不被允许的。
 
@@ -85,23 +85,23 @@ $$
 $$
 因此要取正号。回到平面波展开式：
 $$
-\psi(x)=\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3/2}\sqrt{2E_p}}\sum_{r=1}^2\left[b_\vec p^{(r)}u_\vec p^{(r)}\mathrm{e}^{-ip\cdot x}+c_\vec p^{(r)\dagger} v_\vec p^{(r)}\mathrm{e}^{ip\cdot x}\right],\quad \psi^\dagger(y)=\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3/2}\sqrt{2E_p}}\sum_{r=1}^2\left[b_\vec p^{(r)\dagger}u_\vec p^{(r)\dagger}\mathrm{e}^{ip\cdot y}+c_\vec p^{(r)} v_\vec p^{(r)\dagger}\mathrm{e}^{-ip\cdot y}\right]
+\psi(x)=\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3/2}\sqrt{2E_p}}\sum_{r=1}^2\left[b_{\vec p}^{(r)}u_{\vec p}^{(r)}\mathrm{e}^{-ip\cdot x}+c_{\vec p}^{(r)\dagger} v_{\vec p}^{(r)}\mathrm{e}^{ip\cdot x}\right],\quad \psi^\dagger(y)=\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3/2}\sqrt{2E_p}}\sum_{r=1}^2\left[b_{\vec p}^{(r)\dagger}u_{\vec p}^{(r)\dagger}\mathrm{e}^{ip\cdot y}+c_{\vec p}^{(r)} v_{\vec p}^{(r)\dagger}\mathrm{e}^{-ip\cdot y}\right]
 $$
 我们发现产生-湮灭算符同样应当满足**反对易关系**而不是对易关系：
 $$
-\{b_\vec p^{(r)},b_{\vec p'}^{(s)\dagger}\}=\delta^{rs}\delta^{(3)}(\vec p-\vec p'),\quad \{c_\vec p^{(r)},c_{\vec p'}^{(s)\dagger}\}=\delta^{rs}\delta^{(3)}(\vec p-\vec p'),\quad\text{其他反对易子为零}
+\{b_{\vec p}^{(r)},b_{\vec p'}^{(s)\dagger}\}=\delta^{rs}\delta^{(3)}(\vec p-\vec p'),\quad \{c_{\vec p}^{(r)},c_{\vec p'}^{(s)\dagger}\}=\delta^{rs}\delta^{(3)}(\vec p-\vec p'),\quad\text{其他反对易子为零}
 $$
 请自行验证正则量子化关系成立。此时的能量表达式为：
 $$
-H=\int\mathrm{d}^3\vec p\,E_p\sum_{r=1}^2\left(b_\vec p^{(r)\dagger}b_\vec p^{(r)}-c_\vec p^{(r)}c_\vec p^{(r)\dagger}\right)=\int\mathrm{d}^3\vec p\,E_p\sum_{r=1}^2\left(b_\vec p^{(r)\dagger}b_\vec p^{(r)}+c_\vec p^{(r)\dagger}c_\vec p^{(r)}-\underbrace{\delta^{(3)}(0)}_{\text{can be discarded}}\right)
+H=\int\mathrm{d}^3\vec p\,E_p\sum_{r=1}^2\left(b_{\vec p}^{(r)\dagger}b_{\vec p}^{(r)}-c_{\vec p}^{(r)}c_{\vec p}^{(r)\dagger}\right)=\int\mathrm{d}^3\vec p\,E_p\sum_{r=1}^2\left(b_{\vec p}^{(r)\dagger}b_{\vec p}^{(r)}+c_{\vec p}^{(r)\dagger}c_{\vec p}^{(r)}-\underbrace{\delta^{(3)}(0)}_{\text{can be discarded}}\right)
 $$
 这个能量表达式就是**正定的**。我们可以验证一下产生-湮灭算符与哈密顿量的对易关系。暂时忽略自旋：
 $$
-[H,b_\vec q]=\left[\int\mathrm{d}^3\vec p\,E_pb_\vec p^\dagger b_\vec p,b_\vec q\right]=\int\mathrm{d}^3\vec p\,E_p\left(b_\vec p^\dagger\{b_\vec p,b_\vec q\}-\{b_\vec p^\dagger,b_\vec q\}b_\vec p\right)=-E_\vec q\,b_\vec q,\quad [H,b_\vec q^\dagger]=E_\vec q\,b_\vec q^\dagger
+[H,b_{\vec q}]=\left[\int\mathrm{d}^3\vec p\,E_pb_{\vec p}^\dagger b_{\vec p},b_{\vec q}\right]=\int\mathrm{d}^3\vec p\,E_p\left(b_{\vec p}^\dagger\{b_{\vec p},b_{\vec q}\}-\{b_{\vec p}^\dagger,b_{\vec q}\}b_{\vec p}\right)=-E_{\vec q}\,b_{\vec q},\quad [H,b_{\vec q}^\dagger]=E_{\vec q}\,b_{\vec q}^\dagger
 $$
 因此一些熟知的作用关系仍不变：
 $$
-b_\vec q|0\rangle=H|0\rangle=0,\quad b_\vec q^\dagger|0\rangle=|\vec q\rangle,\quad H|\vec q\rangle=E_q|\vec q\rangle,\quad \langle\vec q'|\vec q\rangle=\langle 0|b_{\vec q'}b_\vec q|0\rangle=\delta^{(3)}(\vec q-\vec q')
+b_{\vec q}|0\rangle=H|0\rangle=0,\quad b_{\vec q}^\dagger|0\rangle=|\vec q\rangle,\quad H|\vec q\rangle=E_q|\vec q\rangle,\quad \langle\vec q'|\vec q\rangle=\langle 0|b_{\vec q'}b_{\vec q}|0\rangle=\delta^{(3)}(\vec q-\vec q')
 $$
 多粒子态为：
 $$
@@ -174,7 +174,7 @@ $$
 $$
 其中
 $$
-\psi^{(+)}=\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3/2}\sqrt{2E_p}}\sum_{r=1}^2b_\vec p^{(r)}u_\vec p^{(r)}\mathrm{e}^{-ip\cdot x},\quad \psi^{(-)}=\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3/2}\sqrt{2E_p}}\sum_{r=1}^2c_\vec p^{(r)\dagger}v_\vec p^{(r)}\mathrm{e}^{ip\cdot x}
+\psi^{(+)}=\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3/2}\sqrt{2E_p}}\sum_{r=1}^2b_{\vec p}^{(r)}u_{\vec p}^{(r)}\mathrm{e}^{-ip\cdot x},\quad \psi^{(-)}=\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3/2}\sqrt{2E_p}}\sum_{r=1}^2c_{\vec p}^{(r)\dagger}v_{\vec p}^{(r)}\mathrm{e}^{ip\cdot x}
 $$
 这样就完成了时序积与正规序积的定义。可以证明，在这样的定义下，Wick定理仍然成立。在此不做具体证明，可以参考[Coleman QFT - Lecture 8. 微扰理论 I：Wick diagram](./Coleman%20QFT%20-%20Lecture%208.%20%E5%BE%AE%E6%89%B0%E7%90%86%E8%AE%BA%20I%EF%BC%9AWick%20diagram.md)。对于两个旋量场的情况，缩并定义为：
 $$
@@ -195,18 +195,18 @@ $$
 注意这里我把分量角标去掉了。这会导致前面提到的问题，即 $\bar\psi\psi$ 与 $\psi\bar\psi$ 按矩阵乘法来看是阶数不同的矩阵。因此我们规定不论写的顺序如何，上面的式子都代表一个 $4\times 4$ 矩阵， $\psi$ 的分量指标 $a$ 与 $\bar\psi$ 的分量指标 $b$ 构成矩阵元的坐标 $(ab)$。我们就来计算缩并的显式表达式。
 平面波展开式：
 $$
-\psi(x)=\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3/2}\sqrt{2E_p}}\sum_{r=1}^2\left[b_\vec p^{(r)}u_\vec p^{(r)}\mathrm{e}^{-ip\cdot x}+c_\vec p^{(r)\dagger} v_\vec p^{(r)}\mathrm{e}^{ip\cdot x}\right]
+\psi(x)=\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3/2}\sqrt{2E_p}}\sum_{r=1}^2\left[b_{\vec p}^{(r)}u_{\vec p}^{(r)}\mathrm{e}^{-ip\cdot x}+c_{\vec p}^{(r)\dagger} v_{\vec p}^{(r)}\mathrm{e}^{ip\cdot x}\right]
 $$
 $$
-\bar\psi(y)=\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3/2}\sqrt{2E_p}}\sum_{r=1}^2\left[b_\vec p^{(r)\dagger}\bar u_\vec p^{(r)}\mathrm{e}^{ip\cdot y}+c_\vec p^{(r)} \bar v_\vec p^{(r)}\mathrm{e}^{-ip\cdot y}\right]
+\bar\psi(y)=\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3/2}\sqrt{2E_p}}\sum_{r=1}^2\left[b_{\vec p}^{(r)\dagger}\bar u_{\vec p}^{(r)}\mathrm{e}^{ip\cdot y}+c_{\vec p}^{(r)} \bar v_{\vec p}^{(r)}\mathrm{e}^{-ip\cdot y}\right]
 $$
 当 $x^0>y^0$ 时
 $$
-\overset {|\Large \mkern-2mu{}^{\overline{\quad\;\;}}\mkern-3mu\normalsize |}{\psi(x) \bar\psi} (y)=\langle 0|T(\psi(x)\bar\psi(y))|0\rangle=\int\dfrac{\mathrm{d}^3\vec p\,\mathrm{d}^3\vec p'}{(2\pi)^3\sqrt{2E_p}\sqrt{2E_{p'}}}\mathrm{e}^{-ip\cdot x+ip'\cdot y}\sum_{r,s}\langle 0|b_\vec p^{(r)}b_{\vec p'}^{(s)\dagger}|0\rangle u_\vec p^{(r)}\bar u_{\vec p'}^{(s)}
+\overset {|\Large \mkern-2mu{}^{\overline{\quad\;\;}}\mkern-3mu\normalsize |}{\psi(x) \bar\psi} (y)=\langle 0|T(\psi(x)\bar\psi(y))|0\rangle=\int\dfrac{\mathrm{d}^3\vec p\,\mathrm{d}^3\vec p'}{(2\pi)^3\sqrt{2E_p}\sqrt{2E_{p'}}}\mathrm{e}^{-ip\cdot x+ip'\cdot y}\sum_{r,s}\langle 0|b_{\vec p}^{(r)}b_{\vec p'}^{(s)\dagger}|0\rangle u_{\vec p}^{(r)}\bar u_{\vec p'}^{(s)}
 $$
 利用
 $$
-\langle 0|b_\vec p^{(r)}b_{\vec p'}^{(s)\dagger}|0\rangle=\langle 0|\{b_\vec p^{(r)},b_{\vec p'}^{(s)\dagger}\}|0\rangle=\delta^{rs}\delta^{(3)}(\vec p-\vec p'),\quad \sum_r u_\vec p^{(r)}\bar u_\vec p^{(r)}=p\mkern-8.5 mu/+m
+\langle 0|b_{\vec p}^{(r)}b_{\vec p'}^{(s)\dagger}|0\rangle=\langle 0|\{b_{\vec p}^{(r)},b_{\vec p'}^{(s)\dagger}\}|0\rangle=\delta^{rs}\delta^{(3)}(\vec p-\vec p'),\quad \sum_r u_{\vec p}^{(r)}\bar u_{\vec p}^{(r)}=p\mkern-8.5 mu/+m
 $$
 因此
 $$
@@ -273,13 +273,13 @@ $$
 $$
 \begin{align}
 \langle f|S-1|i\rangle&=\langle p',s;q'|(-ig)^2\int\mathrm{d}^4x_1\,\mathrm{d}^4x_2\,:\bar\psi_2\varGamma\overset {|\Large \mkern-2mu{}^{\overline{\quad\;\;}}\mkern-3mu\normalsize |}{\psi_2\phi_2 \bar\psi_1}\varGamma\psi_1\phi_1:|p,r;q\rangle\\
-&=(-ig)^2\int\dfrac{\mathrm{d}^4k}{(2\pi)^4}\mathrm{d}^4x_1\,\mathrm{d}^4x_2\,\mathrm{e}^{i(q'+p')x_2}\mathrm{e}^{-i(q+p)x_1}[\mathrm{e}^{-ik\cdot(x_2-x_1)}\times\bar u_{\vec p'}^{(s)}\varGamma\dfrac{i}{k\mkern-8.5mu/-m+i\epsilon}\varGamma u_\vec p^{(r)}]\\
-&=(-ig)^2(2\pi)^4\delta^{(4)}(p+q-p'-q')\bar u_{\vec p'}^{(s)}\varGamma\dfrac{i}{p\mkern-8.5mu/+q\mkern-8.5mu/-m+i\epsilon}\varGamma u_\vec p^{(r)}
+&=(-ig)^2\int\dfrac{\mathrm{d}^4k}{(2\pi)^4}\mathrm{d}^4x_1\,\mathrm{d}^4x_2\,\mathrm{e}^{i(q'+p')x_2}\mathrm{e}^{-i(q+p)x_1}[\mathrm{e}^{-ik\cdot(x_2-x_1)}\times\bar u_{\vec p'}^{(s)}\varGamma\dfrac{i}{k\mkern-8.5mu/-m+i\epsilon}\varGamma u_{\vec p}^{(r)}]\\
+&=(-ig)^2(2\pi)^4\delta^{(4)}(p+q-p'-q')\bar u_{\vec p'}^{(s)}\varGamma\dfrac{i}{p\mkern-8.5mu/+q\mkern-8.5mu/-m+i\epsilon}\varGamma u_{\vec p}^{(r)}
 \end{align}
 $$
 类似的定义Feynman振幅：
 $$
-\langle f|S-1|i\rangle\equiv(2\pi)^4\delta^{(4)}(p+q-p'-q')\mathcal \,iA_{fi},\quad \mathcal iA_{fi}=(-ig)^2\bar u_{\vec p'}^{(s)}\varGamma\dfrac{i}{p\mkern-8.5mu/+q\mkern-8.5mu/-m+i\epsilon}\varGamma u_\vec p^{(r)}
+\langle f|S-1|i\rangle\equiv(2\pi)^4\delta^{(4)}(p+q-p'-q')\mathcal \,iA_{fi},\quad \mathcal iA_{fi}=(-ig)^2\bar u_{\vec p'}^{(s)}\varGamma\dfrac{i}{p\mkern-8.5mu/+q\mkern-8.5mu/-m+i\epsilon}\varGamma u_{\vec p}^{(r)}
 $$
 此外，我们还能来讨论一下反核子-介子散射，即
 $$
@@ -298,7 +298,7 @@ $$
 这里左右的态指反核子-介子态。现在不同点出现了，原先我们用 $\psi_1$ 湮灭右侧的核子，$\bar\psi_2$ 产生左侧的核子，但现在我们只能用 $\bar\psi_2$ 湮灭右侧的反核子，$\psi_1$
 产生左侧的反核子，因此这两个算符要换位置。这会产生一个额外的 $-1$ 因子。同时，由于现在顶点2负责湮灭，因此中间的动量 $k=-p-q$（你可以写出积分式确认这一点），以及代表核子的旋量 $u$ 用代表反核子的旋量 $v$ 代替。因此这个散射过程的Feynman振幅为：
 $$
-\mathcal iA_{fi}=(-1)\cdot(-ig)^2\bar v_{\vec p'}^{(s)}\varGamma\dfrac{i}{-p\mkern-8.5mu/-q\mkern-8.5mu/-m+i\epsilon}\varGamma v_\vec p^{(r)}
+\mathcal iA_{fi}=(-1)\cdot(-ig)^2\bar v_{\vec p'}^{(s)}\varGamma\dfrac{i}{-p\mkern-8.5mu/-q\mkern-8.5mu/-m+i\epsilon}\varGamma v_{\vec p}^{(r)}
 $$
 在处理标量场时，由于传播子是动量的二次式，因此不用考虑内线动量的正负。但Dirac传播子中，动量的正负会影响到传播子的表达式，因此要更为小心的处理。现在我可以写下旋量场的Feynman规则了。
 
@@ -400,23 +400,23 @@ $$
 $$
 前面的函数与自旋无关。我现在将自旋态显式地写出来：
 $$
-\mathcal A_{sr}=f(E,\theta)\,\bar u_{\vec p'}^{(s)}q\mkern-8.5mu/ u_\vec p^{(r)}
+\mathcal A_{sr}=f(E,\theta)\,\bar u_{\vec p'}^{(s)}q\mkern-8.5mu/ u_{\vec p}^{(r)}
 $$
 注意：对自旋态求和与平均都是指对振幅的模方而不是振幅，也就是说：
 $$
-|\mathcal A|^2=\dfrac12\sum_{r,s}|\mathcal A_{rs}|^2=\dfrac{1}{2}|f(E,\theta)|^2\sum_{r,s}(\bar u_{\vec p'}^{(s)}q\mkern-8.5mu/ u_\vec p^{(r)})^\dagger(\bar u_{\vec p'}^{(s)}q\mkern-8.5mu/ u_\vec p^{(r)})
+|\mathcal A|^2=\dfrac12\sum_{r,s}|\mathcal A_{rs}|^2=\dfrac{1}{2}|f(E,\theta)|^2\sum_{r,s}(\bar u_{\vec p'}^{(s)}q\mkern-8.5mu/ u_{\vec p}^{(r)})^\dagger(\bar u_{\vec p'}^{(s)}q\mkern-8.5mu/ u_{\vec p}^{(r)})
 $$
 利用
 $$
-(\bar u_{\vec p'}^{(s)}q\mkern-8.5mu/ u_\vec p^{(r)})^\dagger=u_\vec p^{(r)\dagger}\gamma^{\mu\dagger}\gamma^{0\dagger}u_{\vec p'}^{(s)}q_\mu=u_\vec p^{(r)\dagger}\gamma^0\gamma^0\gamma^{\mu\dagger}\gamma^0u_{\vec p'}^{(s)}q_\mu=\bar u_{\vec p}^{(r)}q\mkern-8.5mu/ u_{\vec p'}^{(s)}
+(\bar u_{\vec p'}^{(s)}q\mkern-8.5mu/ u_{\vec p}^{(r)})^\dagger=u_{\vec p}^{(r)\dagger}\gamma^{\mu\dagger}\gamma^{0\dagger}u_{\vec p'}^{(s)}q_\mu=u_{\vec p}^{(r)\dagger}\gamma^0\gamma^0\gamma^{\mu\dagger}\gamma^0u_{\vec p'}^{(s)}q_\mu=\bar u_{\vec p}^{(r)}q\mkern-8.5mu/ u_{\vec p'}^{(s)}
 $$
-由 $\bar u_{\vec p'}^{(s)}q\mkern-8.5mu/ u_\vec p^{(r)}$ 是一个纯数，因此其厄米共轭等于Dirac伴随，而 $\gamma^\mu$ 是自伴的，也可得到上面的结果。因此
+由 $\bar u_{\vec p'}^{(s)}q\mkern-8.5mu/ u_{\vec p}^{(r)}$ 是一个纯数，因此其厄米共轭等于Dirac伴随，而 $\gamma^\mu$ 是自伴的，也可得到上面的结果。因此
 $$
-|\mathcal A|^2=\dfrac{1}{2}|f(E,\theta)|^2\sum_{r,s}\bar u_{\vec p}^{(r)}q\mkern-8.5mu/ u_{\vec p'}^{(s)}\bar u_{\vec p'}^{(s)}q\mkern-8.5mu/ u_\vec p^{(r)}
+|\mathcal A|^2=\dfrac{1}{2}|f(E,\theta)|^2\sum_{r,s}\bar u_{\vec p}^{(r)}q\mkern-8.5mu/ u_{\vec p'}^{(s)}\bar u_{\vec p'}^{(s)}q\mkern-8.5mu/ u_{\vec p}^{(r)}
 $$
 接下来怎么办呢？一个技巧来源于Feynman：上面是两个二次型相乘，最后是一个数。我们可以交换一下其乘法的顺序，最后求迹，仍会得到原来的结果。即
 $$
-\sum_{r,s}\bar u_{\vec p}^{(r)}q\mkern-8.5mu/ u_{\vec p'}^{(s)}\bar u_{\vec p'}^{(s)}q\mkern-8.5mu/ u_\vec p^{(r)}=\mathrm{Tr}\left(\sum_{r,s}q\mkern-8.5mu/ u_{\vec p'}^{(s)}\bar u_{\vec p'}^{(s)}q\mkern-8.5mu/ u_\vec p^{(r)}\bar u_{\vec p}^{(r)}\right)=\mathrm{Tr}(q\mkern-8.5mu/(p\mkern-8.5mu/+m)q\mkern-8.5mu/(p\mkern-8.5mu/'+m))
+\sum_{r,s}\bar u_{\vec p}^{(r)}q\mkern-8.5mu/ u_{\vec p'}^{(s)}\bar u_{\vec p'}^{(s)}q\mkern-8.5mu/ u_{\vec p}^{(r)}=\mathrm{Tr}\left(\sum_{r,s}q\mkern-8.5mu/ u_{\vec p'}^{(s)}\bar u_{\vec p'}^{(s)}q\mkern-8.5mu/ u_{\vec p}^{(r)}\bar u_{\vec p}^{(r)}\right)=\mathrm{Tr}(q\mkern-8.5mu/(p\mkern-8.5mu/+m)q\mkern-8.5mu/(p\mkern-8.5mu/'+m))
 $$
 第二步用了完备性关系。我们在[Coleman QFT - Problem 11](./Coleman%20QFT%20-%20Problem%2011.md)中推导了 $a\mkern-9.5mu /$ 的乘积的迹如何求解，有结论：
 $$

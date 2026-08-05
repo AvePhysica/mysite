@@ -39,7 +39,7 @@ P:\psi(\vec x,t)\to \mathrm{e}^{i\eta_p}\beta\psi(-\vec x,t),\quad \phi(\vec x,t
 $$
 下面，宇称对具体粒子的作用又是什么？考虑旋量场的展开：
 $$
-\psi(x)=\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3/2}\sqrt{2E_p}}\sum_{r=1}^2\left[b_\vec p^{(r)}u_\vec p^{(r)}\mathrm{e}^{-ip\cdot x}+c_\vec p^{(r)\dagger} v_\vec p^{(r)}\mathrm{e}^{ip\cdot x}\right]
+\psi(x)=\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3/2}\sqrt{2E_p}}\sum_{r=1}^2\left[b_{\vec p}^{(r)}u_{\vec p}^{(r)}\mathrm{e}^{-ip\cdot x}+c_{\vec p}^{(r)\dagger} v_{\vec p}^{(r)}\mathrm{e}^{ip\cdot x}\right]
 $$
 因此
 $$
@@ -47,18 +47,18 @@ $$
 $$
 旋量在宇称变换下的性质为：
 $$
-\beta u_\vec p^{(r)}=u_{-\vec p}^{(r)},\quad \beta v_\vec p^{(r)}=-v_{-\vec p}^{(r)}
+\beta u_{\vec p}^{(r)}=u_{-\vec p}^{(r)},\quad \beta v_{\vec p}^{(r)}=-v_{-\vec p}^{(r)}
 $$
 因此
 $$
 \beta\psi(-\vec x,t)=\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3/2}\sqrt{2E_p}}\sum_{r=1}^2\left[b_{-\vec p}^{(r)}u_{\vec p}^{(r)}\mathrm{e}^{-ip\cdot x}-c_{-\vec p}^{(r)\dagger} v_{\vec p}^{(r)}\mathrm{e}^{ip\cdot x}\right]
 $$
-也就是说，宇称对应的幺正算符对 $b_\vec p,c_\vec p^\dagger$ 的作用为：
+也就是说，宇称对应的幺正算符对 $b_{\vec p},c_{\vec p}^\dagger$ 的作用为：
 
 $$
-P:\,b_\vec p^{(r)}\to b_{-\vec p}^{(r)},\quad c_\vec p^{(r)\dagger}\to -c_{-\vec p}^{(r)\dagger}
+P:\,b_{\vec p}^{(r)}\to b_{-\vec p}^{(r)},\quad c_{\vec p}^{(r)\dagger}\to -c_{-\vec p}^{(r)\dagger}
 $$
-取共轭可以得到对 $b^\dagger_\vec p,c_\vec p$ 的作用是类似的。这说明了粒子与反粒子具有相反的宇称，这一点已经在实验上得到验证。考虑核反应：
+取共轭可以得到对 $b^\dagger_{\vec p},c_{\vec p}$ 的作用是类似的。这说明了粒子与反粒子具有相反的宇称，这一点已经在实验上得到验证。考虑核反应：
 $$
 p+\bar p\to\begin{cases}
 \pi^++\pi^-\\
@@ -90,7 +90,7 @@ U_C^\dagger(a\phi_1+b\phi_2)U_C=aU_C^\dagger \phi_1 U_C+bU_C^\dagger \phi_2U_C
 $$
 但是复共轭操作是反线性的，其会将系数也取复共轭。电荷共轭真正的作用是交换粒子与反粒子：
 $$
-C:b_\vec p\leftrightarrow c_\vec p,\quad b_\vec p^\dagger\leftrightarrow c_\vec p^\dagger
+C:b_{\vec p}\leftrightarrow c_{\vec p},\quad b_{\vec p}^\dagger\leftrightarrow c_{\vec p}^\dagger
 $$
 你可以显式地写出展开式验证：
 $$
@@ -174,18 +174,18 @@ $$
 
 现在，我们正式开始研究Dirac理论中电荷共轭的作用。我们已经证明，在Majorana基底下，通过将电荷共轭的作用取为 $\psi\leftrightarrow \psi^*$，则这是一个对称性。那么，具体到平面波展开式中：
 $$
-\psi(x)=\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3/2}\sqrt{2E_p}}\sum_{r=1}^2\left[b_\vec p^{(r)}u_\vec p^{(r)}\mathrm{e}^{-ip\cdot x}+c_\vec p^{(r)\dagger} v_\vec p^{(r)}\mathrm{e}^{ip\cdot x}\right]
+\psi(x)=\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3/2}\sqrt{2E_p}}\sum_{r=1}^2\left[b_{\vec p}^{(r)}u_{\vec p}^{(r)}\mathrm{e}^{-ip\cdot x}+c_{\vec p}^{(r)\dagger} v_{\vec p}^{(r)}\mathrm{e}^{ip\cdot x}\right]
 $$
 $$
-\psi^*(x)=\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3/2}\sqrt{2E_p}}\sum_{r=1}^2\left[b_\vec p^{(r)\dagger}u_\vec p^{(r)*}\mathrm{e}^{ip\cdot x}+c_\vec p^{(r)} v_\vec p^{(r)*}\mathrm{e}^{-ip\cdot x}\right]
+\psi^*(x)=\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3/2}\sqrt{2E_p}}\sum_{r=1}^2\left[b_{\vec p}^{(r)\dagger}u_{\vec p}^{(r)*}\mathrm{e}^{ip\cdot x}+c_{\vec p}^{(r)} v_{\vec p}^{(r)*}\mathrm{e}^{-ip\cdot x}\right]
 $$
 当然，电荷共轭的标准作用是：
 $$
-C:b_\vec p\leftrightarrow c_\vec p,\quad b_\vec p^\dagger\leftrightarrow c_\vec p^\dagger
+C:b_{\vec p}\leftrightarrow c_{\vec p},\quad b_{\vec p}^\dagger\leftrightarrow c_{\vec p}^\dagger
 $$
 但看上去还是有些不一样，现在的问题就是
 $$
-u_{\vec p}^{(r)*}\overset{?}=v_\vec p^{(r)}
+u_{\vec p}^{(r)*}\overset{?}=v_{\vec p}^{(r)}
 $$
 是否成立。如果成立，则两种定义电荷共轭的方法就是等价的。由于Lorentz boost和复共轭是对易的，因此我们只需要证明
 $$
@@ -269,11 +269,11 @@ $$
 因此要求光子场在电荷共轭下反号。这里也能体现电荷共轭与复共轭的区别，因为 $A_\mu$ 是一个实矢量场。
 考虑电荷共轭的本征态是有趣的，由于其能交换粒子与反粒子，因此取这个态为一个粒子与一个反粒子构成的态，其一般形式可以写为：
 $$
-|\psi\rangle=\int\mathrm{d}^3\vec p\,\mathrm{d}^3\vec p'\sum_{r,s}f_{rs}(\vec p,\vec p')b_\vec p^{(r)\dagger}c_{\vec p'}^{(s)\dagger}|0\rangle
+|\psi\rangle=\int\mathrm{d}^3\vec p\,\mathrm{d}^3\vec p'\sum_{r,s}f_{rs}(\vec p,\vec p')b_{\vec p}^{(r)\dagger}c_{\vec p'}^{(s)\dagger}|0\rangle
 $$
 则
 $$
-U_C|\psi\rangle=\int\mathrm{d}^3\vec p\,\mathrm{d}^3\vec p'\sum_{r,s}f_{rs}(\vec p,\vec p')c_\vec p^{(r)\dagger}b_{\vec p'}^{(s)\dagger}|0\rangle=-\int\mathrm{d}^3\vec p\,\mathrm{d}^3\vec p'\sum_{r,s}f_{sr}(\vec p',\vec p)b_{\vec p}^{(r)\dagger}c_{\vec p'}^{(s)\dagger}|0\rangle
+U_C|\psi\rangle=\int\mathrm{d}^3\vec p\,\mathrm{d}^3\vec p'\sum_{r,s}f_{rs}(\vec p,\vec p')c_{\vec p}^{(r)\dagger}b_{\vec p'}^{(s)\dagger}|0\rangle=-\int\mathrm{d}^3\vec p\,\mathrm{d}^3\vec p'\sum_{r,s}f_{sr}(\vec p',\vec p)b_{\vec p}^{(r)\dagger}c_{\vec p'}^{(s)\dagger}|0\rangle
 $$
 这里交换了指标 $r,s$ 与积分变量 $\vec p,\vec p'$。为了使 $|\psi\rangle$ 是电荷共轭的本征态（本征值为 $\pm 1$ ），对系数 $f_{rs}(\vec p,\vec p')$ 的要求为：
 $$
@@ -342,28 +342,28 @@ $$
 因此是不变的。其他二次型的变换性质同样可以得到。
 接下来，来看平面波展开式：
 $$
-\psi(x)=\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3/2}\sqrt{2E_p}}\sum_{r=1}^2\left[b_\vec p^{(r)}u_\vec p^{(r)}\mathrm{e}^{-ip\cdot x}+c_\vec p^{(r)\dagger} v_\vec p^{(r)}\mathrm{e}^{ip\cdot x}\right]
+\psi(x)=\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3/2}\sqrt{2E_p}}\sum_{r=1}^2\left[b_{\vec p}^{(r)}u_{\vec p}^{(r)}\mathrm{e}^{-ip\cdot x}+c_{\vec p}^{(r)\dagger} v_{\vec p}^{(r)}\mathrm{e}^{ip\cdot x}\right]
 $$
 $$
-\psi(x)=-i\gamma_5\varOmega_{PT}^{-1}\psi(-x)\varOmega_{PT}=\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3/2}\sqrt{2E_p}}\sum_{r=1}^2\left[(\varOmega_{PT}^{-1}\,b_\vec p^{(r)}\varOmega_{PT})\,(-i\gamma_5u_\vec p^{(r)*})\mathrm{e}^{-ip\cdot x}+\cdots\right]
+\psi(x)=-i\gamma_5\varOmega_{PT}^{-1}\psi(-x)\varOmega_{PT}=\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3/2}\sqrt{2E_p}}\sum_{r=1}^2\left[(\varOmega_{PT}^{-1}\,b_{\vec p}^{(r)}\varOmega_{PT})\,(-i\gamma_5u_{\vec p}^{(r)*})\mathrm{e}^{-ip\cdot x}+\cdots\right]
 $$
 先只看前面这个部分，由于
 $$
-(p\mkern-8.5mu/-m)(i\gamma_5u_\vec p^{(r)*})=0
+(p\mkern-8.5mu/-m)(i\gamma_5u_{\vec p}^{(r)*})=0
 $$
-（ $u_\vec p^*\sim v_\vec p,\,\{\gamma^\mu,\gamma_5\}=0$ ），因此 $i\gamma_5u_\vec p^{(r)*}$ 一定还是 $u$。实际上，由于 $L_z$ 是两个gamma矩阵的乘积，故与 $i\gamma_5$ 对易，因此
+（ $u_{\vec p}^*\sim v_{\vec p},\,\{\gamma^\mu,\gamma_5\}=0$ ），因此 $i\gamma_5u_{\vec p}^{(r)*}$ 一定还是 $u$。实际上，由于 $L_z$ 是两个gamma矩阵的乘积，故与 $i\gamma_5$ 对易，因此
 $$
-L_z(i\gamma_5 u_\vec p^{(1)*})=i\gamma_5 L_z v_\vec p^{(1)}=-\dfrac12(i\gamma_5 u_\vec p^{(1)*})
+L_z(i\gamma_5 u_{\vec p}^{(1)*})=i\gamma_5 L_z v_{\vec p}^{(1)}=-\dfrac12(i\gamma_5 u_{\vec p}^{(1)*})
 $$
-因此 $i\gamma_5 u_\vec p^{(1)*}= u_\vec p^{(2)}$，即 $PT$ 会改变粒子的自旋（这是期望的结果），但不会交换粒子与反粒子。当然，还有可能差一个相位。具体的求解表明：
+因此 $i\gamma_5 u_{\vec p}^{(1)*}= u_{\vec p}^{(2)}$，即 $PT$ 会改变粒子的自旋（这是期望的结果），但不会交换粒子与反粒子。当然，还有可能差一个相位。具体的求解表明：
 $$
-i\gamma_5 u_\vec p^{(1)*}= u_\vec p^{(2)},\quad i\gamma_5 u_\vec p^{(2)*}= -u_\vec p^{(1)}
+i\gamma_5 u_{\vec p}^{(1)*}= u_{\vec p}^{(2)},\quad i\gamma_5 u_{\vec p}^{(2)*}= -u_{\vec p}^{(1)}
 $$
 这样，为了使上面的展开关系成立，产生-湮灭算符的变换即为：
 $$
-\varOmega_{PT}^{-1}\,b_\vec p^{(1)}\varOmega_{PT}=b_\vec p^{(2)},\quad \varOmega_{PT}^{-1}\,b_\vec p^{(2)}\varOmega_{PT}=-b_\vec p^{(1)}
+\varOmega_{PT}^{-1}\,b_{\vec p}^{(1)}\varOmega_{PT}=b_{\vec p}^{(2)},\quad \varOmega_{PT}^{-1}\,b_{\vec p}^{(2)}\varOmega_{PT}=-b_{\vec p}^{(1)}
 $$
-$c_\vec p^{(r)}$ 的变换同理。
+$c_{\vec p}^{(r)}$ 的变换同理。
 
 ## 22.5 Fermi场的CPT定理
 
@@ -422,7 +422,7 @@ $$
 $$
 我们前面已经知道 $\gamma_5 u$ 其实是 $v$ ，因此其的确将粒子变成了反粒子。实际上，真正的CPT变换和这个Lorentz变换有一个负号的差别：
 $$
-CPT: u_\vec p^{(r)}\to i\gamma_5 u_\vec p^{(r)},\quad \bar u_\vec p^{(r)}\to \bar u_\vec p^{(r)}i\gamma_5
+CPT: u_{\vec p}^{(r)}\to i\gamma_5 u_{\vec p}^{(r)},\quad \bar u_{\vec p}^{(r)}\to \bar u_{\vec p}^{(r)}i\gamma_5
 $$
 因此
 $$

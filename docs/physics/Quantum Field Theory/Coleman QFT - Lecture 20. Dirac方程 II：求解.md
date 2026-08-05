@@ -71,15 +71,15 @@ i\partial_0\psi+i\vec\alpha\cdot\nabla\psi=\beta m\psi
 $$
 由于其描述的是自由的质量为 $m$ 的粒子，我们自然会猜测平面波解。首先，我们猜测指数上带负号的**正频率解**：
 $$
-\psi(\vec x,t)=u_\vec p\,\mathrm{e}^{-ip\cdot x}
+\psi(\vec x,t)=u_{\vec p}\,\mathrm{e}^{-ip\cdot x}
 $$
-注意不要混淆其与[Coleman QFT - Lecture 19. Dirac方程 I：构造拉格朗日量](./Coleman%20QFT%20-%20Lecture%2019.%20Dirac%E6%96%B9%E7%A8%8B%20I%EF%BC%9A%E6%9E%84%E9%80%A0%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E9%87%8F.md)中求解Weyl方程时的 $u_\vec p$，现在的 $u_\vec p$ 是四分量的列向量。后面我们会说明，Dirac方程可以推出质量为 $m$ 的Klein-Gordan方程，因此平面波的波矢应当处在质壳上，即
+注意不要混淆其与[Coleman QFT - Lecture 19. Dirac方程 I：构造拉格朗日量](./Coleman%20QFT%20-%20Lecture%2019.%20Dirac%E6%96%B9%E7%A8%8B%20I%EF%BC%9A%E6%9E%84%E9%80%A0%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E9%87%8F.md)中求解Weyl方程时的 $u_{\vec p}$，现在的 $u_{\vec p}$ 是四分量的列向量。后面我们会说明，Dirac方程可以推出质量为 $m$ 的Klein-Gordan方程，因此平面波的波矢应当处在质壳上，即
 $$
 E_p=\sqrt{\vec p^2+m^2}
 $$
 则Dirac方程变为：
 $$
-[E_p-\vec \alpha\cdot\vec p\,]u_\vec p=\beta mu_\vec p
+[E_p-\vec \alpha\cdot\vec p\,]u_{\vec p}=\beta mu_{\vec p}
 $$
 首先，我们考虑静止粒子( $\vec p=0$ )，则
 $$
@@ -95,7 +95,7 @@ u_0^{(1)}=\sqrt{2m}\begin{pmatrix}
 $$
 这里前面的系数 $\sqrt{2m}$ 的作用在后面会显现出来。那么，动量不为零的解又是什么呢？我们不需要直接求解Dirac方程，而是对上面的解施加boost即可。
 $$
-u_\vec p^{(r)}=\mathrm{e}^{-i\hat a\cdot\vec M\phi}u_0^{(r)}=\mathrm{e}^{\frac12\vec\alpha\cdot\hat a\phi}u_0^{(r)}
+u_{\vec p}^{(r)}=\mathrm{e}^{-i\hat a\cdot\vec M\phi}u_0^{(r)}=\mathrm{e}^{\frac12\vec\alpha\cdot\hat a\phi}u_0^{(r)}
 $$
 其中 $$\hat a=\dfrac{\vec p}{|\vec p|},\quad \cosh\phi=\dfrac{E_p}{m}$$为了简单起见，考虑沿 $z$ 轴的动量，由于
 $$
@@ -135,11 +135,11 @@ $$
 这正是能动量的Lorentz变换。
 接下来，我们来看另一部分，关于**负频率**的平面波解，即
 $$
-\psi(\vec x,t)=v_\vec p\mathrm{e}^{+ip\cdot x},\quad p^0=E_p=\sqrt{\vec p^2+m^2}
+\psi(\vec x,t)=v_{\vec p}\mathrm{e}^{+ip\cdot x},\quad p^0=E_p=\sqrt{\vec p^2+m^2}
 $$
 代入Dirac方程得到：
 $$
-[E_p-\vec\alpha\cdot\vec p\,]v_\vec p=-\beta mv_\vec p
+[E_p-\vec\alpha\cdot\vec p\,]v_{\vec p}=-\beta mv_{\vec p}
 $$
 应用相同的流程。对于零动量 $\vec p=0$ 情形：
 $$
@@ -425,35 +425,35 @@ $$
 $$
 这可以用gamma矩阵表示为
 $$
-\bar u_\vec p^{(r)}\gamma^\mu u_\vec p^{(s)}=\bar v_\vec p^{(r)}\gamma^\mu v_\vec p^{(s)}=2p^\mu\delta^{rs}
+\bar u_{\vec p}^{(r)}\gamma^\mu u_{\vec p}^{(s)}=\bar v_{\vec p}^{(r)}\gamma^\mu v_{\vec p}^{(s)}=2p^\mu\delta^{rs}
 $$
 将其与 $p_\mu$ 做内积得到：
 $$
-\bar u_\vec p^{(r)}p\mkern-8.5mu/ u_\vec p^{(s)}=\bar v_\vec p^{(r)}p\mkern-8.5mu/ v_\vec p^{(s)}=2m^2\delta^{rs}
+\bar u_{\vec p}^{(r)}p\mkern-8.5mu/ u_{\vec p}^{(s)}=\bar v_{\vec p}^{(r)}p\mkern-8.5mu/ v_{\vec p}^{(s)}=2m^2\delta^{rs}
 $$
 利用Dirac方程：
 $$
-(p\mkern-8.5mu/-m)u_\vec p^{(r)}=0,\quad (p\mkern-8.5mu/+m)v_\vec p^{(s)}=0
+(p\mkern-8.5mu/-m)u_{\vec p}^{(r)}=0,\quad (p\mkern-8.5mu/+m)v_{\vec p}^{(s)}=0
 $$
 得到
 $$
-\bar u_\vec p^{(r)}u_\vec p^{(s)}=2m\delta^{rs},\quad \bar v_\vec p^{(r)}v_\vec p^{(s)}=-2m\delta^{rs}
+\bar u_{\vec p}^{(r)}u_{\vec p}^{(s)}=2m\delta^{rs},\quad \bar v_{\vec p}^{(r)}v_{\vec p}^{(s)}=-2m\delta^{rs}
 $$
-那混合积 $\bar v_\vec p^{(r)}u_\vec p^{(s)}$ 和 $\bar u_\vec p^{(r)}v_\vec p^{(s)}$ 呢？利用
+那混合积 $\bar v_{\vec p}^{(r)}u_{\vec p}^{(s)}$ 和 $\bar u_{\vec p}^{(r)}v_{\vec p}^{(s)}$ 呢？利用
 $$
-m\bar u_\vec p^{(r)}v_\vec p^{(s)}=\bar u_\vec p^{(r)}p\mkern-8.5mu /v_\vec p^{(s)}=\bar u_\vec p^{(r)}(-m)v_\vec p^{(s)}\Rightarrow \bar u_\vec p^{(r)}v_\vec p^{(s)}=0
+m\bar u_{\vec p}^{(r)}v_{\vec p}^{(s)}=\bar u_{\vec p}^{(r)}p\mkern-8.5mu /v_{\vec p}^{(s)}=\bar u_{\vec p}^{(r)}(-m)v_{\vec p}^{(s)}\Rightarrow \bar u_{\vec p}^{(r)}v_{\vec p}^{(s)}=0
 $$
 因此
 $$
-\bar u_\vec p^{(r)}v_\vec p^{(s)}=\bar u_\vec p^{(r)}\gamma^\mu v_\vec p^{(s)}=\bar v_\vec p^{(r)}u_\vec p^{(s)}=\bar v_\vec p^{(r)}\gamma^\mu u_\vec p^{(s)}=0
+\bar u_{\vec p}^{(r)}v_{\vec p}^{(s)}=\bar u_{\vec p}^{(r)}\gamma^\mu v_{\vec p}^{(s)}=\bar v_{\vec p}^{(r)}u_{\vec p}^{(s)}=\bar v_{\vec p}^{(r)}\gamma^\mu u_{\vec p}^{(s)}=0
 $$
 这样，我们知道四个平面波解是**Dirac正交**的。接下来研究完备性，考虑下面的定义：
 $$
-P_u\equiv\dfrac{1}{2m}\sum_{r=1}^2u_\vec p^{(r)}\bar u_\vec p^{(r)},\quad P_v\equiv\dfrac{1}{2m}\sum_{r=1}^2v_\vec p^{(r)}\bar v_\vec p^{(r)}
+P_u\equiv\dfrac{1}{2m}\sum_{r=1}^2u_{\vec p}^{(r)}\bar u_{\vec p}^{(r)},\quad P_v\equiv\dfrac{1}{2m}\sum_{r=1}^2v_{\vec p}^{(r)}\bar v_{\vec p}^{(r)}
 $$
 可验证：
 $$
-P_u u_\vec p^{(s)}=\dfrac{1}{2m}\sum_{r=1}^2u_\vec p^{(r)}\underbrace{\bar u_\vec p^{(r)}u_\vec p^{(s)}}_{2m\delta^{rs}}=u_\vec p^{(s)},\quad P_u v_\vec p^{(s)}=0,\quad P_v u_{\vec p}^{(s)}=0,P_v v_\vec p^{(s)}=v_\vec p^{(s)}
+P_u u_{\vec p}^{(s)}=\dfrac{1}{2m}\sum_{r=1}^2u_{\vec p}^{(r)}\underbrace{\bar u_{\vec p}^{(r)}u_{\vec p}^{(s)}}_{2m\delta^{rs}}=u_{\vec p}^{(s)},\quad P_u v_{\vec p}^{(s)}=0,\quad P_v u_{\vec p}^{(s)}=0,P_v v_{\vec p}^{(s)}=v_{\vec p}^{(s)}
 $$
 因此 $P_u,P_v$ 称为**旋量投影算符**。具体计算表明：
 $$

@@ -249,7 +249,7 @@ $$
 $$
 原先连续谱下用于归一化的 $(2\pi)^{-3/2}$ 现在被替换为了 $V^{-1/2}$。我们来验证一下等时对易子：
 $$
-[\phi(\vec x,t),\dot\phi(\vec y,t)]=\sum_{\vec p}\dfrac{1}{V}\cdot\dfrac{1}{2E_\vec p}\left(\mathrm{e}^{-i\vec p\cdot(\vec x-\vec y)}+\mathrm{e}^{i\vec p\cdot(\vec x-\vec y)}\right)\cdot iE_\vec p=\dfrac{i}{V}\sum_\vec p\mathrm{e}^{i\vec p\cdot(\vec x-\vec y)}=i\delta^{(3)}(\vec x-\vec y)
+[\phi(\vec x,t),\dot\phi(\vec y,t)]=\sum_{\vec p}\dfrac{1}{V}\cdot\dfrac{1}{2E_{\vec p}}\left(\mathrm{e}^{-i\vec p\cdot(\vec x-\vec y)}+\mathrm{e}^{i\vec p\cdot(\vec x-\vec y)}\right)\cdot iE_{\vec p}=\dfrac{i}{V}\sum_{\vec p}\mathrm{e}^{i\vec p\cdot(\vec x-\vec y)}=i\delta^{(3)}(\vec x-\vec y)
 $$
 最后一步即离散表象下的完备性关系。
 现在，我们正式进入散射。跃迁概率为：

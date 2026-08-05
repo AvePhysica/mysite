@@ -125,7 +125,7 @@ $$
 \begin{align}
 \langle 0|\psi(x)\bar\psi(y)|0\rangle&=\sum_r\int\dfrac{\mathrm{d}^3q}{(2\pi)^32E_q}\mathrm{e}^{-iq\cdot(x-y)}\langle 0|\psi'(0)|q,r\rangle\langle q,r|\bar\psi'(0)|0\rangle
 +\sum_{|n\rangle}\mkern-6.5mm\int\;\,\mathrm{e}^{-iP_n\cdot(x-y)}\langle 0|\psi'(0)|n\rangle\langle n|\bar\psi'(0)|0\rangle\\
-&=\sum_r\int\dfrac{\mathrm{d}^3q}{(2\pi)^32E_q}\mathrm{e}^{-iq\cdot(x-y)}u_\vec q^{(r)}\bar u_\vec q^{(r)}+\int\mathrm{d}^4p\,\mathrm{e}^{-ip\cdot(x-y)}\sum_{|n\rangle}\mkern-6.5mm\int\;\,\delta^{(4)}(p-P_n)\langle 0|\psi'(0)|n\rangle\langle n|\bar\psi'(0)|0\rangle\\
+&=\sum_r\int\dfrac{\mathrm{d}^3q}{(2\pi)^32E_q}\mathrm{e}^{-iq\cdot(x-y)}u_{\vec q}^{(r)}\bar u_{\vec q}^{(r)}+\int\mathrm{d}^4p\,\mathrm{e}^{-ip\cdot(x-y)}\sum_{|n\rangle}\mkern-6.5mm\int\;\,\delta^{(4)}(p-P_n)\langle 0|\psi'(0)|n\rangle\langle n|\bar\psi'(0)|0\rangle\\
 &=\int\dfrac{\mathrm{d}^3q}{(2\pi)^32E_q}\mathrm{e}^{-iq\cdot(x-y)}(q\mkern-8.5mu/+m)+\int\dfrac{\mathrm{d}^4p}{(2\pi)^3}\mathrm{e}^{-ip\cdot(x-y)}[\sigma_+(p^2)\theta(p^0)(p\mkern-8.5mu/+m)+\sigma_-(p^2)\theta(p^0)(p\mkern-8.5mu/-m)]\\
 &=(i\partial\mkern-9mu/_x+m)\Delta_+(x-y)+\int_0^\infty\mathrm{d}a^2\,\left[\sigma_+(a^2)(i\partial\mkern-9mu/_x+a)\Delta_+(x-y,a^2)+\sigma_-(a^2)(i\partial\mkern-9mu/_x-a)\Delta_+(x-y,a^2)\right]
 \end{align}

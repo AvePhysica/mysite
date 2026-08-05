@@ -373,7 +373,7 @@ $$
 $$
 H_m+H_e\ge H,\quad V_m+V_e\ge V
 $$
-此外，由于此环路包含在 $E+E_\min$ 中，因此 $E$ 与 $E_\min$ 在这条环路上的边**共享相同边界**。由于 $E_\min$ 是最小权重链，因此
+此外，由于此环路包含在 $E+E_{\min}$ 中，因此 $E$ 与 $E_{\min}$ 在这条环路上的边**共享相同边界**。由于 $E_{\min}$ 是最小权重链，因此
 $$
 \left(\dfrac{p}{1-p}\right)^{H_e}\left(\dfrac{q}{1-q}\right)^{V_{e}}\le \left(\dfrac{p}{1-p}\right)^{H_m}\left(\dfrac{q}{1-q}\right)^{V_{m}}
 $$
@@ -381,7 +381,7 @@ $$
 $$
 \left(\dfrac{p}{1-p}\right)^{H_e}\left(\dfrac{q}{1-q}\right)^{V_{e}}\le\left[\left(\dfrac{p}{1-p}\right)^{H}\left(\dfrac{q}{1-q}\right)^{V}\right]^{1/2}
 $$
-现在来看 $\mathrm{Prob}(H,V)$，代表一条有 $H$ 条横向链与 $V$ 条纵向链的闭链被包含在 $E+E_\min$ 中的概率。这条链上被 $E$ 占据的方式数有 $2^{H+V}$ 种（每条边占据或不占据），一种位形对应的概率为：
+现在来看 $\mathrm{Prob}(H,V)$，代表一条有 $H$ 条横向链与 $V$ 条纵向链的闭链被包含在 $E+E_{\min}$ 中的概率。这条链上被 $E$ 占据的方式数有 $2^{H+V}$ 种（每条边占据或不占据），一种位形对应的概率为：
 $$
 p^{H_e}(1-p)^{H-H_e}q^{V_e}(1-q)^{V-V_e}=(1-p)^H(1-q)^V\left(\dfrac{p}{1-p}\right)^{H_e}\left(\dfrac{q}{1-q}\right)^{V_{e}}
 $$
@@ -389,7 +389,7 @@ $$
 $$
 \mathrm{Prob}(H,V)\le 2^{H+V}(\tilde p^H\tilde q^V)^{1/2},\quad \tilde p=p(1-p),\;\tilde q=q(1-q)
 $$
-现在，我们可以通过计数全体 $(H,V)$ 的闭路径条数，来确定 $E+E_\min$ 包含一条 $(H,V)$ 的概率。因为我们最终要给出一个出现一条非平凡环路的概率。此外，我们还要加一个额外的限制：此闭路径必须是**自回避的**(self-avoiding walks, SAW's)。这是因为对于一条非自回避路径，我们总可以去掉那些平凡环路使得其变为SAW，且不改变其同调性质。
+现在，我们可以通过计数全体 $(H,V)$ 的闭路径条数，来确定 $E+E_{\min}$ 包含一条 $(H,V)$ 的概率。因为我们最终要给出一个出现一条非平凡环路的概率。此外，我们还要加一个额外的限制：此闭路径必须是**自回避的**(self-avoiding walks, SAW's)。这是因为对于一条非自回避路径，我们总可以去掉那些平凡环路使得其变为SAW，且不改变其同调性质。
 由于此路径可以从时空上的任意一点发出，假设晶格尺寸为 $L\times L$，时间长度为 $T$ 。则
 $$
 \mathrm{Prob_{SAP}}(H,V)\le L^2T\cdot n_{\text{SAP}}(H,V)\cdot 2^{H+V}(\tilde p^H\tilde q^V)^{1/2}
@@ -565,12 +565,12 @@ $$
 ### 错误链组合学
 
 根据上一节的分析，通过分析硬件基础层面上的错误，得到了data qubit的错误类型及对应的概率，这似乎与之前的单qubit**错误概率独立且相等假设**矛盾？hooks会让我们的分析更为复杂。
-我们能相信其不会对原先的分析造成很大影响，基于以下的原因： $E+E_\min$ 为非平凡回路，要求某一个方向上有至少 $L$ 条错误链，但是hook是不同方向的两根链。此外，水平链只会发生在面的西北角上，因此其有更低的“**取向熵**(orientational entropy)”。这意味着在自避路径上设置钩子会减少特定长度路径的数量。最后，$p_{\text{hook}}<p_{\text{single}},\;q_{\text{hook}}<q_{\text{single}}$，因此进一步压低了在 $E+E_{\min}$ 中出现hook的概率。
-仍假设 $E_\min$ 通过最小权方法构造（使下式最小）：
+我们能相信其不会对原先的分析造成很大影响，基于以下的原因： $E+E_{\min}$ 为非平凡回路，要求某一个方向上有至少 $L$ 条错误链，但是hook是不同方向的两根链。此外，水平链只会发生在面的西北角上，因此其有更低的“**取向熵**(orientational entropy)”。这意味着在自避路径上设置钩子会减少特定长度路径的数量。最后，$p_{\text{hook}}<p_{\text{single}},\;q_{\text{hook}}<q_{\text{single}}$，因此进一步压低了在 $E+E_{\min}$ 中出现hook的概率。
+仍假设 $E_{\min}$ 通过最小权方法构造（使下式最小）：
 $$
 H\log p_{\text{single}}^{-1}+V\log q_{\text{single}}^{-1}
 $$
-这里我们将 $p/(1-p)$ 替换为了 $p$，这将略微削弱对 $p$ 的上限估计。此流程建立在只有单错误存在的假设上(no hooks)。与前述方法类似，对于 $E+E_\min$ 中包含的一条 $(H,V)$ 闭链（或连通开链），有
+这里我们将 $p/(1-p)$ 替换为了 $p$，这将略微削弱对 $p$ 的上限估计。此流程建立在只有单错误存在的假设上(no hooks)。与前述方法类似，对于 $E+E_{\min}$ 中包含的一条 $(H,V)$ 闭链（或连通开链），有
 $$
 p_{\text{single}}^{H_e} q_{\text{single}}^{V_e}\le p_{\text{single}}^{H/2}q_{\text{single}}^{V/2}
 $$
@@ -587,7 +587,7 @@ $$
 $$
 C_{H_2}^{H_{\text{hook}}}C_{V}^{V_{\text{hook}}}\cdot 2^{H_1+H_2-2H_{\text{hook}}-V_{\text{hook}}}2^{V-V_{\text{hook}}}\cdot 2^{H_{\text{hook}}}4^{V_{\text{hook}}}\cdot 5^{H_1+H_2-2H_{\text{hook}}+V-2V_{\text{hook}}}
 $$
-将 $(*)$ 式的上界估计乘上上式，得到 $E+E_\min$ 包含这条特定的SAW路径的概率上界为：
+将 $(*)$ 式的上界估计乘上上式，得到 $E+E_{\min}$ 包含这条特定的SAW路径的概率上界为：
 $$
 C_{H_2}^{H_{\text{hook}}}\left(\dfrac{p_{\text{hook}}}{50p_{\text{single}}^2}\right)^{H_{\text{hook}}}(100p_{\text{single}})^{(H_1+H_2)/2}\cdot C_{V}^{V_{\text{hook}}}\left(\dfrac{q_{\text{hook}}}{25p_{\text{single}}q_{\text{single}}}\right)^{V_{\text{hook}}}(100q_{\text{single}})^{V/2}
 $$

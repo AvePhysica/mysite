@@ -170,7 +170,7 @@ $$
 代入表达式中，逐项计算得：
 $$
 \begin{align}
-\dfrac12\int\mathrm{d}^3\vec x\,\pi^2(\vec x,t)&=\dfrac12\iiint\dfrac{\mathrm{d}^3\vec x\,\mathrm{d}^3\vec p\,\mathrm{d}^3\vec p'}{2(2\pi)^3\sqrt{\omega_{\vec p}\omega_{\vec p'}}}(-i\omega_\vec p a_{\vec p}\,\mathrm{e}^{-ip\cdot x}+i\omega_{\vec p}a^\dagger_{\vec p}\,\mathrm{e}^{ip\cdot x}\,)(-i\omega_{\vec p'} a_{\vec p'}\,\mathrm{e}^{-ip'\cdot x}+i\omega_{\vec p'}a^\dagger_{\vec p'}\,\mathrm{e}^{ip'\cdot x}\,)\\&=\dfrac12\int\dfrac{\mathrm{d}^3\vec p}{2\omega_{\vec p}}[-\omega_{\vec p}^2(a_{\vec p}a_{-\vec p}\,\mathrm{e}^{-2i\,\omega_{\vec p}\,t}+a_{\vec p}^\dagger a_{-\vec p}^\dagger\,\mathrm{e}^{2i\,\omega_{\vec p}t})+\omega_{\vec p}^2(a_{\vec p}a_{\vec p}^\dagger+a_{\vec p}^\dagger a_{\vec p})]
+\dfrac12\int\mathrm{d}^3\vec x\,\pi^2(\vec x,t)&=\dfrac12\iiint\dfrac{\mathrm{d}^3\vec x\,\mathrm{d}^3\vec p\,\mathrm{d}^3\vec p'}{2(2\pi)^3\sqrt{\omega_{\vec p}\omega_{\vec p'}}}(-i\omega_{\vec p} a_{\vec p}\,\mathrm{e}^{-ip\cdot x}+i\omega_{\vec p}a^\dagger_{\vec p}\,\mathrm{e}^{ip\cdot x}\,)(-i\omega_{\vec p'} a_{\vec p'}\,\mathrm{e}^{-ip'\cdot x}+i\omega_{\vec p'}a^\dagger_{\vec p'}\,\mathrm{e}^{ip'\cdot x}\,)\\&=\dfrac12\int\dfrac{\mathrm{d}^3\vec p}{2\omega_{\vec p}}[-\omega_{\vec p}^2(a_{\vec p}a_{-\vec p}\,\mathrm{e}^{-2i\,\omega_{\vec p}\,t}+a_{\vec p}^\dagger a_{-\vec p}^\dagger\,\mathrm{e}^{2i\,\omega_{\vec p}t})+\omega_{\vec p}^2(a_{\vec p}a_{\vec p}^\dagger+a_{\vec p}^\dagger a_{\vec p})]
 \end{align}
 $$
 $$

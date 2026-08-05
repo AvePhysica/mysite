@@ -14,28 +14,28 @@ title: "Coleman QFT Problem 12"
 
 考虑标量场的平面波展开式：
 $$
-\phi(x)=\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3/2}\sqrt{2\omega_p}}[b_\vec p\,\mathrm{e}^{-ip\cdot x}+c_\vec p^\dagger \,\mathrm{e}^{ip\cdot x}]
+\phi(x)=\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3/2}\sqrt{2\omega_p}}[b_{\vec p}\,\mathrm{e}^{-ip\cdot x}+c_{\vec p}^\dagger \,\mathrm{e}^{ip\cdot x}]
 $$
 因此
 $$
-\phi(\vec x,0)=\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3/2}\sqrt{2\omega_p}}[b_\vec p\,\mathrm{e}^{i\vec p\cdot \vec x}+c_\vec p^\dagger \,\mathrm{e}^{-i\vec p\cdot \vec x}],\quad \dot\phi(\vec x,0)=i\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3/2}}\sqrt{\dfrac{\omega_p}{2}}[-b_\vec p\,\mathrm{e}^{i\vec p\cdot \vec x}+c_\vec p^\dagger \,\mathrm{e}^{ip\cdot x}]
+\phi(\vec x,0)=\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3/2}\sqrt{2\omega_p}}[b_{\vec p}\,\mathrm{e}^{i\vec p\cdot \vec x}+c_{\vec p}^\dagger \,\mathrm{e}^{-i\vec p\cdot \vec x}],\quad \dot\phi(\vec x,0)=i\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3/2}}\sqrt{\dfrac{\omega_p}{2}}[-b_{\vec p}\,\mathrm{e}^{i\vec p\cdot \vec x}+c_{\vec p}^\dagger \,\mathrm{e}^{ip\cdot x}]
 $$
 由其可以反解出：
 $$
-b_\vec p=\int\dfrac{\mathrm{d}^3\vec x}{(2\pi)^{3/2}}\mathrm{e}^{-i\vec p\cdot\vec x}\left[\sqrt{\dfrac{\omega_p}{2}}\phi(\vec x,0)+\dfrac{i}{\sqrt{2\omega_p}}\dot\phi(\vec x,0)\right],\quad c_\vec p^\dagger=\int\dfrac{\mathrm{d}^3\vec x}{(2\pi)^{3/2}}\mathrm{e}^{i\vec p\cdot\vec x}\left[\sqrt{\dfrac{\omega_p}{2}}\phi(\vec x,0)-\dfrac{i}{\sqrt{2\omega_p}}\dot\phi(\vec x,0)\right]
+b_{\vec p}=\int\dfrac{\mathrm{d}^3\vec x}{(2\pi)^{3/2}}\mathrm{e}^{-i\vec p\cdot\vec x}\left[\sqrt{\dfrac{\omega_p}{2}}\phi(\vec x,0)+\dfrac{i}{\sqrt{2\omega_p}}\dot\phi(\vec x,0)\right],\quad c_{\vec p}^\dagger=\int\dfrac{\mathrm{d}^3\vec x}{(2\pi)^{3/2}}\mathrm{e}^{i\vec p\cdot\vec x}\left[\sqrt{\dfrac{\omega_p}{2}}\phi(\vec x,0)-\dfrac{i}{\sqrt{2\omega_p}}\dot\phi(\vec x,0)\right]
 $$
 取厄米共轭得到：
 $$
-b_\vec p^\dagger=\int\dfrac{\mathrm{d}^3\vec x}{(2\pi)^{3/2}}\mathrm{e}^{i\vec p\cdot\vec x}\left[\sqrt{\dfrac{\omega_p}{2}}\phi^*(\vec x,0)-\dfrac{i}{\sqrt{2\omega_p}}\dot\phi^*(\vec x,0)\right],\quad c_\vec p=\int\dfrac{\mathrm{d}^3\vec x}{(2\pi)^{3/2}}\mathrm{e}^{-i\vec p\cdot\vec x}\left[\sqrt{\dfrac{\omega_p}{2}}\phi^*(\vec x,0)+\dfrac{i}{\sqrt{2\omega_p}}\dot\phi^*(\vec x,0)\right]
+b_{\vec p}^\dagger=\int\dfrac{\mathrm{d}^3\vec x}{(2\pi)^{3/2}}\mathrm{e}^{i\vec p\cdot\vec x}\left[\sqrt{\dfrac{\omega_p}{2}}\phi^*(\vec x,0)-\dfrac{i}{\sqrt{2\omega_p}}\dot\phi^*(\vec x,0)\right],\quad c_{\vec p}=\int\dfrac{\mathrm{d}^3\vec x}{(2\pi)^{3/2}}\mathrm{e}^{-i\vec p\cdot\vec x}\left[\sqrt{\dfrac{\omega_p}{2}}\phi^*(\vec x,0)+\dfrac{i}{\sqrt{2\omega_p}}\dot\phi^*(\vec x,0)\right]
 $$
 计算反对易子：
 $$
-\{b_\vec p,b_{\vec p'}^\dagger\}=\int\dfrac{\mathrm{d}^3\vec x}{(2\pi)^3}\,\mathrm{e}^{-i(\vec p-\vec p')\cdot \vec x}\dfrac{i}{2}\left[\lambda^*\sqrt{\dfrac{\omega_{p'}}{\omega_p}}-\lambda\sqrt{\dfrac{\omega_p}{\omega_{p'}}}\right]=\mathrm{Im(\lambda)\delta^{(3)}}(\vec p-\vec p')
+\{b_{\vec p},b_{\vec p'}^\dagger\}=\int\dfrac{\mathrm{d}^3\vec x}{(2\pi)^3}\,\mathrm{e}^{-i(\vec p-\vec p')\cdot \vec x}\dfrac{i}{2}\left[\lambda^*\sqrt{\dfrac{\omega_{p'}}{\omega_p}}-\lambda\sqrt{\dfrac{\omega_p}{\omega_{p'}}}\right]=\mathrm{Im(\lambda)\delta^{(3)}}(\vec p-\vec p')
 $$
 $$
-\{c^\dagger_\vec p,c_{\vec p'}\}=-\mathrm{Im}(\lambda)\delta^{(3)}(\vec p-\vec p')
+\{c^\dagger_{\vec p},c_{\vec p'}\}=-\mathrm{Im}(\lambda)\delta^{(3)}(\vec p-\vec p')
 $$
-因此 $\langle 0|\{b_\vec p,b_{\vec p'}^\dagger\}|0\rangle$ 与 $\langle 0|\{c_\vec p,c_{\vec p'}^\dagger\}|0\rangle$ 不可能同时为正，破坏了正定性。
+因此 $\langle 0|\{b_{\vec p},b_{\vec p'}^\dagger\}|0\rangle$ 与 $\langle 0|\{c_{\vec p},c_{\vec p'}^\dagger\}|0\rangle$ 不可能同时为正，破坏了正定性。
 
 ---
 
@@ -51,7 +51,7 @@ $O(g^2)$ 阶的两个Feynman图为：
 
 其对应的Feynman振幅为：
 $$
-i\mathcal A^{(1)}_{rs}=-g^2\bar u^{(r)}_{\vec p'}\dfrac{i(p\mkern -8.5 mu/+k\mkern -8.5 mu/+m)}{(p+k)^2-m^2}u_\vec p^{(s)},\quad i\mathcal A_{rs}^{(2)}=-g^2\bar u^{(r)}_{\vec p'}\dfrac{i(p\mkern -8.5 mu/-k\mkern -8.5 mu/'+m)}{(p-k')^2-m^2}u_\vec p^{(s)}
+i\mathcal A^{(1)}_{rs}=-g^2\bar u^{(r)}_{\vec p'}\dfrac{i(p\mkern -8.5 mu/+k\mkern -8.5 mu/+m)}{(p+k)^2-m^2}u_{\vec p}^{(s)},\quad i\mathcal A_{rs}^{(2)}=-g^2\bar u^{(r)}_{\vec p'}\dfrac{i(p\mkern -8.5 mu/-k\mkern -8.5 mu/'+m)}{(p-k')^2-m^2}u_{\vec p}^{(s)}
 $$
 令
 $$
@@ -59,7 +59,7 @@ A=\dfrac{1}{(p+k)^2-m^2}+\dfrac{1}{(p-k')^2-m^2},\quad B=\dfrac{1}{(p+k)^2-m^2}-
 $$
 则
 $$
-i\mathcal A_{rs}=-ig^2 \bar u_{\vec p'}^{(r)}(2mA+k\mkern-8.5mu/B)u_\vec p^{(s)}
+i\mathcal A_{rs}=-ig^2 \bar u_{\vec p'}^{(r)}(2mA+k\mkern-8.5mu/B)u_{\vec p}^{(s)}
 $$
 微分散射截面为：
 $$
@@ -68,7 +68,7 @@ $$
 其中
 $$
 \begin{align}
-\sum_{r,s}|\mathcal A_{rs}|^2&=g^4\sum_{r,s}\bar u_{\vec p'}^{(r)}(2mA+k\mkern-8.5mu/B)u_\vec p^{(s)}\bar u_{\vec p}^{(s)}(2mA+k\mkern-8.5mu/B)u_{\vec p'}^{(r)}\\&=g^4\,\mathrm{Tr}\,[(p\mkern-8.5 mu/'+m)(2mA+k\mkern-8.5mu/B)(p\mkern-8.5 mu/+m)(2mA+k\mkern-8.5mu/B)]\\
+\sum_{r,s}|\mathcal A_{rs}|^2&=g^4\sum_{r,s}\bar u_{\vec p'}^{(r)}(2mA+k\mkern-8.5mu/B)u_{\vec p}^{(s)}\bar u_{\vec p}^{(s)}(2mA+k\mkern-8.5mu/B)u_{\vec p'}^{(r)}\\&=g^4\,\mathrm{Tr}\,[(p\mkern-8.5 mu/'+m)(2mA+k\mkern-8.5mu/B)(p\mkern-8.5 mu/+m)(2mA+k\mkern-8.5mu/B)]\\
 &=4g^4\left[4m^2A^2(p\cdot p'+m^2)+4m^2ABk\cdot(p+p')+B^2(m^2\mu^2+2(p\cdot k)(p'\cdot k)-\mu^2(p\cdot p'))\right]
 \end{align}
 $$

@@ -134,22 +134,22 @@ $$
 $$
 因此常说Weyl方程是KG方程的“平方根”，KG方程是二阶微分方程，而Weyl方程是一阶的。我们考虑Weyl方程的**平面波解**：
 $$
-u_+(x)=u_\vec p\,\mathrm{e}^{\pm ip\cdot x},\quad p_\mu=(|\vec p|,-\vec p)
+u_+(x)=u_{\vec p}\,\mathrm{e}^{\pm ip\cdot x},\quad p_\mu=(|\vec p|,-\vec p)
 $$
-来确定 $u_\vec p$，为简单期间，考虑沿 $z$ 轴运动有手性无质量粒子，其可以用Weyl方程描述，$p^\mu=p^0(1,0,0,1)$。代入Weyl方程得到：
+来确定 $u_{\vec p}$，为简单期间，考虑沿 $z$ 轴运动有手性无质量粒子，其可以用Weyl方程描述，$p^\mu=p^0(1,0,0,1)$。代入Weyl方程得到：
 $$
-(p^0-\vec \sigma\cdot\vec p)u_\vec p=(1-\sigma_z)u_\vec p=0\Rightarrow u_\vec p=\begin{pmatrix}
+(p^0-\vec \sigma\cdot\vec p)u_{\vec p}=(1-\sigma_z)u_{\vec p}=0\Rightarrow u_{\vec p}=\begin{pmatrix}
 1\\0
 \end{pmatrix}
 $$
-因此我们可以猜测，对于光锥上的每一个动量 $p^\mu$，均存在一个对应的二分量旋量 $u_\vec p$。因此，当我们在量子化这一理论时，对于每一动量的粒子都会有相应的产生湮灭算符。
+因此我们可以猜测，对于光锥上的每一个动量 $p^\mu$，均存在一个对应的二分量旋量 $u_{\vec p}$。因此，当我们在量子化这一理论时，对于每一动量的粒子都会有相应的产生湮灭算符。
 接下来，我们来讨论自旋。首先，对于**无质量粒子**，我们无法换到其静止系中。因此，其空间对称性就不再是原先的 $SO(3)$，而是子群 $ISO(2)$（这里说的“空间对称性”就是保持动量不变的**小群**）。此时，我们只能谈论无质量粒子的自旋在运动方向上的投影，这称为**螺旋度**(helicity)。仍以上面沿 $z$ 方向运动的粒子为例，粒子态是 $J_z$ 的本征态。
 $$
 J_z|p\rangle=\lambda|p\rangle
 $$
 对此理论进行量子化，会得到一个Weyl旋量场 $u_+(x)$，这是一个算符场，类比在标量场的情形，我们期待：
 $$
-\langle 0|u_+(x)|p\rangle=u_\vec p\,\mathrm{e}^{-ip\cdot x}
+\langle 0|u_+(x)|p\rangle=u_{\vec p}\,\mathrm{e}^{-ip\cdot x}
 $$
 同时，利用 $u_+$ 在Lorentz变换下的性质，得到
 $$
@@ -157,7 +157,7 @@ $$
 $$
 因此
 $$
-\mathrm{e}^{-i\lambda\theta}u_\vec p=\mathrm{e}^{-\frac i2\sigma_z\theta} u_\vec p=\mathrm{e}^{-\frac i2\theta} u_\vec p\Rightarrow \lambda=\dfrac12
+\mathrm{e}^{-i\lambda\theta}u_{\vec p}=\mathrm{e}^{-\frac i2\sigma_z\theta} u_{\vec p}=\mathrm{e}^{-\frac i2\theta} u_{\vec p}\Rightarrow \lambda=\dfrac12
 $$
 这样就说明了旋量场 $u_+$ 描述的粒子就是螺旋度为 $\lambda=1/2$ 的粒子。
 由于该理论带有守恒荷，因此存在反粒子。因此，场算符 $u_+(x)$ 还会产生反粒子。我们只需将上面的过程反过来，由于：

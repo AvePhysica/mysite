@@ -98,8 +98,8 @@ assert.match(
 );
 assert.match(
   config,
-  /"\/physics\/Quantum Field Theory\/":\s*"auto"/,
-  "QFT 页面应使用独立自动侧边栏",
+  /"\/physics\/Quantum Field Theory\/":\s*qftSidebar/,
+  "QFT 页面应使用独立的自然排序侧边栏",
 );
 assert.match(
   config,
@@ -161,6 +161,39 @@ assert.match(
   css,
   /html\[data-theme=light\] body:has\(\.vp-doc\):not\(:has\(\.home-dashboard\)\) \.vp-sidebar\{[^}]*background-image:/,
   "The article sidebar grid should support the light theme",
+);
+
+const navbarTitleRule =
+  css.match(/\.vp-navbar-title \.title\{[^}]*\}/)?.[0] ?? "";
+const navbarMenuRule = css.match(/\.vp-navbar-menu\{[^}]*\}/)?.[0] ?? "";
+const footerRule = css.match(/\.vp-footer\{[^}]*\}/)?.[0] ?? "";
+
+assert.match(
+  navbarTitleRule,
+  /font-family:Times New Roman,serif/,
+  "左上角 Luminosity 应使用 Times New Roman",
+);
+assert.match(
+  navbarMenuRule,
+  /霞鹜文楷等宽[^}]*LXGW WenKai Mono/,
+  "右上角导航选项应使用霞鹜文楷等宽",
+);
+assert.match(
+  footerRule,
+  /font-family:Times New Roman,Noto Serif SC,serif/,
+  "所有页面的页脚应使用首页的字体",
+);
+assert.match(footerRule, /font-style:italic/, "所有页面的页脚应使用首页的斜体形式");
+assert.match(footerRule, /background:#202326/, "所有页面应使用首页的深色页脚背景");
+assert.match(
+  css,
+  /\.vp-footer \.message,\.vp-footer \.copyright\{[^}]*font:inherit[^}]*color:inherit/,
+  "页脚内部文字应继承统一后的全站页脚样式",
+);
+assert.match(
+  css,
+  /html\[data-theme=light\] \.vp-footer\{[^}]*background:#edf3f4/,
+  "所有页面的页脚应使用首页的亮色形式",
 );
 
 assert.match(

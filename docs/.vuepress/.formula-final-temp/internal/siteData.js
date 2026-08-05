@@ -1,0 +1,1 @@
+export const siteData = JSON.parse("{\"base\":\"/\",\"lang\":\"zh-CN\",\"title\":\"Luminosity\",\"description\":\"Physics · AI · Mathematics · Learning\",\"head\":[],\"locales\":{\"/\":{\"lang\":\"zh-CN\",\"title\":\"Luminosity\",\"description\":\"Physics · AI · Mathematics · Learning\"}}}")

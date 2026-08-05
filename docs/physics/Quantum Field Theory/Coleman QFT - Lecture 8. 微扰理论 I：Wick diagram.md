@@ -330,7 +330,7 @@ $$
 $$
 则
 $$
-O_1=-ig\int\mathrm{d}^4x\,\rho(x)\phi(x)=-ig\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3/2}\sqrt{2\omega_{\vec p}}}\left[a_\vec p\,\tilde\rho(\vec p,\omega_{\vec p})^*+a_{\vec p}^\dagger\,\tilde\rho(\vec p,\omega_{\vec p})\right]
+O_1=-ig\int\mathrm{d}^4x\,\rho(x)\phi(x)=-ig\int\dfrac{\mathrm{d}^3\vec p}{(2\pi)^{3/2}\sqrt{2\omega_{\vec p}}}\left[a_{\vec p}\,\tilde\rho(\vec p,\omega_{\vec p})^*+a_{\vec p}^\dagger\,\tilde\rho(\vec p,\omega_{\vec p})\right]
 $$
 这里需要注意的是，我们只需要在质壳上的傅里叶变换 $\tilde\rho(\vec p,\omega_{\vec p})$ 即可。
 为简单起见，我们定义：

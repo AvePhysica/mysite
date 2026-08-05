@@ -165,7 +165,7 @@ $$
 $$
 为验证两者相同，将标量场的展开式代入前一式：
 $$
-\vec P=-\iiint\dfrac{\mathrm{d}^3\vec x\,\mathrm{d}^3\vec p\,\mathrm{d}^3\vec p'}{2(2\pi)^3\sqrt{\omega_{\vec p}\omega_{\vec p'}}}(-i\omega_\vec p a_{\vec p}\,\mathrm{e}^{-ip\cdot x}+i\omega_{\vec p}a^\dagger_{\vec p}\,\mathrm{e}^{ip\cdot x}\,)(i\vec p' a_{\vec p'}\,\mathrm{e}^{-ip'\cdot x}-i\vec p'a^\dagger_{\vec p'}\,\mathrm{e}^{ip'\cdot x}\,)=\dfrac12 \int\mathrm{d}^3\vec p\,(a_{\vec p}a_{\vec p}^\dagger+a_{\vec p}^\dagger a_{\vec p})\,\vec p
+\vec P=-\iiint\dfrac{\mathrm{d}^3\vec x\,\mathrm{d}^3\vec p\,\mathrm{d}^3\vec p'}{2(2\pi)^3\sqrt{\omega_{\vec p}\omega_{\vec p'}}}(-i\omega_{\vec p} a_{\vec p}\,\mathrm{e}^{-ip\cdot x}+i\omega_{\vec p}a^\dagger_{\vec p}\,\mathrm{e}^{ip\cdot x}\,)(i\vec p' a_{\vec p'}\,\mathrm{e}^{-ip'\cdot x}-i\vec p'a^\dagger_{\vec p'}\,\mathrm{e}^{ip'\cdot x}\,)=\dfrac12 \int\mathrm{d}^3\vec p\,(a_{\vec p}a_{\vec p}^\dagger+a_{\vec p}^\dagger a_{\vec p})\,\vec p
 $$
 我们又一次遇到了在[Coleman QFT - Lecture 4. 场的正则量子化](./Coleman%20QFT%20-%20Lecture%204.%20%E5%9C%BA%E7%9A%84%E6%AD%A3%E5%88%99%E9%87%8F%E5%AD%90%E5%8C%96.md)中正规序一节遇到的问题：两个表达式相差了一个无穷大的常数。不管它或者将其理解为正规序，则两个表达式确实是相等的。
 

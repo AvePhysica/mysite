@@ -283,7 +283,7 @@ $$
 $$
 其也不改变动量表象的产生-湮灭算符：
 $$
-a_\vec p=\varOmega^{-1}_{PT}\,a_{\vec p}\varOmega_{PT},\quad a_\vec p^\dagger=\varOmega^{-1}_{PT}\,a^\dagger_{\vec p}\varOmega_{PT}
+a_{\vec p}=\varOmega^{-1}_{PT}\,a_{\vec p}\varOmega_{PT},\quad a_{\vec p}^\dagger=\varOmega^{-1}_{PT}\,a^\dagger_{\vec p}\varOmega_{PT}
 $$
 其对标量场的作用为：
 $$

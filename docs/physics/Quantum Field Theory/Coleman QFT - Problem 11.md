@@ -39,12 +39,12 @@ D(R(\hat z\phi))=\cos\dfrac{\theta}{2}-i\sin\dfrac{\theta}{2}\begin{pmatrix}
 $$
 因此
 $$
-u_\vec p^{(1)}=D(R(\hat z\phi))D(R(\hat y\theta))u_{p_z}^{(1)}=\begin{pmatrix}
+u_{\vec p}^{(1)}=D(R(\hat z\phi))D(R(\hat y\theta))u_{p_z}^{(1)}=\begin{pmatrix}
 \mathrm{e}^{-\frac i2\phi}\cos\frac\theta 2\sqrt{E_p+m}\\\mathrm{e}^{\frac i2\phi}\sin\frac\theta 2\sqrt{E_p+m}\\\mathrm{e}^{-\frac i2\phi}\cos\frac\theta 2\sqrt{E_p-m}\\\mathrm{e}^{\frac i2\phi}\sin\frac\theta 2\sqrt{E_p-m}
 \end{pmatrix}
 $$
 $$
-u_\vec p^{(2)}=D(R(\hat z\phi))D(R(\hat y\theta))u_{p_z}^{(1)}=\begin{pmatrix}
+u_{\vec p}^{(2)}=D(R(\hat z\phi))D(R(\hat y\theta))u_{p_z}^{(1)}=\begin{pmatrix}
 -\mathrm{e}^{-\frac i2\phi}\sin\frac\theta 2\sqrt{E_p+m}\\\mathrm{e}^{\frac i2\phi}\cos\frac\theta 2\sqrt{E_p+m}\\\mathrm{e}^{-\frac i2\phi}\sin\frac\theta 2\sqrt{E_p-m}\\-\mathrm{e}^{\frac i2\phi}\cos\frac\theta 2\sqrt{E_p-m}
 \end{pmatrix}
 $$

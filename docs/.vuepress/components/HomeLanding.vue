@@ -97,10 +97,7 @@ function formatDate(timestamp) {
         <div class="home-copy">
           <p class="home-overline">PERSONAL KNOWLEDGE GARDEN</p>
           <p class="home-kicker">流明酱的小站</p>
-          <h1 id="home-title">Study &amp; Research</h1>
-          <p class="home-intro">
-            记录物理、量子计算、语言学习与技术探索，让零散的思考在这里持续生长。
-          </p>
+          <h1 id="home-title">Blog &amp; Study</h1>
 
           <nav class="home-actions" aria-label="主要内容入口">
             <RouteLink to="/physics/">进入知识库</RouteLink>
@@ -279,7 +276,7 @@ function formatDate(timestamp) {
   width: fit-content;
   margin-top: 18px;
   font-family: "霞鹜文楷等宽", "Times New Roman", serif;
-  font-size: clamp(2.8rem, 6vw, 4.8rem);
+  font-size: clamp(2.3rem, 6vw, 4.3rem);
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.045em;
@@ -291,7 +288,7 @@ function formatDate(timestamp) {
 .home-copy h1 {
   margin-top: 26px;
   font-family: "霞鹜文楷等宽", "Times New Roman", "Noto Serif SC", serif;
-  font-size: clamp(1.7rem, 3.2vw, 2.65rem);
+  font-size: clamp(1.2rem, 3.2vw, 2.2rem);
   font-weight: 600;
   line-height: 1.08;
   letter-spacing: -0.035em;

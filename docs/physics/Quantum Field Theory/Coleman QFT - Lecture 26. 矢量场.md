@@ -108,7 +108,7 @@ $$
 $$
 除了正交归一关系，更为重要的是完备关系。回忆在Dirac方程中的完备关系：
 $$
-P_u\equiv\dfrac{1}{2m}\sum_{r=1}^2u_\vec p^{(r)}\bar u_\vec p^{(r)}=\dfrac{p\mkern-8.5mu/+m}{2m},\quad P_v\equiv\dfrac{1}{2m}\sum_{r=1}^2v_\vec p^{(r)}\bar v_\vec p^{(r)}=\dfrac{p\mkern-8.5mu/-m}{2m}
+P_u\equiv\dfrac{1}{2m}\sum_{r=1}^2u_{\vec p}^{(r)}\bar u_{\vec p}^{(r)}=\dfrac{p\mkern-8.5mu/+m}{2m},\quad P_v\equiv\dfrac{1}{2m}\sum_{r=1}^2v_{\vec p}^{(r)}\bar v_{\vec p}^{(r)}=\dfrac{p\mkern-8.5mu/-m}{2m}
 $$
 Proca方程的平面波解也有类似的关系式。定义
 $$
@@ -206,7 +206,7 @@ A_\mu(x)=\sum_{r=1}^3\int\dfrac{\mathrm{d}^3\vec k}{(2\pi)^{3/2}\sqrt{2\omega_k}
 $$
 我们自然会猜测产生-湮灭算符的对易关系：
 $$
-\left[a_\vec k^{(r)},a_{\vec k'}^{(s)\dagger}\right]=\delta^{(3)}(\vec k-\vec k')\delta^{rs}
+\left[a_{\vec k}^{(r)},a_{\vec k'}^{(s)\dagger}\right]=\delta^{(3)}(\vec k-\vec k')\delta^{rs}
 $$
 这是否和正则对易子自洽呢？答案是是的。我们来验证它。回忆标量场的情形：
 $$
@@ -249,7 +249,7 @@ $$
 $$
 最后，经过非常恶心的计算，你可以验证;
 $$
-H=\int\mathrm{d}^3\vec x\,\mathcal H=\int\mathrm{d}^3\vec k\,\omega_k\sum_ra_{\vec k}^{(r)\dagger}a_\vec k^{(r)}
+H=\int\mathrm{d}^3\vec x\,\mathcal H=\int\mathrm{d}^3\vec k\,\omega_k\sum_ra_{\vec k}^{(r)\dagger}a_{\vec k}^{(r)}
 $$
 以上就是有质量矢量场的正则量子化过程。如果你想使用相同的方法对无质量矢量场做量子化，你会遇到许多问题。比如完备性关系在 $\mu\to 0$ 下发散：
 $$

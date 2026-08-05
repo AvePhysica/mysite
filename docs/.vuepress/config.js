@@ -1,6 +1,7 @@
 import { viteBundler } from "@vuepress/bundler-vite";
 import { defineUserConfig } from "vuepress";
 import { plumeTheme } from "vuepress-theme-plume";
+import { qftSidebar } from "./qftSidebar.js";
 
 export default defineUserConfig({
   lang: "zh-CN",
@@ -43,6 +44,8 @@ export default defineUserConfig({
   },
 
   theme: plumeTheme({
+    logo: "/images/profile_picture.png",
+
     navbar: [
       { text: "首页", link: "/" },
       {
@@ -61,12 +64,13 @@ export default defineUserConfig({
       },
       { text: "日本語", link: "/japanese/" },
       { text: "计算机科学", link: "/computer-science/" },
+      { text: "About", link: "/about/" },
     ],
 
     sidebar: {
-  "/physics/Quantum Field Theory/": "auto",
-  "/physics/Quantum Computation/": "auto",
-  "/physics/": [{ text: "Physics", link: "/physics/" }],
+      "/physics/Quantum Field Theory/": qftSidebar,
+      "/physics/Quantum Computation/": "auto",
+      "/physics/": [{ text: "Physics", link: "/physics/" }],
       "/japanese/": "auto",
       "/computer-science/": "auto",
     },
