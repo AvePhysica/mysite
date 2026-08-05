@@ -50,6 +50,37 @@ html {
   line-height: 1.85;
 }
 
+.vp-doc:not(:has(.home-dashboard)) .hint-container {
+  --vp-hint-container-font-size: 1em;
+  --vp-custom-block-font-size: 1em;
+}
+
+.vp-doc:not(:has(.home-dashboard)) table :is(th, td) {
+  font-size: inherit;
+}
+
+.vp-doc:not(:has(.home-dashboard)) .katex {
+  font-size: 1em !important;
+}
+
+.vp-doc:not(:has(.home-dashboard)) .katex-display > .katex {
+  font-size: 0.95em !important;
+}
+
+@media (min-width: 1600px) {
+  body:has(.vp-doc):not(:has(.home-dashboard)):not(:has(.about-page)) {
+    --vp-layout-max-width: 1600px;
+  }
+
+  .vp-doc-container.has-aside .content-container {
+    max-width: 920px !important;
+  }
+
+  .vp-doc-container:not(.has-aside) .content-container {
+    max-width: 1040px !important;
+  }
+}
+
 body:has(.vp-doc):not(:has(.home-dashboard)) {
   background-image:
     linear-gradient(rgb(255 255 255 / 5%) 1px, transparent 1px),
