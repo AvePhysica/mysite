@@ -71,7 +71,20 @@ export default defineUserConfig({
           },
         ],
       },
-      { text: "日本語", link: "/japanese/" },
+      {
+        text: "日本語",
+        items: [
+          { text: "日本語概览", link: "/japanese/" },
+          {
+            text: "全能日语初级下",
+            link: "/japanese/全能日语初级下/",
+          },
+          {
+            text: "新标日下册",
+            link: "/japanese/新标日下册/",
+          },
+        ],
+      },
       { text: "计算机科学", link: "/computer-science/" },
       { text: "About", link: "/about/" },
     ],
@@ -90,7 +103,23 @@ export default defineUserConfig({
           link: "/physics/Quantum%20Computation/",
         },
       ],
-      "/japanese/": "auto",
+      "/japanese/全能日语初级下/": "auto",
+      "/japanese/新标日下册/": "auto",
+      "/japanese/": [
+        { text: "日本語 Overview", link: "/japanese/" },
+        {
+          text: "日本地区行政区划",
+          link: "/japanese/日本地区行政区划",
+        },
+        {
+          text: "全能日语初级下",
+          link: "/japanese/全能日语初级下/",
+        },
+        {
+          text: "新标日下册",
+          link: "/japanese/新标日下册/",
+        },
+      ],
       "/computer-science/": "auto",
     },
 
@@ -98,6 +127,7 @@ export default defineUserConfig({
       ? {
           provider: "Waline",
           serverURL: walineServerURL,
+          placeholder: "留下你的评论吧~",
           comment: true,
           meta: ["nick", "mail", "link"],
           requiredMeta: ["nick", "mail"],

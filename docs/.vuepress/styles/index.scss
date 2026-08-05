@@ -99,7 +99,13 @@ body:has(.home-dashboard) .vp-navbar button {
   font-size: 0.9rem;
   font-style: italic;
   color: rgb(230 235 236 / 60%);
-  background: #202326;
+  background-color: #202326;
+  background-image:
+    linear-gradient(rgb(255 255 255 / 5%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 5%) 1px, transparent 1px);
+  background-position: -1px -1px;
+  background-size: 32px 32px;
+  background-attachment: fixed;
   border-top-color: rgb(255 255 255 / 7%);
 }
 
@@ -117,8 +123,45 @@ html[data-theme="light"] body:has(.home-dashboard) .vp-navbar {
 
 html[data-theme="light"] .vp-footer {
   color: rgb(43 62 69 / 62%);
-  background: #edf3f4;
+  background-color: #edf3f4;
+  background-image:
+    linear-gradient(rgb(47 73 82 / 7%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(47 73 82 / 7%) 1px, transparent 1px);
   border-top-color: rgb(61 89 98 / 12%);
+}
+
+body:has(.home-dashboard) {
+  background:
+    linear-gradient(115deg, rgb(6 11 22 / 18%), rgb(8 10 12 / 42%)),
+    linear-gradient(180deg, rgb(7 13 27 / 50%), rgb(8 17 34 / 66%)),
+    url("/images/background.png") center / cover no-repeat fixed;
+}
+
+body:has(.home-dashboard) :is(.home-dashboard, .vp-footer) {
+  background: transparent;
+}
+
+body:has(.home-dashboard) .home-dashboard::before {
+  background: transparent;
+}
+
+body:has(.about-page) .vp-footer {
+  background:
+    linear-gradient(rgb(8 17 34 / 74%), rgb(8 17 34 / 74%)),
+    url("/images/background.png") center / cover no-repeat fixed;
+}
+
+html[data-theme="light"] body:has(.home-dashboard) {
+  background:
+    linear-gradient(115deg, rgb(255 255 255 / 8%), rgb(221 231 233 / 28%)),
+    linear-gradient(180deg, rgb(239 247 249 / 40%), rgb(226 238 242 / 50%)),
+    url("/images/background_light.png") center / cover no-repeat fixed;
+}
+
+html[data-theme="light"] body:has(.about-page) .vp-footer {
+  background:
+    linear-gradient(rgb(226 238 242 / 70%), rgb(226 238 242 / 70%)),
+    url("/images/background_light.png") center / cover no-repeat fixed;
 }
 
 html[data-theme="light"] .home-dashboard {
