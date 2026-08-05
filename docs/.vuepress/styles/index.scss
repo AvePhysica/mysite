@@ -242,3 +242,45 @@ html[data-theme="light"] .focus-toggle:hover {
 html[data-theme="light"] .focus-toggle span {
   background: rgb(67 148 170 / 12%);
 }
+
+.waline-wrapper {
+  --waline-font-size: 1rem;
+  --waline-color: rgb(232 239 241 / 84%);
+  --waline-text-color: rgb(232 239 241 / 84%);
+  --waline-bg-color: rgb(35 39 43 / 72%);
+  --waline-bg-color-light: rgb(255 255 255 / 5%);
+  --waline-bg-color-hover: rgb(255 255 255 / 8%);
+  --waline-border-color: rgb(210 229 234 / 20%);
+  --waline-theme-color: #69c4d9;
+  --waline-active-color: #91dcec;
+  --waline-info-bg-color: rgb(255 255 255 / 5%);
+  --waline-info-color: rgb(222 234 237 / 52%);
+  --waline-box-shadow: 0 18px 52px rgb(0 0 0 / 16%);
+
+  margin-top: 4rem;
+  padding-top: 2.25rem;
+  border-top: 1px solid rgb(210 229 234 / 14%);
+  font-family: "霞鹜文楷等宽", "LXGW WenKai Mono",
+    "Noto Sans Mono CJK SC", monospace;
+}
+
+.waline-wrapper .wl-panel,
+.waline-wrapper .wl-card-item {
+  backdrop-filter: blur(10px);
+}
+
+html[data-theme="light"] .waline-wrapper {
+  --waline-color: rgb(34 52 59 / 86%);
+  --waline-text-color: rgb(34 52 59 / 86%);
+  --waline-bg-color: rgb(255 255 255 / 68%);
+  --waline-bg-color-light: rgb(48 108 126 / 6%);
+  --waline-bg-color-hover: rgb(48 108 126 / 10%);
+  --waline-border-color: rgb(58 100 113 / 22%);
+  --waline-theme-color: #287f98;
+  --waline-active-color: #155f74;
+  --waline-info-bg-color: rgb(48 108 126 / 7%);
+  --waline-info-color: rgb(42 65 73 / 56%);
+  --waline-box-shadow: 0 18px 52px rgb(68 94 102 / 13%);
+
+  border-top-color: rgb(58 100 113 / 16%);
+}

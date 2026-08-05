@@ -3,6 +3,8 @@ import { defineUserConfig } from "vuepress";
 import { plumeTheme } from "vuepress-theme-plume";
 import { qftSidebar } from "./qftSidebar.js";
 
+const walineServerURL = process.env.WALINE_SERVER_URL?.trim();
+
 export default defineUserConfig({
   lang: "zh-CN",
   title: "Luminosity",
@@ -12,6 +14,13 @@ export default defineUserConfig({
 
   extendsPage(page) {
     const relativePath = page.filePathRelative?.replaceAll("\\", "/") ?? "";
+
+    if (
+      relativePath.endsWith("README.md") &&
+      page.frontmatter.comments === undefined
+    ) {
+      page.frontmatter.comments = false;
+    }
 
     page.routeMeta.homepage = {
       title: page.title,
@@ -74,6 +83,21 @@ export default defineUserConfig({
       "/japanese/": "auto",
       "/computer-science/": "auto",
     },
+
+    comment: walineServerURL
+      ? {
+          provider: "Waline",
+          serverURL: walineServerURL,
+          comment: true,
+          meta: ["nick", "mail", "link"],
+          requiredMeta: ["nick", "mail"],
+          wordLimit: 1000,
+          pageSize: 10,
+          commentSorting: "latest",
+          login: "enable",
+          pageview: false,
+        }
+      : false,
 
     footer: {
       message: "Powered by VuePress and Plume Theme",
