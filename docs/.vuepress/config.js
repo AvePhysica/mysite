@@ -79,7 +79,17 @@ export default defineUserConfig({
     sidebar: {
       "/physics/Quantum Field Theory/": qftSidebar,
       "/physics/Quantum Computation/": "auto",
-      "/physics/": [{ text: "Physics", link: "/physics/" }],
+      "/physics/": [
+        { text: "Physics Overview", link: "/physics/" },
+        {
+          text: "Quantum Field Theory",
+          link: "/physics/Quantum%20Field%20Theory/",
+        },
+        {
+          text: "Quantum Computation",
+          link: "/physics/Quantum%20Computation/",
+        },
+      ],
       "/japanese/": "auto",
       "/computer-science/": "auto",
     },

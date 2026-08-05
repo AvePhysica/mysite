@@ -25,7 +25,7 @@ assert.match(
 
 assert.match(
   styles,
-  /\.vp-navbar-menu\s+\.navbar-menu-link[\s\S]*?\.vp-navbar-menu-group\s+\.text\s*\{[^}]*font-size:\s*16px;/s,
+  /\.vp-navbar-menu\s+\.navbar-menu-link[\s\S]*?\.vp-navbar-menu-group\s+\.text\s*\{[^}]*font-size:\s*17px;/s,
   "右上角普通链接和下拉菜单标题应使用放大后的统一字号",
 );
 
