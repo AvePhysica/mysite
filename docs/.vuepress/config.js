@@ -15,11 +15,12 @@ export default defineUserConfig({
   extendsPage(page) {
     const relativePath = page.filePathRelative?.replaceAll("\\", "/") ?? "";
 
-    if (
-      relativePath.endsWith("README.md") &&
-      page.frontmatter.comments === undefined
-    ) {
-      page.frontmatter.comments = false;
+    if (relativePath.endsWith("README.md")) {
+      if (page.frontmatter.comments === undefined) {
+        page.frontmatter.comments = false;
+      }
+      page.frontmatter.changelog = false;
+      page.frontmatter.copyright = false;
     }
 
     page.routeMeta.homepage = {
@@ -54,6 +55,33 @@ export default defineUserConfig({
 
   theme: plumeTheme({
     logo: "/images/profile_picture.png",
+
+    docsRepo: "https://github.com/AvePhysica/mysite",
+    docsBranch: "main",
+    docsDir: "docs",
+
+    changelog: {
+      maxCount: 5,
+    },
+
+    copyright: {
+      author: {
+        name: "Luminosity",
+        url: "https://github.com/AvePhysica",
+      },
+      license: "CC-BY-NC-SA-4.0",
+      creation: "original",
+    },
+
+    changelogText: "更新日志",
+    changelogOnText: "于",
+    changelogButtonText: "查看所有更新日志",
+    copyrightText: "版权所有",
+    copyrightAuthorText: "版权归属：",
+    copyrightCreationOriginalText: "本文链接：",
+    copyrightCreationTranslateText: "译文来源：",
+    copyrightCreationReprintText: "转载来源：",
+    copyrightLicenseText: "许可证：",
 
     navbar: [
       { text: "首页", link: "/" },
