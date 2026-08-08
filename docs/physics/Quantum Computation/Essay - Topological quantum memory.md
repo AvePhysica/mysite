@@ -3,6 +3,12 @@ title: "Essay - Topological quantum memory"
 date: 2026-08-03
 ---
 
+本文是Alexei Kitaev在2001年的论文《Topological quantum memory》的阅读笔记，其中补充了一些计算细节，但大部分都是翻译与概括原意。
+
+原论文：[Topological quantum memory](https://arxiv.org/pdf/quant-ph/0110143v1)
+
+---
+
 ## 0. abstract
 
 研究的对象是**表面码(surface code)**。qubits被放在有**非平凡拓扑曲面**的二维晶格上，其编码操作对应于曲面上的同调非平凡环路。在本文中：
@@ -666,7 +672,7 @@ $$
   <img src="./pictures/Pasted image 20260410213831.png" width="400">
 </div>
 
-	但在通过CNOT门构建新的面与格点时，单个故障CNOT可能会制造块边缘的**一连串的qubits错误**。为确保容错性，需要在流程中频繁进行syndrome测量并进行纠错。完整的扩张流程如下图所示：
+但在通过CNOT门构建新的面与格点时，单个故障CNOT可能会制造块边缘的**一连串的qubits错误**。为确保容错性，需要在流程中频繁进行syndrome测量并进行纠错。完整的扩张流程如下图所示：
 
 <div align="center">
   <img src="./pictures/Pasted image 20260410214224.png" width="400">
