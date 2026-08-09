@@ -57,51 +57,230 @@ $$
 对于经典的快速傅里叶变换(FFT)，其计算时间步长为 $N\log N=n 2^n$ ，而上面的QFT线路的门数量是 $O(n^2)$，因此其相对于经典傅里叶变换是有优势的。然而，QFT实际上有一些问题，首先，没有有效的方法制备初始的任意态 $\sum_{j=0}^{N-1}x_j|j\rangle$。其次也没办法提取出变换后状态的系数 $y_k$。也就是说，QFT并不能有效的用于求解**离散傅里叶变换**，但其在一些其他的问题上是有优势的。接下来就来介绍几个应用QFT线路的问题。
 ## 相位估计
 
-我们的问题是：已知幺正算符 $U$ 有一个本征态 $|u\rangle$，满足
+相位估计（Quantum Phase Estimation, QPE）要解决的问题是：已知幺正算符 $U$ 的一个本征态 $|u\rangle$，满足
 $$
-U|u\rangle=\mathrm{e}^{2\pi i\varphi}|u\rangle
+U|u\rangle=\mathrm{e}^{2\pi i\varphi}|u\rangle,\qquad \varphi\in[0,1),
 $$
-希望对 $\varphi\in[0,1)$ 做出估计。
-我们假设已经有一个Oracle可以制备状态 $|u\rangle$，并且可以执行 Controlled-$U^{2^j}$ 操作。采用下面的线路：
+如何从量子线路中读出本征值所携带的相位 $\varphi$？这里假设我们能够制备 $|u\rangle$，并能执行 Controlled-$U^{2^k}$。前者给出相位所依附的本征态，后者负责将这个不可直接观测的全局相位“踢回”到辅助寄存器上。
+
+### 1. 相位回踢
+
+先考虑一个控制qubit处于 $\alpha|0\rangle+\beta|1\rangle$ 的情形。Controlled-$U^m$ 作用在它与本征态 $|u\rangle$ 上时，有
+$$
+\begin{aligned}
+&\operatorname{C}(U^m)(\alpha|0\rangle+\beta|1\rangle)|u\rangle\\
+={}&\alpha|0\rangle|u\rangle+\beta|1\rangle U^m|u\rangle\\
+={}&\left(\alpha|0\rangle+\beta\mathrm{e}^{2\pi i m\varphi}|1\rangle\right)|u\rangle.
+\end{aligned}
+$$
+目标寄存器仍然停留在 $|u\rangle$，但相位 $\mathrm{e}^{2\pi i m\varphi}$ 已经出现在控制qubit的相对相位中。相对相位可以通过干涉被测量，这就是后续使用QFT的入口。
+
+### 2. 线路与状态演化
+
+使用 $t$ 个辅助qubits，并记 $Q=2^t$。初态为 $|0\rangle^{\otimes t}|u\rangle$。对第一寄存器施加Hadamard门后，得到均匀叠加：
+$$
+|0\rangle^{\otimes t}|u\rangle
+\longrightarrow
+\dfrac{1}{\sqrt Q}\sum_{j=0}^{Q-1}|j\rangle|u\rangle.
+$$
+若 $j=j_{t-1}\cdots j_1j_0$，依次执行由第 $k$ 个qubit控制的 $U^{2^k}$，这些受控幂合起来正好实现 $U^j$，因此
+$$
+\dfrac{1}{\sqrt Q}\sum_{j=0}^{Q-1}|j\rangle|u\rangle
+\longrightarrow
+\dfrac{1}{\sqrt Q}\sum_{j=0}^{Q-1}|j\rangle U^j|u\rangle
+=\dfrac{1}{\sqrt Q}\sum_{j=0}^{Q-1}\mathrm{e}^{2\pi i j\varphi}|j\rangle|u\rangle.
+$$
 
 <div align="center">
   <img src="../pictures/Pasted image 20260503203820.png" width="600">
 </div>
 
-这里，由于 $|u\rangle$ 是 $U$ 的本征态，因此 Controlled-$U^{2^j}$ 门的作用只是产生一个相位，其等效于对上方的qubits作用一个相位。此时，注意到上面的输出正是QFT变换后的结果形式，因为假设 $\varphi=0.j_1\cdots j_t$，则
+如果 $\varphi$ 恰好有 $t$ 位有限二进制展开
 $$
-2^0\varphi=0.j_1\cdots j_t,\quad\cdots\quad 2^{t-1}\varphi\sim0.j_t\quad(\text{整数部分不重要}) 
+\varphi=0.\varphi_1\varphi_2\cdots\varphi_t,
 $$
-因此，我们只需对结果做逆QFT，就能得到 $|j_1\rangle,\cdots,|j_t\rangle$。
+那么上式中的第一寄存器就是 $|Q\varphi\rangle$ 的QFT。换句话说，Controlled-$U^{2^k}$ 将 $2^k\varphi$ 的小数部分逐位写入了辅助qubits的相位；逆QFT再把这些相位转回计算基中的二进制数。
 
 <div align="center">
   <img src="../pictures/Pasted image 20260504095245.png" width="600">
 </div>
 
+### 3. 精确相位与一般相位
 
-再重新看这个过程，逆QFT变换的效果可以写为：
+对第一寄存器施加逆QFT后，完整状态为
 $$
-\dfrac{1}{2^{t/2}}\sum_{j=0}^{2^t-1}\mathrm{e}^{2\pi ij\varphi}|j\rangle\otimes |u\rangle\xrightarrow{\text{inverse QFT}}\sum_{b=0}^{2^t-1}\left(\dfrac{1}{2^t}\sum_{j=0}^{2^t-1}\mathrm{e}^{\frac{2\pi ij}{2^t}(2^t\varphi-b)}\right)|b\rangle\otimes|u\rangle
+\sum_{b=0}^{Q-1}\alpha_b|b\rangle|u\rangle,\qquad
+\alpha_b=\dfrac{1}{Q}\sum_{j=0}^{Q-1}
+\mathrm{e}^{2\pi i j(\varphi-b/Q)}.
 $$
-前面假设了 $2^t\varphi$ 为整数，因此求和的结果是 $\delta_{b,2^t\varphi}$，故逆QFT的结果就是 $|2^t\varphi\rangle\otimes|u\rangle$，这样就能完美得到 $\varphi$。而当 $2^t\varphi$ 并不是整数时，求和将得到一系列 $|b\rangle\otimes|u\rangle$ 的线性叠加，但其在 $b=\mathrm{int}\,2^t\varphi$ 处有峰值，因此测量时大概率能得到 $\varphi$ 的一个有限位数估计。因此相位估计并不是一个一定成功的算法。这里给出一个结论：定义 $b$ 的误差为 $\delta=|\varphi-2^{-t}b|\,(0\le \delta\le2^{-t})$，如果我们希望 $\delta<2^{-n}$，且算法的成功概率不低于 $1-\epsilon$，则所需的 $t$ 最小为：
+当 $Q\varphi$ 是整数时，有限Fourier求和给出
 $$
-t=n+\log\left(2+\dfrac{1}{2\epsilon}\right)
+\alpha_b=\delta_{b,Q\varphi},
 $$
+所以测量必然得到 $b=Q\varphi$，从而精确恢复 $\varphi=b/Q$。
+
+更一般地，$Q\varphi$ 通常不是整数。令
+$$
+\delta_b=\varphi-\dfrac{b}{Q},
+$$
+利用等比数列求和可得
+$$
+\alpha_b=
+\dfrac{1-\mathrm{e}^{2\pi iQ\delta_b}}
+{Q\left(1-\mathrm{e}^{2\pi i\delta_b}\right)},\qquad
+P(b)=|\alpha_b|^2
+=\dfrac{1}{Q^2}
+\dfrac{\sin^2(\pi Q\delta_b)}{\sin^2(\pi\delta_b)}.
+$$
+这个分布在最接近 $Q\varphi$ 的整数附近形成尖峰。因此一次测量不会总是返回同一个 $b$，但 $b/Q$ 会以较高概率给出 $\varphi$ 的有限精度近似。QPE本质上是概率算法，而不是在任意相位下都能精确输出的算法。
+
+如果希望误差满足
+$$
+\left|\varphi-\dfrac{b}{2^t}\right|\le 2^{-n},
+$$
+且成功概率至少为 $1-\epsilon$，一个常用的充分条件是
+$$
+t=n+\left\lceil\log_2\left(2+\dfrac{1}{2\epsilon}\right)\right\rceil.
+$$
+其中前 $n$ 个qubits负责精度，额外的qubits用于压低失败概率。若将 Controlled-$U^{2^k}$ 当作可调用的黑箱，Hadamard门需要 $O(t)$ 个，受控幂需要 $O(t)$ 次，逆QFT需要 $O(t^2)$ 个门，因此线路的门复杂度为 $O(t^2)$。若这些受控幂还需进一步分解，其真实成本则取决于具体的 $U$。
+
+### 4. 输入不是精确本征态时
+
+本征态似乎是QPE的苛刻前提，但若输入态可以展开为
+$$
+|\psi\rangle=\sum_a c_a|u_a\rangle,\qquad
+U|u_a\rangle=\mathrm{e}^{2\pi i\varphi_a}|u_a\rangle,
+$$
+线性性保证线路会同时估计所有 $\varphi_a$。测量第一寄存器时，我们以约 $|c_a|^2$ 的概率得到 $\varphi_a$ 的估计，同时第二寄存器投影到对应的 $|u_a\rangle$。因此，真正必要的条件不是事先知道某个本征态，而是输入态与目标本征态有非零重叠。求阶算法正是利用了这一点。
+
 ## 求阶问题与质因数分解
 
-著名的RSA加密算法的核心在于，经典算法对一个大数分解质因数是困难的。对于分解 $N=p\times q$，现在最先进的经典算法完成的时间为：
+给定互素的正整数 $x$ 与 $N$，$x$ 模 $N$ 的**阶**定义为满足
 $$
-2^{(\log N)^a},\quad a=\dfrac13
+x^r\equiv1\pmod N
 $$
-对于量子计算，其按下面的流程进行：
-- 如果 $N$ 为偶数，则直接返回2。
-- 确定 $N$ 是否可以写为形式 $N=a^b$，如果是则返回 $a$。此步可以用经典算法高效完成。
-- 随机选取一个 $x\in\{2,\cdots,N-1\}$，如果 $\mathrm{GCD}(x,N)>1$ 则返回 $x$。
-- 确定最小的 $r>0$ 使得 $x^r\equiv 1\,(\mathrm{mod}\,N)$。
-- 若 $r$ 为偶时，计算 $\mathrm{GCD}(x^{r/2}-1,N)$ 与 $\mathrm{GCD}(x^{r/2}+1,N)$，检查其中是否包含非平凡结果。如果没有，则返回步骤3。
-求最大公约数可以使用经典算法高效完成。因此上面需要量子算法参与的只有步骤4，这一步也称为**求阶问题**。
-求阶问题实际上可以等效为一个相位估计问题。考虑一个幺正算符：
+的最小正整数 $r$。数列
 $$
-U_x|y\rangle\equiv |xy\,\mathrm{mod}\,N\rangle
+1,x,x^2,\ldots,x^{r-1},x^r,x^{r+1},\ldots\pmod N
 $$
+会以 $r$ 为周期循环，求阶问题就是从 $x$ 和 $N$ 中找出这个未知周期。
 
+求阶之所以值得单独研究，是因为Shor分解算法把大整数分解归约到了它。对待分解的奇合数 $N$，随机选取 $x\in\{2,\ldots,N-1\}$：若 $\gcd(x,N)>1$，已经直接找到了因子；否则求出 $x$ 模 $N$ 的阶 $r$。当 $r$ 为偶数且
+$$
+x^{r/2}\not\equiv-1\pmod N
+$$
+时，由
+$$
+(x^{r/2}-1)(x^{r/2}+1)\equiv0\pmod N
+$$
+可知，$\gcd(x^{r/2}-1,N)$ 与 $\gcd(x^{r/2}+1,N)$ 中至少能给出一个非平凡因子。求最大公约数和检查候选因子都能由经典算法高效完成，量子部分真正承担的任务只有求 $r$。
+
+### 1. 一个简单例子
+
+取 $x=5,N=21$，逐次计算可得
+$$
+5^1\equiv5,\quad
+5^2\equiv4,\quad
+5^3\equiv20,\quad
+5^4\equiv16,\quad
+5^5\equiv17,\quad
+5^6\equiv1\pmod{21}.
+$$
+此前没有更小的正整数使结果回到 $1$，因此 $5$ 模 $21$ 的阶为 $r=6$。直接逐项尝试当然能解这个小例子，但当 $N$ 很大时，这种做法可能需要检查数量随 $N$ 增长的幂次，并不关于输入长度 $\log N$ 多项式高效。
+
+### 2. 把求阶写成本征相位问题
+
+令 $L=\lceil\log_2N\rceil$，在 $L$ 个qubits组成的第二寄存器上定义模乘算符
+$$
+U_x|y\rangle=|xy\bmod N\rangle,\qquad 0\le y<N.
+$$
+由于 $\gcd(x,N)=1$，乘以 $x$ 在模 $N$ 的剩余类上是一一映射，所以 $U_x$ 是一个置换，也就是幺正变换。为了把它定义在整个 $2^L$ 维空间中，可以约定当 $N\le y<2^L$ 时 $U_x|y\rangle=|y\rangle$；这部分不会参与算法。
+
+在由 $|x^k\bmod N\rangle$ 张成的周期子空间中，定义
+$$
+|u_s\rangle=\dfrac{1}{\sqrt r}\sum_{k=0}^{r-1}
+\mathrm{e}^{-2\pi isk/r}|x^k\bmod N\rangle,\qquad
+s=0,1,\ldots,r-1.
+$$
+对它作用 $U_x$，并将指标循环平移一位，有
+$$
+\begin{aligned}
+U_x|u_s\rangle
+&=\dfrac{1}{\sqrt r}\sum_{k=0}^{r-1}
+\mathrm{e}^{-2\pi isk/r}|x^{k+1}\bmod N\rangle\\
+&=\mathrm{e}^{2\pi is/r}|u_s\rangle.
+\end{aligned}
+$$
+因此 $U_x$ 的本征相位正是
+$$
+\varphi_s=\dfrac{s}{r}.
+$$
+只要能够对 $U_x$ 做相位估计，就能得到一个接近 $s/r$ 的有理数。分母中已经出现了我们要找的 $r$。
+
+### 3. 不知道 $r$，如何制备本征态？
+
+这里有一个看起来有点循环的地方：$|u_s\rangle$ 的定义依赖 $r$，但 $r$ 正是未知量。好在这些本征态的均匀叠加非常简单：
+$$
+\begin{aligned}
+\dfrac{1}{\sqrt r}\sum_{s=0}^{r-1}|u_s\rangle
+&=\dfrac{1}{r}\sum_{k=0}^{r-1}
+\left(\sum_{s=0}^{r-1}\mathrm{e}^{-2\pi isk/r}\right)
+|x^k\bmod N\rangle\\
+&=|x^0\bmod N\rangle=|1\rangle.
+\end{aligned}
+$$
+离散Fourier求和消去了所有 $k\ne0$ 的项。因此我们不需要知道任何一个 $|u_s\rangle$，只需把第二寄存器初始化为计算基态 $|1\rangle=|0\cdots01\rangle$。QPE会自动从这个叠加态中随机选出一个本征相位 $s/r$。
+
+### 4. 求阶线路的状态演化
+
+第一寄存器使用 $t$ 个qubits，记 $Q=2^t$。Hadamard门后，系统处于
+$$
+\dfrac{1}{\sqrt Q}\sum_{j=0}^{Q-1}|j\rangle|1\rangle.
+$$
+接下来执行受控模乘
+$$
+|j\rangle|y\rangle\longmapsto
+|j\rangle|x^jy\bmod N\rangle.
+$$
+在线路中，它由 Controlled-$U_x^{2^k}$ 组成；各个常数 $x^{2^k}\bmod N$ 可以预先用重复平方计算。利用 $|1\rangle=r^{-1/2}\sum_s|u_s\rangle$，受控模乘后的状态可以写成
+$$
+\dfrac{1}{\sqrt{rQ}}
+\sum_{s=0}^{r-1}\sum_{j=0}^{Q-1}
+\mathrm{e}^{2\pi ijs/r}|j\rangle|u_s\rangle.
+$$
+对第一寄存器施加逆QFT并测量，就会随机得到某个 $s$ 对应的相位估计
+$$
+\dfrac{b}{Q}\approx\dfrac{s}{r}.
+$$
+由于 $|1\rangle$ 对每个 $|u_s\rangle$ 的权重相同，在理想情形下不同 $s$ 被选中的概率均为 $1/r$。注意测量直接给出的只是整数 $b$，并不会把 $r$ 写在屏幕上；从 $b/Q$ 恢复分母还需要最后一步经典后处理。
+
+### 5. 用连分数恢复阶
+
+有理逼近定理告诉我们：如果
+$$
+\left|\dfrac{b}{Q}-\dfrac{s}{r}\right|<\dfrac{1}{2r^2},
+$$
+那么约分后的 $s/r$ 一定出现在 $b/Q$ 的连分数渐近分数中。由于 $r<N$，通常选择
+$$
+N^2\le Q=2^t<2N^2,
+$$
+也就是取大约 $t=2L$ 个辅助qubits。这样QPE提供的精度足以用连分数找到候选分母。
+
+若 $\gcd(s,r)=1$，约分后的分母就是 $r$；若二者不互素，只能得到 $r$ 的一个因子。因而每次得到候选 $r'$ 后，都必须经典验证
+$$
+x^{r'}\equiv1\pmod N.
+$$
+验证失败就重新运行算法；也可以收集多次测量得到的候选分母，再取它们的最小公倍数并继续验证。以 $x=5,N=21,r=6$ 为例，只有 $s=1,5$ 与 $6$ 互素时才能一次从约分分母中直接读出 $6$，其他结果可能只给出 $1,2$ 或 $3$。
+
+### 6. 算法总结
+
+求阶算法可以整理为下面几步：
+
+1. 取 $L=\lceil\log_2N\rceil$，选择 $t\simeq2L$，制备 $|0\rangle^{\otimes t}|1\rangle$。
+2. 对第一寄存器施加Hadamard门，得到 $Q=2^t$ 个计算基态的均匀叠加。
+3. 执行 Controlled-$U_x^{2^k}$，等价于计算 $|j\rangle|1\rangle\mapsto|j\rangle|x^j\bmod N\rangle$。
+4. 对第一寄存器施加逆QFT并测量，得到 $b$，使 $b/Q\approx s/r$。
+5. 对 $b/Q$ 做连分数展开，提取分母小于 $N$ 的渐近分数，并用 $x^{r'}\equiv1\pmod N$ 验证候选阶。
+6. 若候选无效则重复；得到正确的 $r$ 后，将它交回经典的最大公约数步骤完成因数分解。
+
+这里的量子加速并不是因为QFT直接“算出了周期”，而是因为受控模乘把周期编码成了 $U_x$ 的本征相位，QFT再通过干涉把相位集中为可测量的频率峰。模指数运算、QFT和连分数后处理都能在 $\log N$ 的多项式时间内完成，这才使求阶算法成为Shor算法中真正关键的量子部分。

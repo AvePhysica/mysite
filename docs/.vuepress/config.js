@@ -117,7 +117,23 @@ export default defineUserConfig({
           },
         ],
       },
-      { text: "计算机科学", link: "/computer-science/" },
+      {
+        text: "计算机科学",
+        items: [
+          {
+            text: "机器学习",
+            link: "/computer-science/Machine%20Learning/",
+          },
+          {
+            text: "深度学习",
+            link: "/computer-science/Deep%20Learning/",
+          },
+          {
+            text: "人工智能导论",
+            link: "/computer-science/Introduction%20to%20Artificial%20Intelligence/",
+          },
+        ],
+      },
       { text: "About", link: "/about/" },
     ],
 
@@ -153,7 +169,24 @@ export default defineUserConfig({
           link: "/japanese/新标日下册/",
         },
       ],
-      "/computer-science/": "auto",
+      "/computer-science/Machine Learning/": "auto",
+      "/computer-science/Deep Learning/": "auto",
+      "/computer-science/Introduction to Artificial Intelligence/": "auto",
+      "/computer-science/": [
+        { text: "计算机科学概览", link: "/computer-science/" },
+        {
+          text: "机器学习",
+          link: "/computer-science/Machine%20Learning/",
+        },
+        {
+          text: "深度学习",
+          link: "/computer-science/Deep%20Learning/",
+        },
+        {
+          text: "人工智能导论",
+          link: "/computer-science/Introduction%20to%20Artificial%20Intelligence/",
+        },
+      ],
     },
 
     comment: walineServerURL
