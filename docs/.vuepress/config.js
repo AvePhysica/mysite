@@ -5,6 +5,17 @@ import { qftSidebar } from "./qftSidebar.js";
 
 const walineServerURL = process.env.WALINE_SERVER_URL?.trim();
 
+const machineLearningSidebar = [
+  "第二讲：线性模型",
+  "第三讲：支持向量机",
+  "第四讲：学习理论",
+  "第五讲：决策树与随机森林",
+  "第六讲：集成学习与 Boosting",
+  "第七讲：无监督学习",
+  "第八讲：强化学习 I",
+  "第九讲：强化学习 II",
+];
+
 export default defineUserConfig({
   lang: "zh-CN",
   title: "Luminosity",
@@ -120,6 +131,7 @@ export default defineUserConfig({
       {
         text: "计算机科学",
         items: [
+          { text: "计算机科学概览", link: "/computer-science/" },
           {
             text: "机器学习",
             link: "/computer-science/Machine%20Learning/",
@@ -169,7 +181,7 @@ export default defineUserConfig({
           link: "/japanese/新标日下册/",
         },
       ],
-      "/computer-science/Machine Learning/": "auto",
+      "/computer-science/Machine Learning/": machineLearningSidebar,
       "/computer-science/Deep Learning/": "auto",
       "/computer-science/Introduction to Artificial Intelligence/": "auto",
       "/computer-science/": [
