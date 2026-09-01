@@ -5,18 +5,18 @@ import { japaneseVocabularyProgress } from "../data/japaneseVocabulary.js";
 const DAY_IN_MS = 24 * 60 * 60 * 1000;
 const WEEK_IN_MS = 7 * DAY_IN_MS;
 const monthNames = [
-  "一月",
-  "二月",
-  "三月",
-  "四月",
-  "五月",
-  "六月",
-  "七月",
-  "八月",
-  "九月",
-  "十月",
-  "十一月",
-  "十二月",
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
 ];
 
 const year = Number(japaneseVocabularyProgress.year);
@@ -140,9 +140,9 @@ const summary = computed(() => {
 
     <div class="heatmap-card">
       <div class="weekday-labels" aria-hidden="true">
-        <span>一</span>
-        <span>三</span>
-        <span>五</span>
+        <span>Mon</span>
+        <span>Wed</span>
+        <span>Fri</span>
       </div>
 
       <div class="heatmap-scroll" tabindex="0" aria-label="全年日语单词背诵热力图">
@@ -190,11 +190,11 @@ const summary = computed(() => {
 .vocabulary-heatmap {
   --heatmap-cell-size: 13px;
   --heatmap-cell-gap: 4px;
-  --heatmap-empty: #1a2838;
-  --heatmap-level-1: #183c5a;
-  --heatmap-level-2: #1f6191;
-  --heatmap-level-3: #2389c2;
-  --heatmap-level-4: #54b9ef;
+  --heatmap-empty: #22374d;
+  --heatmap-level-1: #22577d;
+  --heatmap-level-2: #2b78aa;
+  --heatmap-level-3: #36a0d5;
+  --heatmap-level-4: #72c9ee;
 
   padding-top: clamp(44px, 6vw, 72px);
   margin-top: clamp(30px, 4vw, 52px);
@@ -397,44 +397,44 @@ const summary = computed(() => {
   text-align: right;
 }
 
-:global(html[data-theme="light"]) .vocabulary-heatmap {
-  --heatmap-empty: #e6eef2;
-  --heatmap-level-1: #d5ebf8;
-  --heatmap-level-2: #9bd0ee;
-  --heatmap-level-3: #489ed0;
-  --heatmap-level-4: #166aa3;
+:global(html[data-theme="light"] .vocabulary-heatmap) {
+  --heatmap-empty: #edf4f7;
+  --heatmap-level-1: #c9e8f8;
+  --heatmap-level-2: #84cbee;
+  --heatmap-level-3: #3aa4dc;
+  --heatmap-level-4: #1d83c1;
 
   color: #24333a;
   border-top-color: rgb(57 86 98 / 18%);
 }
 
-:global(html[data-theme="light"]) .heatmap-heading h2 {
+:global(html[data-theme="light"] .heatmap-heading h2) {
   color: #203139;
 }
 
-:global(html[data-theme="light"]) .heatmap-heading p,
-:global(html[data-theme="light"]) .heatmap-summary strong {
+:global(html[data-theme="light"] .heatmap-heading p),
+:global(html[data-theme="light"] .heatmap-summary strong) {
   color: #287f98;
 }
 
-:global(html[data-theme="light"]) .heatmap-heading > strong,
-:global(html[data-theme="light"]) .heatmap-summary span,
-:global(html[data-theme="light"]) .heatmap-note,
-:global(html[data-theme="light"]) .heatmap-legend,
-:global(html[data-theme="light"]) .month-labels,
-:global(html[data-theme="light"]) .weekday-labels {
+:global(html[data-theme="light"] .heatmap-heading > strong),
+:global(html[data-theme="light"] .heatmap-summary span),
+:global(html[data-theme="light"] .heatmap-note),
+:global(html[data-theme="light"] .heatmap-legend),
+:global(html[data-theme="light"] .month-labels),
+:global(html[data-theme="light"] .weekday-labels) {
   color: rgb(36 57 65 / 62%);
 }
 
-:global(html[data-theme="light"]) .heatmap-summary {
+:global(html[data-theme="light"] .heatmap-summary) {
   border-color: rgb(57 86 98 / 16%);
 }
 
-:global(html[data-theme="light"]) .heatmap-summary div + div {
+:global(html[data-theme="light"] .heatmap-summary div + div) {
   border-left-color: rgb(57 86 98 / 12%);
 }
 
-:global(html[data-theme="light"]) .heatmap-card {
+:global(html[data-theme="light"] .heatmap-card) {
   background: linear-gradient(120deg, rgb(248 252 253 / 76%), rgb(221 237 244 / 48%));
   border-color: rgb(57 112 137 / 18%);
   box-shadow: inset 0 1px 0 rgb(255 255 255 / 70%), 0 22px 55px rgb(56 82 92 / 10%);
