@@ -180,9 +180,6 @@ const summary = computed(() => {
       </div>
     </div>
 
-    <p class="heatmap-note">
-      每个方格代表一天，蓝色越明显表示当天背诵的单词越多。
-    </p>
   </section>
 </template>
 
