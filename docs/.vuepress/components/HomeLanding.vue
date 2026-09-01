@@ -1,6 +1,7 @@
 <script setup>
 import { computed, ref } from "vue";
 import { RouteLink, useRoutes } from "vuepress/client";
+import JapaneseVocabularyHeatmap from "./JapaneseVocabularyHeatmap.vue";
 
 const routes = useRoutes();
 const showUpdates = ref(true);
@@ -129,6 +130,8 @@ function formatDate(timestamp) {
           </nav>
         </aside>
       </section>
+
+      <JapaneseVocabularyHeatmap />
 
       <Transition name="recent-section">
         <section
