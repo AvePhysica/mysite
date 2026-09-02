@@ -131,7 +131,12 @@ function formatDate(timestamp) {
         </aside>
       </section>
 
-      <JapaneseVocabularyHeatmap />
+      <Transition name="recent-section">
+        <JapaneseVocabularyHeatmap
+          v-if="showUpdates"
+          id="vocabulary-heatmap-panel"
+        />
+      </Transition>
 
       <Transition name="recent-section">
         <section
@@ -200,12 +205,12 @@ function formatDate(timestamp) {
       <button
         type="button"
         class="focus-toggle"
-        aria-controls="recent-update-panel"
+        aria-controls="vocabulary-heatmap-panel recent-update-panel"
         :aria-expanded="showUpdates"
         @click="showUpdates = !showUpdates"
       >
         <span aria-hidden="true">{{ showUpdates ? "−" : "+" }}</span>
-        {{ showUpdates ? "专注模式" : "显示笔记" }}
+        {{ showUpdates ? "专注模式" : "显示内容" }}
       </button>
     </div>
   </main>

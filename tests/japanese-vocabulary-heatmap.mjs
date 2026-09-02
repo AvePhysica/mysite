@@ -32,7 +32,7 @@ assert.match(
 );
 assert.match(
   home,
-  /<JapaneseVocabularyHeatmap\s*\/>/,
+  /<JapaneseVocabularyHeatmap\b[^>]*\/>/s,
   "首页应渲染日语单词热力图",
 );
 assert.match(heatmap, /class="vocabulary-heatmap"/);

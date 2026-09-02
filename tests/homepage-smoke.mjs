@@ -46,9 +46,19 @@ assert.match(html, /class="featured-note"/, "首页应突出展示最新文章")
 assert.match(html, /class="recent-list"/, "首页应以时间列表展示其余最近文章");
 assert.match(html, /class="focus-toggle"/, "首页应提供专注模式切换按钮");
 assert.match(
-  html,
-  /aria-controls="recent-update-panel"/,
-  "切换按钮应关联最近更新面板",
+  homeComponent,
+  /aria-controls="vocabulary-heatmap-panel recent-update-panel"/,
+  "专注模式按钮应同时关联热力图和最近更新面板",
+);
+assert.match(
+  homeComponent,
+  /<JapaneseVocabularyHeatmap\s+v-if="showUpdates"\s+id="vocabulary-heatmap-panel"\s*\/>/,
+  "专注模式应收起日语单词热力图",
+);
+assert.match(
+  homeComponent,
+  /showUpdates \? "专注模式" : "显示内容"/,
+  "收起后按钮应提示恢复全部内容",
 );
 assert.match(html, /aria-expanded="true"/, "最近更新面板默认应为展开状态");
 assert.match(html, /id="recent-update-panel"/, "最近更新面板应提供稳定标识");
