@@ -3,5 +3,6 @@ export const japaneseVocabularyProgress = {
   year: 2026,
   daily: {
     "2026-09-01": 27,
+    "2026-09-02": 28,
   },
 };
