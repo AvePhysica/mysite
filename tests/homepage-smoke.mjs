@@ -21,6 +21,13 @@ const config = await readFile(
   resolve(dirname(fileURLToPath(import.meta.url)), "../docs/.vuepress/config.js"),
   "utf8",
 );
+const stylesSource = await readFile(
+  resolve(
+    dirname(fileURLToPath(import.meta.url)),
+    "../docs/.vuepress/styles/index.scss",
+  ),
+  "utf8",
+);
 
 assert.match(
   homeComponent,
@@ -153,24 +160,39 @@ assert.match(
   "Article body text should use the enlarged readable size and line height",
 );
 assert.match(
-  css,
-  /body:has\(\.vp-doc\):not\(:has\(\.home-dashboard\)\)\{[^}]*background-image:[^}]*background-size:32px 32px/,
-  "Article pages should display the grid background without affecting the homepage",
+  stylesSource,
+  /body:has\(\.vp-doc\):not\(:has\(\.home-dashboard\)\):not\(:has\(\.about-page\)\)\s*\{[^}]*background-color:\s*#202326;[^}]*background-image:\s*none;/s,
+  "文章页暗色背景应为纯色且不影响首页与 About 页面",
 );
 assert.match(
-  css,
-  /html\[data-theme=light\] body:has\(\.vp-doc\):not\(:has\(\.home-dashboard\)\)\{[^}]*background-image:/,
-  "Article grid should provide a light-theme color",
+  stylesSource,
+  /html\[data-theme="light"\]\s+body:has\(\.vp-doc\):not\(:has\(\.home-dashboard\)\):not\(:has\(\.about-page\)\)\s*\{[^}]*background-color:\s*#f5f8f9;[^}]*background-image:\s*none;/s,
+  "文章页亮色背景应使用对应的纯色",
 );
 assert.match(
-  css,
-  /body:has\(\.vp-doc\):not\(:has\(\.home-dashboard\)\) \.vp-sidebar\{[^}]*background-image:[^}]*background-size:32px 32px/,
-  "The article sidebar should continue the grid background",
+  stylesSource,
+  /body:has\(\.vp-doc\):not\(:has\(\.home-dashboard\)\):not\(:has\(\.about-page\)\)\s+\.vp-sidebar\s*\{[^}]*background-color:\s*#202326;[^}]*background-image:\s*none;/s,
+  "文章侧栏暗色背景应与正文使用一致的纯色",
 );
 assert.match(
-  css,
-  /html\[data-theme=light\] body:has\(\.vp-doc\):not\(:has\(\.home-dashboard\)\) \.vp-sidebar\{[^}]*background-image:/,
-  "The article sidebar grid should support the light theme",
+  stylesSource,
+  /html\[data-theme="light"\][\s\S]*?body:has\(\.vp-doc\):not\(:has\(\.home-dashboard\)\):not\(:has\(\.about-page\)\)[\s\S]*?\.vp-sidebar\s*\{[^}]*background-color:\s*#f5f8f9;[^}]*background-image:\s*none;/s,
+  "文章侧栏亮色背景应与正文使用一致的纯色",
+);
+assert.match(
+  stylesSource,
+  /body:has\(\.vp-doc\):not\(:has\(\.home-dashboard\)\):not\(:has\(\.about-page\)\)\s+\.vp-navbar\s*\{[^}]*--vp-nav-bg-color:\s*#191c1f;[^}]*background-color:\s*#191c1f\s*!important;[^}]*border-bottom:\s*1px solid/s,
+  "文章页暗色顶栏应使用比正文略深的统一纯色",
+);
+assert.match(
+  stylesSource,
+  /html\[data-theme="light"\][\s\S]*?body:has\(\.vp-doc\):not\(:has\(\.home-dashboard\)\):not\(:has\(\.about-page\)\)\s+\.vp-navbar\s*\{[^}]*--vp-nav-bg-color:\s*#e8eef0;[^}]*background-color:\s*#e8eef0\s*!important;[^}]*border-bottom:\s*1px solid/s,
+  "文章页亮色顶栏应使用比正文略深的统一纯色",
+);
+assert.match(
+  stylesSource,
+  /body:has\(\.vp-doc\):not\(:has\(\.home-dashboard\)\):not\(:has\(\.about-page\)\)\s+\.vp-navbar\s+:is\(\.vp-navbar-title\.has-sidebar \.title, \.divider-line\)\s*\{[^}]*border-bottom-color:\s*transparent\s*!important;[^}]*background-color:\s*transparent\s*!important;/s,
+  "文章顶栏内部的分段线应被统一的整栏分隔线替代",
 );
 
 const navbarTitleRule =
@@ -194,15 +216,19 @@ assert.match(
   "所有页面的页脚应使用首页的字体",
 );
 assert.match(footerRule, /font-style:italic/, "所有页面的页脚应使用首页的斜体形式");
-assert.match(footerRule, /background:#202326/, "所有页面应使用首页的深色页脚背景");
+assert.match(
+  footerRule,
+  /background(?:-color)?:#202326/,
+  "所有页面应使用首页的深色页脚背景",
+);
 assert.match(
   css,
   /\.vp-footer \.message,\.vp-footer \.copyright\{[^}]*font:inherit[^}]*color:inherit/,
   "页脚内部文字应继承统一后的全站页脚样式",
 );
 assert.match(
-  css,
-  /html\[data-theme=light\] \.vp-footer\{[^}]*background:#edf3f4/,
+  stylesSource,
+  /html\[data-theme="light"\]\s+\.vp-footer\s*\{[^}]*background-color:\s*#f5f8f9;/s,
   "所有页面的页脚应使用首页的亮色形式",
 );
 

@@ -13,14 +13,14 @@ const styles = await readFile(
 
 assert.match(
   styles,
-  /\.vp-footer\s*\{[^}]*background-image:\s*linear-gradient\([\s\S]*?linear-gradient\([^}]*background-size:\s*32px 32px;/s,
-  "深色脚注区应沿用正文的 32px 网格背景",
+  /\.vp-footer\s*\{[^}]*background-color:\s*#202326;[^}]*background-image:\s*none;/s,
+  "暗色文章脚注区应使用纯色背景",
 );
 
 assert.match(
   styles,
-  /html\[data-theme="light"\]\s+\.vp-footer\s*\{[^}]*background-image:\s*linear-gradient\([\s\S]*?linear-gradient\(/s,
-  "亮色脚注区应使用适配亮色主题的网格背景",
+  /html\[data-theme="light"\]\s+\.vp-footer\s*\{[^}]*background-color:\s*#f5f8f9;[^}]*background-image:\s*none;/s,
+  "亮色文章脚注区应使用纯色背景",
 );
 
 assert.match(
@@ -59,4 +59,4 @@ assert.doesNotMatch(
   "About 主区域不能被全局样式强制设为透明",
 );
 
-console.log("Footer grid background checks passed.");
+console.log("Footer background checks passed.");

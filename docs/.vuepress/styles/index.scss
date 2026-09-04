@@ -81,36 +81,52 @@ html {
   }
 }
 
-body:has(.vp-doc):not(:has(.home-dashboard)) {
-  background-image:
-    linear-gradient(rgb(255 255 255 / 5%) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(255 255 255 / 5%) 1px, transparent 1px);
-  background-position: -1px -1px;
-  background-size: 32px 32px;
-  background-attachment: fixed;
-}
-
-html[data-theme="light"] body:has(.vp-doc):not(:has(.home-dashboard)) {
-  background-image:
-    linear-gradient(rgb(47 73 82 / 7%) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(47 73 82 / 7%) 1px, transparent 1px);
-}
-
-body:has(.vp-doc):not(:has(.home-dashboard)) .vp-sidebar {
-  background-image:
-    linear-gradient(rgb(255 255 255 / 5%) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(255 255 255 / 5%) 1px, transparent 1px);
-  background-position: -1px -1px;
-  background-size: 32px 32px;
-  background-attachment: fixed;
+body:has(.vp-doc):not(:has(.home-dashboard)):not(:has(.about-page)) {
+  background-color: #202326;
+  background-image: none;
 }
 
 html[data-theme="light"]
-  body:has(.vp-doc):not(:has(.home-dashboard))
+  body:has(.vp-doc):not(:has(.home-dashboard)):not(:has(.about-page)) {
+  background-color: #f5f8f9;
+  background-image: none;
+}
+
+body:has(.vp-doc):not(:has(.home-dashboard)):not(:has(.about-page))
   .vp-sidebar {
-  background-image:
-    linear-gradient(rgb(47 73 82 / 7%) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(47 73 82 / 7%) 1px, transparent 1px);
+  background-color: #202326;
+  background-image: none;
+}
+
+html[data-theme="light"]
+  body:has(.vp-doc):not(:has(.home-dashboard)):not(:has(.about-page))
+  .vp-sidebar {
+  background-color: #f5f8f9;
+  background-image: none;
+}
+
+body:has(.vp-doc):not(:has(.home-dashboard)):not(:has(.about-page))
+  .vp-navbar {
+  --vp-nav-bg-color: #191c1f;
+
+  background-color: #191c1f !important;
+  border-bottom: 1px solid rgb(255 255 255 / 8%) !important;
+}
+
+html[data-theme="light"]
+  body:has(.vp-doc):not(:has(.home-dashboard)):not(:has(.about-page))
+  .vp-navbar {
+  --vp-nav-bg-color: #e8eef0;
+
+  background-color: #e8eef0 !important;
+  border-bottom: 1px solid rgb(45 68 76 / 14%) !important;
+}
+
+body:has(.vp-doc):not(:has(.home-dashboard)):not(:has(.about-page))
+  .vp-navbar
+  :is(.vp-navbar-title.has-sidebar .title, .divider-line) {
+  border-bottom-color: transparent !important;
+  background-color: transparent !important;
 }
 
 body:has(.home-dashboard) .vp-navbar {
@@ -131,12 +147,7 @@ body:has(.home-dashboard) .vp-navbar button {
   font-style: italic;
   color: rgb(230 235 236 / 60%);
   background-color: #202326;
-  background-image:
-    linear-gradient(rgb(255 255 255 / 5%) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(255 255 255 / 5%) 1px, transparent 1px);
-  background-position: -1px -1px;
-  background-size: 32px 32px;
-  background-attachment: fixed;
+  background-image: none;
   border-top-color: rgb(255 255 255 / 7%);
 }
 
@@ -154,10 +165,8 @@ html[data-theme="light"] body:has(.home-dashboard) .vp-navbar {
 
 html[data-theme="light"] .vp-footer {
   color: rgb(43 62 69 / 62%);
-  background-color: #edf3f4;
-  background-image:
-    linear-gradient(rgb(47 73 82 / 7%) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(47 73 82 / 7%) 1px, transparent 1px);
+  background-color: #f5f8f9;
+  background-image: none;
   border-top-color: rgb(61 89 98 / 12%);
 }
 
