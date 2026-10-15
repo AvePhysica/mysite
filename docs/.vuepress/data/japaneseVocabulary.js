@@ -56,5 +56,6 @@ export const japaneseVocabularyProgress = {
     "2026-10-10": 19,
     "2026-10-11": 30,
     "2026-10-13": 50,
+    "2026-10-15": 33,
   },
 };
